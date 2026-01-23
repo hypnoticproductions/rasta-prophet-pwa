@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <application xmlns="urn:schemas-microsoft:UAP">
+    <ApplicationId>com.rastaprophet.pwa</ApplicationId>
+    <ApplicationDescription>The Rasta Prophet Podcast</ApplicationDescription>
+    <VisualElements>
+      <BackgroundColor>#121212</BackgroundColor>
+      <SplashScreenBackgroundColor>#121212</SplashScreenBackgroundColor>
+      <SplashScreenImage>/icons/icon-192x192.png</SplashScreenImage>
+    </VisualElements>
+  </application>
+</configuration>
