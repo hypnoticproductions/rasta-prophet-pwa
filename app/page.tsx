@@ -1,180 +1,340 @@
-import { RotatingMic } from '@/components/visuals/RotatingMic';
-import { EpisodeList } from '@/components/EpisodeList';
-import { AudioPlayer } from '@/components/player/AudioPlayer';
-import { getAllEpisodes } from '@/data/episodes';
-import { Calendar, Clock, Headphones } from 'lucide-react';
+'use client';
 
-export default function Home() {
-  const episodes = getAllEpisodes();
-  const latestEpisode = episodes[0];
-  const otherEpisodes = episodes.slice(1);
+import React, { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+
+// --- CONFIGURATION & ASSETS ---
+const ASSETS = {
+  prophetImg: "https://res.cloudinary.com/dd6z9fx5m/image/upload/v1769202027/Generated_Image_January_23_2026_-_4_44PM_i9awnk.jpg",
+  blazinLogo: "https://www.blazin993.com/uploads/1/2/5/0/125013032/editor/blazin-logo.png?1661003091",
+  whatsappLink: "https://wa.me/17584863825?text=Blessings%20Rodniel%2C%20I%20am%20reaching%20out%20from%20The%20Rasta%20Prophet%20App.",
+  bottleVideo: "https://res.cloudinary.com/dd6z9fx5m/video/upload/v1769210282/grok-video-ec8ab583-f70a-4ae5-9f75-f7de21d4dced_q1kceu.mp4",
+  episodes: [
+    { id: 1, title: "CARIBBEAN UNDER SIEGE", date: "Jan 11", duration: "1:02:14", category: "Political Reasoning", url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" },
+    { id: 2, title: "VENEZUELA HIJACKED", date: "Jan 11", duration: "48:20", category: "Global Truth", url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" },
+    { id: 3, title: "BLACK STAR ROOTS PROMO", date: "Jan 18", duration: "55:10", category: "Cultural Heritage", url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" },
+    { id: 4, title: "VOICE OF AFRICA - SEGMENT 1", date: "Dec 21", duration: "3:34:14", category: "Self Improvement", url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3" },
+  ]
+};
+
+const COLORS = {
+  red: "#FF0000",
+  gold: "#D4AF37",
+  green: "#006400",
+  black: "#050505"
+};
+
+const ProphetCanvas = ({ isPlaying }: { isPlaying: boolean }) => {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    let width: number, height: number, animationFrameId: number;
+
+    const particles: Particle[] = [];
+    const particleCount = isPlaying ? 120 : 30;
+
+    const resize = () => {
+      width = window.innerWidth;
+      height = window.innerHeight;
+      canvas.width = width;
+      canvas.height = height;
+    };
+
+    class Particle {
+      x: number;
+      y: number;
+      vx: number;
+      vy: number;
+      size: number;
+      color: string;
+      life: number;
+      decay: number;
+
+      constructor() {
+        this.x = 0;
+        this.y = 0;
+        this.vx = 0;
+        this.vy = 0;
+        this.size = 0;
+        this.color = '';
+        this.life = 0;
+        this.decay = 0;
+        this.reset();
+      }
+
+      reset() {
+        this.x = Math.random() * width;
+        this.y = height + 50;
+        this.vx = (Math.random() - 0.5) * (isPlaying ? 2.5 : 1);
+        this.vy = -Math.random() * (isPlaying ? 4 : 1.5) - 0.5;
+        this.size = Math.random() * (isPlaying ? 5 : 2) + 1;
+        this.color = [COLORS.red, COLORS.gold, COLORS.green][Math.floor(Math.random() * 3)];
+        this.life = 1;
+        this.decay = Math.random() * 0.004 + 0.001;
+      }
+
+      update() {
+        this.x += this.vx + Math.sin(this.y * 0.01) * 0.5;
+        this.y += this.vy;
+        this.life -= this.decay;
+        if (this.life <= 0) this.reset();
+      }
+
+      draw() {
+        ctx.globalAlpha = this.life * 0.6;
+        ctx.fillStyle = this.color;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    for (let i = 0; i < particleCount; i++) particles.push(new Particle());
+
+    const animate = (time: number) => {
+      ctx.clearRect(0, 0, width, height);
+
+      const barCount = 100;
+      const barWidth = width / barCount;
+      for (let i = 0; i < barCount; i++) {
+        const multiplier = isPlaying ? 80 : 15;
+        const h = Math.abs(Math.sin(time * 0.002 + i * 0.1)) * multiplier;
+        ctx.globalAlpha = 0.3;
+        ctx.fillStyle = i % 3 === 0 ? COLORS.red : i % 3 === 1 ? COLORS.gold : COLORS.green;
+        ctx.fillRect(i * barWidth, height - h, barWidth - 1, h);
+      }
+
+      particles.forEach(p => {
+        p.update();
+        p.draw();
+      });
+      animationFrameId = requestAnimationFrame(animate);
+    };
+
+    window.addEventListener('resize', resize);
+    resize();
+    animate(0);
+
+    return () => {
+      window.removeEventListener('resize', resize);
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, [isPlaying]);
+
+  return <canvas ref={canvasRef} className="fixed inset-0 pointer-events-none z-10" />;
+};
+
+export default function App() {
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [activeTrack, setActiveTrack] = useState<typeof ASSETS.episodes[0] | null>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef<HTMLAudioElement>(null);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoaded(true), 1500);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const handlePlay = (track: typeof ASSETS.episodes[0]) => {
+    if (activeTrack?.id === track.id) {
+      if (isPlaying) {
+        audioRef.current?.pause();
+        setIsPlaying(false);
+      } else {
+        audioRef.current?.play();
+        setIsPlaying(true);
+      }
+    } else {
+      setActiveTrack(track);
+      setIsPlaying(true);
+    }
+  };
+
+  useEffect(() => {
+    if (activeTrack && audioRef.current) {
+      audioRef.current.src = activeTrack.url;
+      if (isPlaying) {
+        audioRef.current.play();
+      }
+    }
+  }, [activeTrack, isPlaying]);
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] pb-24">
-      {/* Fixed Central Microphone */}
-      <RotatingMic />
+    <div className="relative min-h-screen bg-black overflow-x-hidden text-stone-100 font-sans">
+      <AnimatePresence>
+        {!isLoaded && (
+          <motion.div
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] bg-black flex flex-col items-center justify-center"
+          >
+            <motion.img
+              animate={{ scale: [1, 1.1, 1] }}
+              transition={{ repeat: Infinity, duration: 2 }}
+              src={ASSETS.blazinLogo}
+              alt="Blazin Logo"
+              className="w-32"
+            />
+            <h2 className="text-gold tracking-[0.8em] font-serif uppercase mt-8 text-sm">Reasoning Imminent...</h2>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0a]/90 backdrop-blur-lg border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#FFD700] to-[#C9A800] flex items-center justify-center">
-              <Headphones className="w-5 h-5 text-black" />
+      {/* BACKGROUND IMAGE - POSITIONED FOR CLEAR FACE VISIBILITY */}
+      <div className="fixed inset-0 z-0">
+        <motion.div
+          animate={{ scale: isPlaying ? 1.05 : 1, opacity: isPlaying ? 0.8 : 0.65 }}
+          transition={{ duration: 15, repeat: Infinity, repeatType: "mirror" }}
+          className="w-full h-full bg-cover bg-[center_15%]"
+          style={{ backgroundImage: `url(${ASSETS.prophetImg})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-black" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90" />
+      </div>
+
+      <ProphetCanvas isPlaying={isPlaying} />
+
+      <div className="relative z-20 flex flex-col min-h-screen">
+
+        {/* NAV */}
+        <nav className="p-6 md:p-10 flex justify-between items-center">
+          <div className="flex items-center space-x-4">
+            <div className="h-10 w-[2px] bg-red" />
+            <div>
+              <h3 className="text-gold font-bold tracking-[0.2em] text-sm md:text-lg uppercase text-shadow-glow">The Rasta Prophet</h3>
+              <p className="text-[9px] text-stone-400 uppercase tracking-widest">Blessed Love Voice of Africa</p>
             </div>
-            <span className="font-bold text-xl text-white">Blessed Love Podcast</span>
           </div>
-          <div className="flex items-center gap-6">
-            <a href="#episodes" className="text-[#B3B3B3] hover:text-white transition-colors font-medium">
-              Episodes
-            </a>
-            <a href="/admin" className="text-[#B3B3B3] hover:text-white transition-colors font-medium">
-              Admin
-            </a>
-          </div>
-        </div>
-      </nav>
+          <img src={ASSETS.blazinLogo} alt="Blazin Logo" className="w-20 md:w-28 opacity-90 hover:opacity-100 transition-opacity" />
+        </nav>
 
-      {/* Hero Section */}
-      <section className="relative z-10 pt-32 pb-20 px-6">
-        <div className="max-w-7xl mx-auto">
-          {/* Featured Episode */}
-          {latestEpisode && (
-            <div className="featured-card p-8 mb-16">
-              <div className="flex gap-8 items-center">
-                {/* Episode Art */}
-                <div className="w-48 h-48 md:w-64 md:h-64 flex-shrink-0 rounded-lg overflow-hidden shadow-2xl">
-                  <img
-                    src="/gold-mic.png"
-                    alt={latestEpisode.title}
-                    className="w-full h-full object-cover"
+        {/* HERO SECTION */}
+        <section className="px-8 mt-auto mb-20 md:mb-28 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.2 }}
+          >
+            <h2 className="text-gold text-sm md:text-base font-serif tracking-[0.5em] uppercase mb-4 opacity-80">The Vibration of Truth</h2>
+            <h1 className="text-5xl md:text-8xl font-black uppercase tracking-tighter mb-10 italic leading-none drop-shadow-2xl">
+              Join the <br/> <span className="text-red">Movement</span>
+            </h1>
+          </motion.div>
+
+          <button
+            onClick={() => handlePlay(ASSETS.episodes[0])}
+            className="group relative px-14 py-5 bg-transparent overflow-hidden border border-gold/40 hover:border-gold transition-colors"
+          >
+            <div className="absolute inset-0 bg-gold translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+            <span className="relative z-10 text-gold group-hover:text-black font-bold text-xl uppercase tracking-[0.25em]">
+              {isPlaying ? 'Pause Session' : 'Begin The Reasoning'}
+            </span>
+          </button>
+        </section>
+
+        {/* NEW VIDEO SPOTLIGHT SECTION */}
+        <section className="px-8 py-20 bg-black/40 backdrop-blur-sm border-y border-white/5">
+           <div className="max-w-4xl mx-auto flex flex-col items-center">
+             <div className="w-full aspect-video rounded-lg overflow-hidden border-2 border-gold/20 shadow-[0_0_50px_rgba(212,175,55,0.15)] relative group">
+                <video
+                  className="w-full h-full object-cover"
+                  src={ASSETS.bottleVideo}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
+                <div className="absolute bottom-6 left-6 text-left">
+                  <h3 className="text-gold font-bold uppercase tracking-widest text-xl mb-1">Prophetic Sustenance</h3>
+                  <p className="text-stone-300 text-xs italic">Pure Energy for the Royal Order</p>
+                </div>
+             </div>
+             <motion.p
+               initial={{ opacity: 0 }}
+               whileInView={{ opacity: 1 }}
+               className="mt-8 text-stone-400 text-sm md:text-base italic max-w-2xl text-center leading-relaxed"
+             >
+               &quot;Nourishing the temple is the first step to liberation. Observe the vessel of strength.&quot;
+             </motion.p>
+           </div>
+        </section>
+
+        {/* ARCHIVE SECTION */}
+        <section id="episodes" className="px-8 pb-32 bg-black/70 backdrop-blur-xl">
+          <div className="max-w-7xl mx-auto">
+            <div className="flex items-center justify-between border-b border-white/10 pb-6 mb-12 pt-16">
+              <h2 className="text-3xl font-bold uppercase italic tracking-tight text-white/90">The Archive of Wisdom</h2>
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-red rounded-full animate-pulse" />
+                <span className="text-[10px] text-stone-400 font-mono uppercase tracking-widest">Broadcast Feed</span>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              {ASSETS.episodes.map((ep) => (
+                <motion.div
+                  key={ep.id}
+                  whileHover={{ backgroundColor: "rgba(255,255,255,0.05)", y: -5 }}
+                  className={`border border-white/5 p-6 transition-all cursor-pointer relative ${activeTrack?.id === ep.id ? 'border-gold/60 bg-white/5' : ''}`}
+                  onClick={() => handlePlay(ep)}
+                >
+                  <p className="text-red text-[9px] font-bold tracking-[0.2em] mb-1 uppercase">{ep.category}</p>
+                  <h4 className="text-xl font-bold mb-6 min-h-[3.5rem] leading-tight">{ep.title}</h4>
+                  <div className="flex items-center justify-between">
+                    <span className="text-[10px] text-stone-500 font-mono uppercase">{ep.date} — {ep.duration}</span>
+                    <div className="text-gold text-lg">
+                      {activeTrack?.id === ep.id && isPlaying ? '⏸' : '▶'}
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* PERSISTENT FOOTER PLAYER */}
+        <AnimatePresence>
+          {activeTrack && (
+            <motion.div
+              initial={{ y: 100 }}
+              animate={{ y: 0 }}
+              className="fixed bottom-0 left-0 w-full z-50 bg-black/98 backdrop-blur-2xl border-t border-gold/30 p-5 md:px-12 flex items-center justify-between shadow-[0_-10px_40px_rgba(0,0,0,0.9)]"
+            >
+              <div className="flex items-center space-x-4 max-w-[50%]">
+                <div className="w-10 h-10 bg-zinc-900 border border-gold/20 flex items-center justify-center text-[10px] font-bold text-gold">LIVE</div>
+                <div className="overflow-hidden">
+                  <h5 className="font-bold text-xs uppercase truncate">{activeTrack.title}</h5>
+                  <p className="text-[9px] text-stone-500 uppercase tracking-widest">Rodniel Theodore</p>
+                </div>
+              </div>
+
+              <div className="flex items-center space-x-8">
+                <button onClick={() => setIsPlaying(!isPlaying)} className="text-gold text-2xl hover:scale-110 transition-transform">
+                  {isPlaying ? '⏸' : '▶'}
+                </button>
+                <div className="hidden lg:block w-72 h-[1px] bg-white/10 relative overflow-hidden">
+                  <motion.div
+                    animate={{ x: ['-100%', '100%'] }}
+                    transition={{ repeat: Infinity, duration: 4, ease: "linear" }}
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-gold to-transparent"
                   />
                 </div>
-                
-                {/* Episode Info */}
-                <div className="flex-1">
-                  <div className="flex items-center gap-2 mb-4">
-                    <span className="text-[#FFD700] text-sm font-bold uppercase tracking-wider">
-                      Latest Episode
-                    </span>
-                  </div>
-                  <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                    {latestEpisode.title}
-                  </h1>
-                  <p className="text-[#B3B3B3] text-lg mb-6 max-w-2xl">
-                    {latestEpisode.description}
-                  </p>
-                  <div className="flex items-center gap-6 mb-6">
-                    <div className="flex items-center gap-2 text-[#B3B3B3]">
-                      <Calendar className="w-4 h-4" />
-                      <span>{new Date(latestEpisode.published_date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-[#B3B3B3]">
-                      <Clock className="w-4 h-4" />
-                      <span>{latestEpisode.duration}</span>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-4">
-                    <button 
-                      data-episode={JSON.stringify(latestEpisode)}
-                      className="btn-primary flex items-center gap-2 play-episode-btn"
-                    >
-                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M8 5v14l11-7z"/>
-                      </svg>
-                      Play Episode
-                    </button>
-                    <button className="btn-secondary flex items-center gap-2">
-                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
-                      </svg>
-                      Download
-                    </button>
-                  </div>
-                </div>
+                <a href={ASSETS.whatsappLink} target="_blank" rel="noopener noreferrer" className="hidden sm:block text-[10px] font-bold text-green-500 border border-green-500/50 px-5 py-2 hover:bg-green-500 hover:text-black transition-all uppercase tracking-widest">
+                  Connect
+                </a>
               </div>
-            </div>
+            </motion.div>
           )}
-        </div>
-      </section>
+        </AnimatePresence>
+      </div>
 
-      {/* About Section */}
-      <section className="relative z-10 py-16 px-6 bg-[#121212]">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                Voice of <span className="gradient-text">Africa</span>
-              </h2>
-              <p className="text-[#B3B3B3] text-lg leading-relaxed mb-6">
-                Welcome to the Blessed Love: Voice of Africa Show with Rodniel Theodore. 
-                A self-improvement show with an Afro Caribbean world view. Each episode 
-                brings wisdom, inspiration, and powerful messages to transform your life.
-              </p>
-              <p className="text-[#B3B3B3] text-lg leading-relaxed">
-                New episodes released weekly. Join thousands of listeners who have discovered 
-                the path to enlightenment through our teachings.
-              </p>
-            </div>
-            <div className="relative">
-              <div className="w-full h-80 rounded-2xl bg-gradient-to-br from-[#1a1a1a] to-[#2d2d2d] flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-[#FFD700] to-[#C9A800] flex items-center justify-center">
-                    <Headphones className="w-12 h-12 text-black" />
-                  </div>
-                  <p className="text-white font-bold text-xl">{episodes.length} Episodes</p>
-                  <p className="text-[#B3B3B3]">Available Now</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* All Episodes Section */}
-      <section id="episodes" className="relative z-10 py-20 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex items-center justify-between mb-8">
-            <h2 className="section-header mb-0">All Episodes</h2>
-            <select className="bg-[#181818] text-white px-4 py-2 rounded-lg border border-white/10 focus:outline-none focus:border-[#FFD700]">
-              <option>Newest First</option>
-              <option>Oldest First</option>
-            </select>
-          </div>
-          <EpisodeList episodes={otherEpisodes} />
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="relative z-10 py-12 px-6 border-t border-white/10">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#FFD700] to-[#C9A800] flex items-center justify-center">
-                <Headphones className="w-5 h-5 text-black" />
-              </div>
-              <span className="font-bold text-white">Blessed Love Podcast</span>
-            </div>
-            <p className="text-[#B3B3B3] text-sm">
-              © {new Date().getFullYear()} Blessed Love: Voice of Africa. All rights reserved.
-            </p>
-            <div className="flex items-center gap-4">
-              <a href="#" className="text-[#B3B3B3] hover:text-white transition-colors">
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                </svg>
-              </a>
-              <a href="#" className="text-[#B3B3B3] hover:text-white transition-colors">
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-      </footer>
-
-      {/* Audio Player */}
-      <AudioPlayer />
+      <audio ref={audioRef} onEnded={() => setIsPlaying(false)} />
     </div>
   );
 }
