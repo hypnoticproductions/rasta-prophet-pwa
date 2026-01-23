@@ -2,19 +2,14 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { getAllEpisodes, Episode } from '@/data/episodes';
 
 // --- CONFIGURATION & ASSETS ---
 const ASSETS = {
   prophetImg: "https://res.cloudinary.com/dd6z9fx5m/image/upload/v1769202027/Generated_Image_January_23_2026_-_4_44PM_i9awnk.jpg",
   blazinLogo: "https://www.blazin993.com/uploads/1/2/5/0/125013032/editor/blazin-logo.png?1661003091",
   whatsappLink: "https://wa.me/17584863825?text=Blessings%20Rodniel%2C%20I%20am%20reaching%20out%20from%20The%20Rasta%20Prophet%20App.",
-  bottleVideo: "https://res.cloudinary.com/dd6z9fx5m/video/upload/v1769210282/grok-video-ec8ab583-f70a-4ae5-9f75-f7de21d4dced_q1kceu.mp4",
-  episodes: [
-    { id: 1, title: "CARIBBEAN UNDER SIEGE", date: "Jan 11", duration: "1:02:14", category: "Political Reasoning", url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" },
-    { id: 2, title: "VENEZUELA HIJACKED", date: "Jan 11", duration: "48:20", category: "Global Truth", url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" },
-    { id: 3, title: "BLACK STAR ROOTS PROMO", date: "Jan 18", duration: "55:10", category: "Cultural Heritage", url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" },
-    { id: 4, title: "VOICE OF AFRICA - SEGMENT 1", date: "Dec 21", duration: "3:34:14", category: "Self Improvement", url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3" },
-  ]
+  bottleVideo: "https://res.cloudinary.com/dd6z9fx5m/video/upload/v1769210282/grok-video-ec8ab583-f70a-4ae5-9f75-f7de21d4dced_q1kceu.mp4"
 };
 
 const COLORS = {
@@ -22,6 +17,21 @@ const COLORS = {
   gold: "#D4AF37",
   green: "#006400",
   black: "#050505"
+};
+
+// Helper function to format date
+const formatDate = (dateString: string) => {
+  const date = new Date(dateString);
+  return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+};
+
+// Helper function to extract category from title
+const getCategory = (title: string) => {
+  if (title.includes('CARIBBEAN')) return 'Political Reasoning';
+  if (title.includes('VENEZUELA')) return 'Global Truth';
+  if (title.includes('BLACK') || title.includes('ROOTS')) return 'Cultural Heritage';
+  if (title.includes('INTERVIEW')) return 'Special Interview';
+  return 'Voice of Africa';
 };
 
 const ProphetCanvas = ({ isPlaying }: { isPlaying: boolean }) => {
@@ -132,16 +142,19 @@ const ProphetCanvas = ({ isPlaying }: { isPlaying: boolean }) => {
 
 export default function App() {
   const [isLoaded, setIsLoaded] = useState(false);
-  const [activeTrack, setActiveTrack] = useState<typeof ASSETS.episodes[0] | null>(null);
+  const [activeTrack, setActiveTrack] = useState<Episode | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
+
+  // Get all episodes
+  const episodes = getAllEpisodes();
 
   useEffect(() => {
     const timer = setTimeout(() => setIsLoaded(true), 1500);
     return () => clearTimeout(timer);
   }, []);
 
-  const handlePlay = (track: typeof ASSETS.episodes[0]) => {
+  const handlePlay = (track: Episode) => {
     if (activeTrack?.id === track.id) {
       if (isPlaying) {
         audioRef.current?.pause();
@@ -158,7 +171,7 @@ export default function App() {
 
   useEffect(() => {
     if (activeTrack && audioRef.current) {
-      audioRef.current.src = activeTrack.url;
+      audioRef.current.src = activeTrack.archive_url;
       if (isPlaying) {
         audioRef.current.play();
       }
@@ -227,7 +240,7 @@ export default function App() {
           </motion.div>
 
           <button
-            onClick={() => handlePlay(ASSETS.episodes[0])}
+            onClick={() => episodes.length > 0 && handlePlay(episodes[0])}
             className="group relative px-14 py-5 bg-transparent overflow-hidden border border-gold/40 hover:border-gold transition-colors"
           >
             <div className="absolute inset-0 bg-gold translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
@@ -277,17 +290,19 @@ export default function App() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-              {ASSETS.episodes.map((ep) => (
+              {episodes.map((ep) => (
                 <motion.div
                   key={ep.id}
                   whileHover={{ backgroundColor: "rgba(255,255,255,0.05)", y: -5 }}
                   className={`border border-white/5 p-6 transition-all cursor-pointer relative ${activeTrack?.id === ep.id ? 'border-gold/60 bg-white/5' : ''}`}
                   onClick={() => handlePlay(ep)}
                 >
-                  <p className="text-red text-[9px] font-bold tracking-[0.2em] mb-1 uppercase">{ep.category}</p>
+                  <p className="text-red text-[9px] font-bold tracking-[0.2em] mb-1 uppercase">{getCategory(ep.title)}</p>
                   <h4 className="text-xl font-bold mb-6 min-h-[3.5rem] leading-tight">{ep.title}</h4>
                   <div className="flex items-center justify-between">
-                    <span className="text-[10px] text-stone-500 font-mono uppercase">{ep.date} — {ep.duration}</span>
+                    <span className="text-[10px] text-stone-500 font-mono uppercase">
+                      {formatDate(ep.published_date)} {ep.duration ? `— ${ep.duration}` : ''}
+                    </span>
                     <div className="text-gold text-lg">
                       {activeTrack?.id === ep.id && isPlaying ? '⏸' : '▶'}
                     </div>
