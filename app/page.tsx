@@ -86,12 +86,12 @@ const ProphetCanvas = ({ isPlaying }: { isPlaying: boolean }) => {
         if (this.life <= 0) this.reset();
       }
 
-      draw() {
-        ctx.globalAlpha = this.life * 0.6;
-        ctx.fillStyle = this.color;
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fill();
+      draw(context: CanvasRenderingContext2D) {
+        context.globalAlpha = this.life * 0.6;
+        context.fillStyle = this.color;
+        context.beginPath();
+        context.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        context.fill();
       }
     }
 
@@ -112,7 +112,7 @@ const ProphetCanvas = ({ isPlaying }: { isPlaying: boolean }) => {
 
       particles.forEach(p => {
         p.update();
-        p.draw();
+        p.draw(ctx);
       });
       animationFrameId = requestAnimationFrame(animate);
     };
