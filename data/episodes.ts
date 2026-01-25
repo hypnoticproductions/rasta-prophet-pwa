@@ -155,6 +155,23 @@ export const episodes: Episode[] = [
     description: "SEGMENT THREE: Black Star Roots Promo Hour - Celebrating African heritage and cultural pride.",
     archive_url: "https://archive.org/download/show-1-18-2026-segment-three-black-star-roots-promo-hour/show%20%201%2018%202026%20segment%20three%20black%20star%20roots%20promo%20hour.mp3",
     published_date: "2026-01-18"
+  },
+  // January 25, 2026 Episodes
+  {
+    id: "17",
+    episode_number: 17,
+    title: "Blessed Love Voice of Africa Show - January 25, 2026",
+    description: "Today's broadcast - Bringing wisdom, truth, and enlightenment to the people.",
+    archive_url: "https://archive.org/download/blessed-love-program-voice-africa-show-1-25-2026/blessed%20love%20program%20voice%20africa%20show%201%2025%202026.mp3",
+    published_date: "2026-01-25"
+  },
+  {
+    id: "18",
+    episode_number: 18,
+    title: "Blessed Love Voice of Africa Show - January 25, 2026 Segment 2",
+    description: "SEGMENT TWO: Continuation of today's powerful message and teachings.",
+    archive_url: "https://archive.org/download/blessed-love-program-voice-africa-show-1-25-2026-segment-2/blessed%20love%20program%20voice%20africa%20show%201%2025%202026%20SEGMENT%202.mp3",
+    published_date: "2026-01-25"
   }
 ];
 
