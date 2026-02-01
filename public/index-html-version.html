@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Rasta Prophet - Voice of Africa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&family=Cinzel:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        /* RESET & BASE */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000000;
+            color: #f5f5f4;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        h1, h2, h3, .font-serif {
+            font-family: 'Cinzel', serif;
+        }
+
+        /* UTILITY CLASSES */
+        .container {
+            position: relative;
+            min-height: 100vh;
+        }
+
+        .fixed {
+            position: fixed;
+        }
+
+        .relative {
+            position: relative;
+        }
+
+        .absolute {
+            position: absolute;
+        }
+
+        .inset-0 {
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+
+        .z-0 { z-index: 0; }
+        .z-10 { z-index: 10; }
+        .z-20 { z-index: 20; }
+        .z-50 { z-index: 50; }
+        .z-100 { z-index: 100; }
+
+        .pointer-events-none {
+            pointer-events: none;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .flex-col {
+            flex-direction: column;
+        }
+
+        .items-center {
+            align-items: center;
+        }
+
+        .justify-center {
+            justify-content: center;
+        }
+
+        .justify-between {
+            justify-content: space-between;
+        }
+
+        .space-x-2 > * + * { margin-left: 0.5rem; }
+        .space-x-4 > * + * { margin-left: 1rem; }
+        .space-x-8 > * + * { margin-left: 2rem; }
+
+        .grid {
+            display: grid;
+        }
+
+        /* COLORS */
+        .bg-black { background-color: #000000; }
+        .bg-red { background-color: #FF0000; }
+        .bg-gold { background-color: #D4AF37; }
+        .bg-green { background-color: #006400; }
+
+        .text-gold { color: #D4AF37; }
+        .text-red { color: #FF0000; }
+        .text-white { color: #ffffff; }
+        .text-stone-100 { color: #f5f5f4; }
+        .text-stone-300 { color: #d6d3d1; }
+        .text-stone-400 { color: #a8a29e; }
+        .text-stone-500 { color: #78716c; }
+        .text-green-500 { color: #22c55e; }
+
+        .text-shadow-glow {
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+        }
+
+        /* LOADING SCREEN */
+        #loading-screen {
+            position: fixed;
+            inset: 0;
+            z-index: 100;
+            background: #000000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 1;
+            transition: opacity 0.8s ease-out;
+        }
+
+        #loading-screen.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        #loading-screen img {
+            width: 8rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        #loading-screen h2 {
+            color: #D4AF37;
+            letter-spacing: 0.8em;
+            text-transform: uppercase;
+            margin-top: 2rem;
+            font-size: 0.875rem;
+        }
+
+        /* BACKGROUND */
+        #background {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+        }
+
+        #background-image {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center 15%;
+            opacity: 0.65;
+            animation: breathe 15s infinite alternate;
+        }
+
+        #background-image.playing {
+            opacity: 0.8;
+        }
+
+        @keyframes breathe {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.05); }
+        }
+
+        .gradient-overlay-top {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.7), transparent, black);
+        }
+
+        .gradient-overlay-bottom {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, black, transparent, transparent);
+            opacity: 0.9;
+        }
+
+        /* CANVAS */
+        #prophet-canvas {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        /* NAVIGATION */
+        nav {
+            padding: 2.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 20;
+        }
+
+        nav .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        nav .divider {
+            height: 2.5rem;
+            width: 2px;
+            background-color: #FF0000;
+            margin-right: 1rem;
+        }
+
+        nav h3 {
+            color: #D4AF37;
+            font-weight: bold;
+            letter-spacing: 0.2em;
+            font-size: 1.125rem;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+        }
+
+        nav p {
+            font-size: 9px;
+            color: #a8a29e;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        nav img {
+            width: 7rem;
+            opacity: 0.9;
+            transition: opacity 0.3s;
+        }
+
+        nav img:hover {
+            opacity: 1;
+        }
+
+        /* HERO SECTION */
+        #hero {
+            padding: 0 2rem;
+            margin-top: auto;
+            margin-bottom: 7rem;
+            text-align: center;
+            position: relative;
+            z-index: 20;
+        }
+
+        #hero h2 {
+            color: #D4AF37;
+            font-size: 1rem;
+            letter-spacing: 0.5em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+
+        #hero h1 {
+            font-size: 5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -0.05em;
+            margin-bottom: 2.5rem;
+            font-style: italic;
+            line-height: 0.9;
+            filter: drop-shadow(0 20px 30px rgba(0,0,0,0.8));
+        }
+
+        #hero h1 span {
+            color: #FF0000;
+        }
+
+        #hero-btn {
+            position: relative;
+            padding: 1.25rem 3.5rem;
+            background: transparent;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            color: #D4AF37;
+            font-weight: bold;
+            font-size: 1.25rem;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            cursor: pointer;
+            overflow: hidden;
+            transition: border-color 0.3s;
+        }
+
+        #hero-btn:hover {
+            border-color: #D4AF37;
+        }
+
+        #hero-btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: #D4AF37;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+            z-index: -1;
+        }
+
+        #hero-btn:hover::before {
+            transform: translateY(0);
+        }
+
+        #hero-btn:hover {
+            color: #000000;
+        }
+
+        /* VIDEO SECTION */
+        #video-section {
+            padding: 5rem 2rem;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+            z-index: 20;
+        }
+
+        #video-section .container-inner {
+            max-width: 56rem;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .video-wrapper {
+            width: 100%;
+            aspect-ratio: 16/9;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            border: 2px solid rgba(212, 175, 55, 0.2);
+            box-shadow: 0 0 50px rgba(212, 175, 55, 0.15);
+            position: relative;
+        }
+
+        .video-wrapper video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, black, transparent, transparent);
+            opacity: 0.6;
+        }
+
+        .video-caption {
+            position: absolute;
+            bottom: 1.5rem;
+            left: 1.5rem;
+            text-align: left;
+        }
+
+        .video-caption h3 {
+            color: #D4AF37;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 1.25rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .video-caption p {
+            color: #d6d3d1;
+            font-size: 0.75rem;
+            font-style: italic;
+        }
+
+        #video-section > p {
+            margin-top: 2rem;
+            color: #a8a29e;
+            font-size: 1rem;
+            font-style: italic;
+            max-width: 42rem;
+            text-align: center;
+            line-height: 1.75;
+        }
+
+        /* EPISODES SECTION */
+        #episodes {
+            padding: 0 2rem 8rem;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(20px);
+            position: relative;
+            z-index: 20;
+        }
+
+        #episodes .container-inner {
+            max-width: 80rem;
+            margin: 0 auto;
+        }
+
+        .episodes-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 1.5rem;
+            margin-bottom: 3rem;
+            padding-top: 4rem;
+        }
+
+        .episodes-header h2 {
+            font-size: 1.875rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-style: italic;
+            letter-spacing: -0.025em;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .broadcast-indicator {
+            display: flex;
+            align-items: center;
+        }
+
+        .broadcast-indicator .pulse-dot {
+            width: 0.5rem;
+            height: 0.5rem;
+            background: #FF0000;
+            border-radius: 50%;
+            animation: pulse-dot 2s infinite;
+            margin-right: 0.5rem;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .broadcast-indicator span {
+            font-size: 10px;
+            color: #a8a29e;
+            font-family: monospace;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .episodes-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .episodes-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .episodes-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .episode-card {
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            transition: all 0.3s;
+            cursor: pointer;
+            position: relative;
+            background: transparent;
+        }
+
+        .episode-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateY(-5px);
+        }
+
+        .episode-card.active {
+            border-color: rgba(212, 175, 55, 0.6);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .episode-card .category {
+            color: #FF0000;
+            font-size: 9px;
+            font-weight: bold;
+            letter-spacing: 0.2em;
+            margin-bottom: 0.25rem;
+            text-transform: uppercase;
+        }
+
+        .episode-card h4 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            min-height: 3.5rem;
+            line-height: 1.2;
+        }
+
+        .episode-card .footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .episode-card .meta {
+            font-size: 10px;
+            color: #78716c;
+            font-family: monospace;
+            text-transform: uppercase;
+        }
+
+        .episode-card .play-icon {
+            color: #D4AF37;
+            font-size: 1.125rem;
+        }
+
+        /* FOOTER PLAYER */
+        #footer-player {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 50;
+            background: rgba(0, 0, 0, 0.98);
+            backdrop-filter: blur(40px);
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 1.25rem 3rem;
+            display: none;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.9);
+            animation: slideUp 0.3s ease-out;
+        }
+
+        #footer-player.visible {
+            display: flex;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        .player-track-info {
+            display: flex;
+            align-items: center;
+            max-width: 50%;
+        }
+
+        .player-track-info .live-badge {
+            width: 2.5rem;
+            height: 2.5rem;
+            background: #27272a;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            font-weight: bold;
+            color: #D4AF37;
+            margin-right: 1rem;
+        }
+
+        .player-track-info .track-details {
+            overflow: hidden;
+        }
+
+        .player-track-info h5 {
+            font-weight: bold;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .player-track-info p {
+            font-size: 9px;
+            color: #78716c;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .player-controls {
+            display: flex;
+            align-items: center;
+        }
+
+        .play-pause-btn {
+            color: #D4AF37;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            margin-right: 2rem;
+            transition: transform 0.2s;
+        }
+
+        .play-pause-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .progress-bar {
+            display: none;
+            width: 18rem;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+            margin-right: 2rem;
+        }
+
+        @media (min-width: 1024px) {
+            .progress-bar {
+                display: block;
+            }
+        }
+
+        .progress-bar-fill {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, transparent, #D4AF37, transparent);
+            animation: progress-slide 4s linear infinite;
+        }
+
+        @keyframes progress-slide {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .whatsapp-btn {
+            display: none;
+            font-size: 10px;
+            font-weight: bold;
+            color: #22c55e;
+            border: 1px solid rgba(34, 197, 94, 0.5);
+            padding: 0.5rem 1.25rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: all 0.3s;
+        }
+
+        @media (min-width: 640px) {
+            .whatsapp-btn {
+                display: block;
+            }
+        }
+
+        .whatsapp-btn:hover {
+            background: #22c55e;
+            color: #000000;
+        }
+
+        /* SCROLLBAR */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #000;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #D4AF37;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            nav {
+                padding: 1.5rem;
+            }
+
+            nav h3 {
+                font-size: 0.875rem;
+            }
+
+            nav img {
+                width: 5rem;
+            }
+
+            #hero h1 {
+                font-size: 3rem;
+            }
+
+            #hero h2 {
+                font-size: 0.875rem;
+            }
+
+            #footer-player {
+                padding: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- LOADING SCREEN -->
+    <div id="loading-screen">
+        <img src="https://www.blazin993.com/uploads/1/2/5/0/125013032/editor/blazin-logo.png?1661003091" alt="Blazin Logo">
+        <h2>Reasoning Imminent...</h2>
+    </div>
+
+    <!-- BACKGROUND -->
+    <div id="background">
+        <div id="background-image" style="background-image: url('https://res.cloudinary.com/dd6z9fx5m/image/upload/v1769202027/Generated_Image_January_23_2026_-_4_44PM_i9awnk.jpg')"></div>
+        <div class="gradient-overlay-top"></div>
+        <div class="gradient-overlay-bottom"></div>
+    </div>
+
+    <!-- CANVAS -->
+    <canvas id="prophet-canvas"></canvas>
+
+    <!-- MAIN CONTENT -->
+    <div class="container">
+        <!-- NAV -->
+        <nav>
+            <div class="logo-container">
+                <div class="divider"></div>
+                <div>
+                    <h3>The Rasta Prophet</h3>
+                    <p>Blessed Love Voice of Africa</p>
+                </div>
+            </div>
+            <img src="https://www.blazin993.com/uploads/1/2/5/0/125013032/editor/blazin-logo.png?1661003091" alt="Blazin Logo">
+        </nav>
+
+        <!-- HERO -->
+        <section id="hero">
+            <div>
+                <h2>The Vibration of Truth</h2>
+                <h1>Join the <br><span>Movement</span></h1>
+            </div>
+            <button id="hero-btn">Begin The Reasoning</button>
+        </section>
+
+        <!-- VIDEO SPOTLIGHT -->
+        <section id="video-section">
+            <div class="container-inner">
+                <div class="video-wrapper">
+                    <video src="https://res.cloudinary.com/dd6z9fx5m/video/upload/v1769210282/grok-video-ec8ab583-f70a-4ae5-9f75-f7de21d4dced_q1kceu.mp4" autoplay loop muted playsinline></video>
+                    <div class="video-overlay"></div>
+                    <div class="video-caption">
+                        <h3>Prophetic Sustenance</h3>
+                        <p>Pure Energy for the Royal Order</p>
+                    </div>
+                </div>
+                <p>"Nourishing the temple is the first step to liberation. Observe the vessel of strength."</p>
+            </div>
+        </section>
+
+        <!-- EPISODES -->
+        <section id="episodes">
+            <div class="container-inner">
+                <div class="episodes-header">
+                    <h2>The Archive of Wisdom</h2>
+                    <div class="broadcast-indicator">
+                        <div class="pulse-dot"></div>
+                        <span>Broadcast Feed</span>
+                    </div>
+                </div>
+                <div class="episodes-grid" id="episodes-grid"></div>
+            </div>
+        </section>
+    </div>
+
+    <!-- FOOTER PLAYER -->
+    <div id="footer-player">
+        <div class="player-track-info">
+            <div class="live-badge">LIVE</div>
+            <div class="track-details">
+                <h5 id="player-title">-</h5>
+                <p>Rodniel Theodore</p>
+            </div>
+        </div>
+        <div class="player-controls">
+            <button class="play-pause-btn" id="play-pause-btn">▶</button>
+            <div class="progress-bar">
+                <div class="progress-bar-fill"></div>
+            </div>
+            <a href="https://wa.me/17584863825?text=Blessings%20Rodniel%2C%20I%20am%20reaching%20out%20from%20The%20Rasta%20Prophet%20App." target="_blank" class="whatsapp-btn">Connect</a>
+        </div>
+    </div>
+
+    <!-- AUDIO ELEMENT -->
+    <audio id="audio-player"></audio>
+
+    <script>
+        // --- CONFIGURATION ---
+        const EPISODES = [
+            { id: 1, title: "FEBRUARY 1 - SEGMENT 1", date: "Feb 1", duration: "", category: "Voice of Africa", url: "https://archive.org/download/show-on-2-1-2026/show%20on%202%201%202026.mp3" },
+            { id: 2, title: "FEBRUARY 1 - SEGMENT 2", date: "Feb 1", duration: "", category: "Voice of Africa", url: "https://archive.org/download/show-on-2-1-2026-segment-2/show%20on%202%201%202026%20SEGMENT%202.mp3" },
+            { id: 3, title: "CARIBBEAN UNDER SIEGE", date: "Jan 11", duration: "1:02:14", category: "Political Reasoning", url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" },
+            { id: 4, title: "VENEZUELA HIJACKED", date: "Jan 11", duration: "48:20", category: "Global Truth", url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" },
+            { id: 5, title: "BLACK STAR ROOTS PROMO", date: "Jan 18", duration: "55:10", category: "Cultural Heritage", url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" },
+            { id: 6, title: "VOICE OF AFRICA - SEGMENT 1", date: "Dec 21", duration: "3:34:14", category: "Self Improvement", url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3" },
+        ];
+
+        const COLORS = {
+            red: "#FF0000",
+            gold: "#D4AF37",
+            green: "#006400",
+            black: "#050505"
+        };
+
+        // --- STATE ---
+        let activeTrack = null;
+        let isPlaying = false;
+        let canvasAnimationId = null;
+
+        // --- ELEMENTS ---
+        const loadingScreen = document.getElementById('loading-screen');
+        const backgroundImage = document.getElementById('background-image');
+        const canvas = document.getElementById('prophet-canvas');
+        const ctx = canvas.getContext('2d');
+        const heroBtn = document.getElementById('hero-btn');
+        const episodesGrid = document.getElementById('episodes-grid');
+        const footerPlayer = document.getElementById('footer-player');
+        const playerTitle = document.getElementById('player-title');
+        const playPauseBtn = document.getElementById('play-pause-btn');
+        const audioPlayer = document.getElementById('audio-player');
+
+        // --- LOADING SCREEN ---
+        setTimeout(() => {
+            loadingScreen.classList.add('hidden');
+        }, 1500);
+
+        // --- CANVAS ANIMATION ---
+        let particles = [];
+        let width, height;
+
+        function resizeCanvas() {
+            width = window.innerWidth;
+            height = window.innerHeight;
+            canvas.width = width;
+            canvas.height = height;
+        }
+
+        class Particle {
+            constructor() {
+                this.reset();
+            }
+
+            reset() {
+                this.x = Math.random() * width;
+                this.y = height + 50;
+                this.vx = (Math.random() - 0.5) * (isPlaying ? 2.5 : 1);
+                this.vy = -Math.random() * (isPlaying ? 4 : 1.5) - 0.5;
+                this.size = Math.random() * (isPlaying ? 5 : 2) + 1;
+                const colors = [COLORS.red, COLORS.gold, COLORS.green];
+                this.color = colors[Math.floor(Math.random() * 3)];
+                this.life = 1;
+                this.decay = Math.random() * 0.004 + 0.001;
+            }
+
+            update() {
+                this.x += this.vx + Math.sin(this.y * 0.01) * 0.5;
+                this.y += this.vy;
+                this.life -= this.decay;
+                if (this.life <= 0) this.reset();
+            }
+
+            draw() {
+                ctx.globalAlpha = this.life * 0.6;
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            const particleCount = isPlaying ? 120 : 30;
+            particles = [];
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function animateCanvas(time) {
+            ctx.clearRect(0, 0, width, height);
+
+            // Draw bars
+            const barCount = 100;
+            const barWidth = width / barCount;
+            for (let i = 0; i < barCount; i++) {
+                const multiplier = isPlaying ? 80 : 15;
+                const h = Math.abs(Math.sin(time * 0.002 + i * 0.1)) * multiplier;
+                ctx.globalAlpha = 0.3;
+                ctx.fillStyle = i % 3 === 0 ? COLORS.red : i % 3 === 1 ? COLORS.gold : COLORS.green;
+                ctx.fillRect(i * barWidth, height - h, barWidth - 1, h);
+            }
+
+            // Draw particles
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+
+            canvasAnimationId = requestAnimationFrame(animateCanvas);
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+        initParticles();
+        animateCanvas(0);
+
+        // --- EPISODES RENDERING ---
+        function renderEpisodes() {
+            episodesGrid.innerHTML = EPISODES.map(ep => `
+                <div class="episode-card ${activeTrack?.id === ep.id ? 'active' : ''}" data-id="${ep.id}">
+                    <p class="category">${ep.category}</p>
+                    <h4>${ep.title}</h4>
+                    <div class="footer">
+                        <span class="meta">${ep.date} — ${ep.duration}</span>
+                        <div class="play-icon">${activeTrack?.id === ep.id && isPlaying ? '⏸' : '▶'}</div>
+                    </div>
+                </div>
+            `).join('');
+
+            // Add click listeners
+            document.querySelectorAll('.episode-card').forEach(card => {
+                card.addEventListener('click', () => {
+                    const id = parseInt(card.dataset.id);
+                    const episode = EPISODES.find(ep => ep.id === id);
+                    handlePlay(episode);
+                });
+            });
+        }
+
+        // --- AUDIO PLAYER ---
+        function handlePlay(track) {
+            if (activeTrack?.id === track.id) {
+                if (isPlaying) {
+                    audioPlayer.pause();
+                    isPlaying = false;
+                } else {
+                    audioPlayer.play();
+                    isPlaying = true;
+                }
+            } else {
+                activeTrack = track;
+                audioPlayer.src = track.url;
+                audioPlayer.play();
+                isPlaying = true;
+                playerTitle.textContent = track.title;
+                footerPlayer.classList.add('visible');
+            }
+
+            updateUI();
+        }
+
+        function updateUI() {
+            // Update button text
+            heroBtn.textContent = isPlaying ? 'Pause Session' : 'Begin The Reasoning';
+            playPauseBtn.textContent = isPlaying ? '⏸' : '▶';
+
+            // Update background
+            if (isPlaying) {
+                backgroundImage.classList.add('playing');
+            } else {
+                backgroundImage.classList.remove('playing');
+            }
+
+            // Re-render episodes
+            renderEpisodes();
+
+            // Update particles
+            initParticles();
+        }
+
+        // --- EVENT LISTENERS ---
+        heroBtn.addEventListener('click', () => {
+            handlePlay(EPISODES[0]);
+        });
+
+        playPauseBtn.addEventListener('click', () => {
+            if (activeTrack) {
+                handlePlay(activeTrack);
+            }
+        });
+
+        audioPlayer.addEventListener('ended', () => {
+            isPlaying = false;
+            updateUI();
+        });
+
+        // --- INITIAL RENDER ---
+        renderEpisodes();
+    </script>
+</body>
+</html>
