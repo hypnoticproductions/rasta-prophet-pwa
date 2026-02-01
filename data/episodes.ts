@@ -172,6 +172,23 @@ export const episodes: Episode[] = [
     description: "SEGMENT TWO: Continuation of today's powerful message and teachings.",
     archive_url: "https://archive.org/download/blessed-love-program-voice-africa-show-1-25-2026-segment-2/blessed%20love%20program%20voice%20africa%20show%201%2025%202026%20SEGMENT%202.mp3",
     published_date: "2026-01-25"
+  },
+  // February 1, 2026 Episodes
+  {
+    id: "19",
+    episode_number: 19,
+    title: "Blessed Love Voice of Africa Show - February 1, 2026",
+    description: "Today's broadcast - Bringing wisdom, truth, and enlightenment to the people.",
+    archive_url: "https://archive.org/download/show-on-2-1-2026/show%20on%202%201%202026.mp3",
+    published_date: "2026-02-01"
+  },
+  {
+    id: "20",
+    episode_number: 20,
+    title: "Blessed Love Voice of Africa Show - February 1, 2026 Segment 2",
+    description: "SEGMENT TWO: Continuation of today's powerful message and teachings.",
+    archive_url: "https://archive.org/download/show-on-2-1-2026-segment-2/show%20on%202%201%202026%20SEGMENT%202.mp3",
+    published_date: "2026-02-01"
   }
 ];
 
