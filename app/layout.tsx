@@ -18,6 +18,10 @@ export const metadata: Metadata = {
   title: 'The Rasta Prophet Podcast',
   description: 'A journey through sound and wisdom. Listen to all episodes of The Rasta Prophet.',
   manifest: '/manifest.json',
+  icons: {
+    icon: '/favicon.svg',
+    apple: '/icons/icon-192x192.png',
+  },
   appleWebApp: {
     capable: true,
     statusBarStyle: 'black-translucent',
