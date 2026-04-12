@@ -250,7 +250,7 @@ export const episodes: Episode[] = [
     episode_number: 27,
     title: "Blessed Love Voice of Africa Show - April 12, 2026",
     description: "Today's full broadcast bringing wisdom, truth, and enlightenment to the people.",
-    archive_url: "https://archive.org/download/show-on-4-12-2026/show%20on%20%204%2012%202026%20.mp3",
+    archive_url: "https://archive.org/download/show-on-4-12-2026/show%20on%20%204%2012%202026%20FIX.mp3",
     published_date: "2026-04-12"
   }
 ];
