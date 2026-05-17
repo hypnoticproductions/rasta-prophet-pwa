@@ -288,6 +288,15 @@ export const episodes: Episode[] = [
     description: "Today's full broadcast bringing wisdom, truth, and enlightenment to the people.",
     archive_url: "https://archive.org/download/show-on-5-10-2026-full-show-001/show%20on%20%205%2010%202026%20full%20show-001.mp3",
     published_date: "2026-05-10"
+  },
+  // May 17, 2026 Episodes
+  {
+    id: "32",
+    episode_number: 32,
+    title: "Blessed Love Voice of Africa Show - May 17, 2026",
+    description: "Today's full broadcast bringing wisdom, truth, and enlightenment to the people.",
+    archive_url: "https://archive.org/download/show-on-may-17-2026-fulll-1/show%20on%20%20may%2017%202026%20fulll%201.mp3",
+    published_date: "2026-05-17"
   }
 ];
 
