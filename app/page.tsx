@@ -449,7 +449,7 @@ export default function App() {
                     </div>
                     <div className="overflow-hidden">
                       <h5 className="font-bold text-xs uppercase truncate">{activeTrack.title}</h5>
-                      <p className="text-[9px] text-stone-500 uppercase tracking-widest">Rodniel Theodore</p>
+                      <p className="text-[9px] text-stone-500 uppercase tracking-widest">Rodneil Theodore / Prophet Alem</p>
                     </div>
                   </div>
 
