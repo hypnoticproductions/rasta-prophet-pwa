@@ -34,6 +34,16 @@ const getCategory = (title: string) => {
   return 'Voice of Africa';
 };
 
+// Helper function to format time (seconds -> H:MM:SS or M:SS)
+const formatTime = (seconds: number) => {
+  if (!seconds || isNaN(seconds) || !isFinite(seconds)) return '0:00';
+  const h = Math.floor(seconds / 3600);
+  const m = Math.floor((seconds % 3600) / 60);
+  const s = Math.floor(seconds % 60);
+  if (h > 0) return `${h}:${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+  return `${m}:${s.toString().padStart(2, '0')}`;
+};
+
 const ProphetCanvas = ({ isPlaying }: { isPlaying: boolean }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -144,6 +154,9 @@ export default function App() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [activeTrack, setActiveTrack] = useState<Episode | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(0);
+  const [toast, setToast] = useState<string | null>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
 
   // Get all episodes
@@ -152,6 +165,23 @@ export default function App() {
   useEffect(() => {
     const timer = setTimeout(() => setIsLoaded(true), 1500);
     return () => clearTimeout(timer);
+  }, []);
+
+  // Deep-link support: ?ep=<id> selects the shared episode on load
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const epId = params.get('ep');
+    if (epId) {
+      const ep = episodes.find((e) => e.id === epId);
+      if (ep) {
+        setActiveTrack(ep);
+        // Scroll to the archive so the listener sees the show
+        setTimeout(() => {
+          document.getElementById('episodes')?.scrollIntoView({ behavior: 'smooth' });
+        }, 1600);
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handlePlay = (track: Episode) => {
@@ -164,16 +194,66 @@ export default function App() {
         setIsPlaying(true);
       }
     } else {
+      setCurrentTime(0);
+      setDuration(0);
       setActiveTrack(track);
       setIsPlaying(true);
     }
   };
 
+  // Skip forward / rewind by a number of seconds
+  const skip = (amount: number) => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    const max = duration || audio.duration || 0;
+    audio.currentTime = Math.min(Math.max(0, audio.currentTime + amount), max);
+    setCurrentTime(audio.currentTime);
+  };
+
+  // Seek via the scrubber
+  const handleSeek = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const time = Number(e.target.value);
+    if (audioRef.current) {
+      audioRef.current.currentTime = time;
+      setCurrentTime(time);
+    }
+  };
+
+  // Share a specific show (native share sheet, falls back to clipboard)
+  const handleShare = async (episode: Episode, e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    const shareUrl =
+      typeof window !== 'undefined'
+        ? `${window.location.origin}/?ep=${episode.id}`
+        : episode.archive_url;
+    const shareData = {
+      title: episode.title,
+      text: `Listen to "${episode.title}" on The Rasta Prophet — Blessed Love Voice of Africa 🦁`,
+      url: shareUrl,
+    };
+    try {
+      if (typeof navigator !== 'undefined' && navigator.share) {
+        await navigator.share(shareData);
+      } else if (typeof navigator !== 'undefined' && navigator.clipboard) {
+        await navigator.clipboard.writeText(shareUrl);
+        setToast('Link copied to clipboard!');
+        setTimeout(() => setToast(null), 2500);
+      }
+    } catch (err) {
+      // User cancelled the share sheet — no action needed
+    }
+  };
+
   useEffect(() => {
     if (activeTrack && audioRef.current) {
-      audioRef.current.src = activeTrack.archive_url;
+      // Only reset the source when the track actually changes
+      if (audioRef.current.src !== activeTrack.archive_url) {
+        audioRef.current.src = activeTrack.archive_url;
+      }
       if (isPlaying) {
-        audioRef.current.play();
+        audioRef.current.play().catch(() => {});
+      } else {
+        audioRef.current.pause();
       }
     }
   }, [activeTrack, isPlaying]);
@@ -303,8 +383,23 @@ export default function App() {
                     <span className="text-[10px] text-stone-500 font-mono uppercase">
                       {formatDate(ep.published_date)} {ep.duration ? `— ${ep.duration}` : ''}
                     </span>
-                    <div className="text-gold text-lg">
-                      {activeTrack?.id === ep.id && isPlaying ? '⏸' : '▶'}
+                    <div className="flex items-center space-x-4">
+                      <button
+                        onClick={(e) => handleShare(ep, e)}
+                        aria-label="Share this show"
+                        className="text-stone-400 hover:text-gold transition-colors"
+                      >
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                          <circle cx="18" cy="5" r="3" />
+                          <circle cx="6" cy="12" r="3" />
+                          <circle cx="18" cy="19" r="3" />
+                          <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
+                          <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
+                        </svg>
+                      </button>
+                      <div className="text-gold text-lg">
+                        {activeTrack?.id === ep.id && isPlaying ? '⏸' : '▶'}
+                      </div>
                     </div>
                   </div>
                 </motion.div>
@@ -317,39 +412,138 @@ export default function App() {
         <AnimatePresence>
           {activeTrack && (
             <motion.div
-              initial={{ y: 100 }}
+              initial={{ y: 120 }}
               animate={{ y: 0 }}
-              className="fixed bottom-0 left-0 w-full z-50 bg-black/98 backdrop-blur-2xl border-t border-gold/30 p-5 md:px-12 flex items-center justify-between shadow-[0_-10px_40px_rgba(0,0,0,0.9)]"
+              exit={{ y: 120 }}
+              className="fixed bottom-0 left-0 w-full z-50 bg-black/98 backdrop-blur-2xl border-t border-gold/30 shadow-[0_-10px_40px_rgba(0,0,0,0.9)]"
             >
-              <div className="flex items-center space-x-4 max-w-[50%]">
-                <div className="w-10 h-10 bg-zinc-900 border border-gold/20 flex items-center justify-center text-[10px] font-bold text-gold">LIVE</div>
-                <div className="overflow-hidden">
-                  <h5 className="font-bold text-xs uppercase truncate">{activeTrack.title}</h5>
-                  <p className="text-[9px] text-stone-500 uppercase tracking-widest">Rodniel Theodore</p>
-                </div>
-              </div>
+              <div className="max-w-7xl mx-auto px-4 md:px-12 py-4 flex flex-col gap-3">
 
-              <div className="flex items-center space-x-8">
-                <button onClick={() => setIsPlaying(!isPlaying)} className="text-gold text-2xl hover:scale-110 transition-transform">
-                  {isPlaying ? '⏸' : '▶'}
-                </button>
-                <div className="hidden lg:block w-72 h-[1px] bg-white/10 relative overflow-hidden">
-                  <motion.div
-                    animate={{ x: ['-100%', '100%'] }}
-                    transition={{ repeat: Infinity, duration: 4, ease: "linear" }}
-                    className="absolute inset-0 bg-gradient-to-r from-transparent via-gold to-transparent"
+                {/* SEEK BAR ROW */}
+                <div className="flex items-center gap-3">
+                  <span className="text-[10px] text-stone-400 font-mono w-12 text-right tabular-nums">{formatTime(currentTime)}</span>
+                  <input
+                    type="range"
+                    min={0}
+                    max={duration || 0}
+                    value={currentTime}
+                    step="any"
+                    onChange={handleSeek}
+                    aria-label="Seek"
+                    className="seek-bar flex-1"
+                    style={{
+                      background: `linear-gradient(to right, ${COLORS.gold} 0%, ${COLORS.gold} ${
+                        duration ? (currentTime / duration) * 100 : 0
+                      }%, rgba(255,255,255,0.12) ${duration ? (currentTime / duration) * 100 : 0}%, rgba(255,255,255,0.12) 100%)`,
+                    }}
                   />
+                  <span className="text-[10px] text-stone-400 font-mono w-12 tabular-nums">{formatTime(duration)}</span>
                 </div>
-                <a href={ASSETS.whatsappLink} target="_blank" rel="noopener noreferrer" className="hidden sm:block text-[10px] font-bold text-green-500 border border-green-500/50 px-5 py-2 hover:bg-green-500 hover:text-black transition-all uppercase tracking-widest">
-                  Connect
-                </a>
+
+                {/* CONTROLS ROW */}
+                <div className="flex items-center justify-between gap-3">
+                  {/* Track info */}
+                  <div className="flex items-center space-x-3 min-w-0 flex-1">
+                    <div className="w-10 h-10 bg-zinc-900 border border-gold/20 flex items-center justify-center text-[9px] font-bold text-gold shrink-0">
+                      {isPlaying ? 'LIVE' : 'PLAY'}
+                    </div>
+                    <div className="overflow-hidden">
+                      <h5 className="font-bold text-xs uppercase truncate">{activeTrack.title}</h5>
+                      <p className="text-[9px] text-stone-500 uppercase tracking-widest">Rodniel Theodore</p>
+                    </div>
+                  </div>
+
+                  {/* Transport controls */}
+                  <div className="flex items-center space-x-4 md:space-x-6 shrink-0">
+                    {/* Rewind 15s */}
+                    <button
+                      onClick={() => skip(-15)}
+                      aria-label="Rewind 15 seconds"
+                      className="relative text-stone-300 hover:text-gold transition-colors"
+                    >
+                      <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M11 5L6 9l5 4" />
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M6 9h7a5 5 0 0 1 0 10h-1" />
+                      </svg>
+                      <span className="absolute inset-0 flex items-center justify-center text-[7px] font-bold mt-1">15</span>
+                    </button>
+
+                    {/* Play / Pause */}
+                    <button
+                      onClick={() => setIsPlaying(!isPlaying)}
+                      aria-label={isPlaying ? 'Pause' : 'Play'}
+                      className="w-11 h-11 rounded-full bg-gold text-black flex items-center justify-center text-xl hover:scale-110 transition-transform shrink-0"
+                    >
+                      {isPlaying ? '⏸' : '▶'}
+                    </button>
+
+                    {/* Forward 15s */}
+                    <button
+                      onClick={() => skip(15)}
+                      aria-label="Forward 15 seconds"
+                      className="relative text-stone-300 hover:text-gold transition-colors"
+                    >
+                      <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M13 5l5 4-5 4" />
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M18 9h-7a5 5 0 0 0 0 10h1" />
+                      </svg>
+                      <span className="absolute inset-0 flex items-center justify-center text-[7px] font-bold mt-1">15</span>
+                    </button>
+
+                    {/* Share current show */}
+                    <button
+                      onClick={(e) => handleShare(activeTrack, e)}
+                      aria-label="Share this show"
+                      className="text-stone-300 hover:text-gold transition-colors"
+                    >
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                        <circle cx="18" cy="5" r="3" />
+                        <circle cx="6" cy="12" r="3" />
+                        <circle cx="18" cy="19" r="3" />
+                        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
+                        <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
+                      </svg>
+                    </button>
+
+                    {/* Connect */}
+                    <a
+                      href={ASSETS.whatsappLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hidden sm:block text-[10px] font-bold text-green-500 border border-green-500/50 px-5 py-2 hover:bg-green-500 hover:text-black transition-all uppercase tracking-widest"
+                    >
+                      Connect
+                    </a>
+                  </div>
+                </div>
               </div>
             </motion.div>
           )}
         </AnimatePresence>
       </div>
 
-      <audio ref={audioRef} onEnded={() => setIsPlaying(false)} />
+      {/* TOAST NOTIFICATION */}
+      <AnimatePresence>
+        {toast && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 20 }}
+            className="fixed bottom-28 left-1/2 -translate-x-1/2 z-[60] bg-gold text-black text-xs font-bold uppercase tracking-widest px-6 py-3 rounded-full shadow-lg"
+          >
+            {toast}
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <audio
+        ref={audioRef}
+        onEnded={() => setIsPlaying(false)}
+        onTimeUpdate={(e) => setCurrentTime(e.currentTarget.currentTime)}
+        onLoadedMetadata={(e) => setDuration(e.currentTarget.duration)}
+        onPlay={() => setIsPlaying(true)}
+        onPause={() => setIsPlaying(false)}
+      />
     </div>
   );
 }
