@@ -2,7 +2,8 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { getAllEpisodes, Episode } from '@/data/episodes';
+import { getAllEpisodes, getEpisodeById, Episode } from '@/data/episodes';
+import { featuredGuest } from '@/data/featured';
 
 // --- CONFIGURATION & ASSETS ---
 const ASSETS = {
@@ -157,10 +158,15 @@ export default function App() {
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [toast, setToast] = useState<string | null>(null);
+  const [featureTab, setFeatureTab] = useState<'overview' | 'feature' | 'quotes'>('overview');
   const audioRef = useRef<HTMLAudioElement>(null);
 
   // Get all episodes
   const episodes = getAllEpisodes();
+
+  // The episode tied to this week's featured guest
+  const featuredEpisode = getEpisodeById(featuredGuest.episodeId);
+  const featuredIsActive = activeTrack?.id === featuredGuest.episodeId;
 
   useEffect(() => {
     const timer = setTimeout(() => setIsLoaded(true), 1500);
@@ -357,6 +363,171 @@ export default function App() {
              </motion.p>
            </div>
         </section>
+
+        {/* FEATURED GUEST SPOTLIGHT */}
+        {featuredEpisode && (
+          <section id="featured" className="px-6 md:px-8 py-20 bg-gradient-to-b from-black via-[#0a0a0a] to-black border-y border-gold/20">
+            <div className="max-w-7xl mx-auto">
+              {/* Section heading */}
+              <div className="flex items-center justify-between mb-10">
+                <div className="flex items-center space-x-3">
+                  <div className="h-8 w-[3px] bg-gold" />
+                  <div>
+                    <p className="text-red text-[10px] font-bold tracking-[0.3em] uppercase">Featured Reasoning</p>
+                    <h2 className="text-2xl md:text-3xl font-bold uppercase italic tracking-tight text-white/90">Today&apos;s Guest — {featuredGuest.showDate}</h2>
+                  </div>
+                </div>
+                <div className="hidden md:flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-red rounded-full animate-pulse" />
+                  <span className="text-[10px] text-stone-400 font-mono uppercase tracking-widest">Special Broadcast</span>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
+                {/* LEFT — Guest portrait + player */}
+                <div className="lg:col-span-2">
+                  <div className="relative rounded-xl overflow-hidden border-2 border-gold/30 shadow-[0_0_60px_rgba(212,175,55,0.18)]">
+                    <div className="aspect-[4/5] w-full overflow-hidden">
+                      <img
+                        src={featuredGuest.image}
+                        alt={`${featuredGuest.honorific} ${featuredGuest.name}`}
+                        className="w-full h-full object-cover object-top"
+                      />
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
+                    <div className="absolute bottom-0 left-0 right-0 p-5">
+                      <p className="text-gold text-[10px] font-bold tracking-[0.25em] uppercase mb-1">{featuredGuest.honorific}</p>
+                      <h3 className="text-2xl font-black uppercase leading-none mb-1">{featuredGuest.name}</h3>
+                      <p className="text-stone-300 text-[11px] leading-snug">{featuredGuest.title}</p>
+                    </div>
+                    {featuredIsActive && isPlaying && (
+                      <div className="absolute top-4 right-4 flex items-center space-x-2 bg-black/70 px-3 py-1 rounded-full">
+                        <div className="w-1.5 h-1.5 bg-red rounded-full animate-pulse" />
+                        <span className="text-[9px] text-gold font-bold uppercase tracking-widest">On Air</span>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Player + share for the featured show */}
+                  <div className="mt-5 flex items-center gap-3">
+                    <button
+                      onClick={() => handlePlay(featuredEpisode)}
+                      className="group relative flex-1 px-6 py-4 bg-gold text-black font-bold uppercase tracking-[0.2em] text-sm flex items-center justify-center gap-3 hover:bg-gold/90 transition-colors"
+                    >
+                      <span className="text-lg">{featuredIsActive && isPlaying ? '⏸' : '▶'}</span>
+                      {featuredIsActive && isPlaying ? 'Pause The Reasoning' : 'Play This Show'}
+                    </button>
+                    <button
+                      onClick={(e) => handleShare(featuredEpisode, e)}
+                      aria-label="Share this show"
+                      className="px-5 py-4 border border-gold/40 text-gold hover:bg-gold hover:text-black transition-colors"
+                    >
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                        <circle cx="18" cy="5" r="3" />
+                        <circle cx="6" cy="12" r="3" />
+                        <circle cx="18" cy="19" r="3" />
+                        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
+                        <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
+                      </svg>
+                    </button>
+                  </div>
+                  <p className="mt-3 text-[9px] text-stone-600 italic">{featuredGuest.imageCredit}</p>
+                </div>
+
+                {/* RIGHT — Tabbed write-up */}
+                <div className="lg:col-span-3">
+                  <p className="text-gold font-serif text-lg md:text-xl italic mb-6 leading-snug">
+                    {featuredGuest.tagline}
+                  </p>
+
+                  {/* Tabs */}
+                  <div className="flex space-x-1 border-b border-white/10 mb-6">
+                    {([
+                      { key: 'overview', label: 'Overview' },
+                      { key: 'feature', label: 'Full Feature' },
+                      { key: 'quotes', label: 'In His Words' },
+                    ] as const).map((tab) => (
+                      <button
+                        key={tab.key}
+                        onClick={() => setFeatureTab(tab.key)}
+                        className={`relative px-4 md:px-6 py-3 text-[11px] md:text-xs font-bold uppercase tracking-widest transition-colors ${
+                          featureTab === tab.key ? 'text-gold' : 'text-stone-500 hover:text-stone-300'
+                        }`}
+                      >
+                        {tab.label}
+                        {featureTab === tab.key && (
+                          <motion.div layoutId="featureTabUnderline" className="absolute bottom-0 left-0 right-0 h-[2px] bg-gold" />
+                        )}
+                      </button>
+                    ))}
+                  </div>
+
+                  {/* Tab content */}
+                  <div className="min-h-[18rem]">
+                    <AnimatePresence mode="wait">
+                      {featureTab === 'overview' && (
+                        <motion.div
+                          key="overview"
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -10 }}
+                          className="space-y-4"
+                        >
+                          {featuredGuest.intro.map((p, i) => (
+                            <p key={i} className="text-stone-300 text-sm md:text-base leading-relaxed">{p}</p>
+                          ))}
+                        </motion.div>
+                      )}
+
+                      {featureTab === 'feature' && (
+                        <motion.div
+                          key="feature"
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -10 }}
+                          className="space-y-7"
+                        >
+                          {featuredGuest.sections.map((sec, i) => (
+                            <div key={i}>
+                              <h4 className="text-gold font-bold uppercase tracking-widest text-sm mb-3">{sec.heading}</h4>
+                              <div className="space-y-3">
+                                {sec.body.map((p, j) => (
+                                  <p key={j} className="text-stone-300 text-sm md:text-[15px] leading-relaxed">{p}</p>
+                                ))}
+                              </div>
+                            </div>
+                          ))}
+                          <div className="flex flex-wrap gap-2 pt-2">
+                            {featuredGuest.hashtags.map((tag) => (
+                              <span key={tag} className="text-[10px] text-green-500/80 font-mono">#{tag}</span>
+                            ))}
+                          </div>
+                        </motion.div>
+                      )}
+
+                      {featureTab === 'quotes' && (
+                        <motion.div
+                          key="quotes"
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -10 }}
+                          className="space-y-6"
+                        >
+                          {featuredGuest.quotes.map((q, i) => (
+                            <blockquote key={i} className="border-l-2 border-gold pl-5 py-1">
+                              <p className="text-white/90 text-base md:text-lg font-serif italic leading-snug mb-2">&ldquo;{q.text}&rdquo;</p>
+                              <footer className="text-[11px] text-stone-500 uppercase tracking-widest">— {q.attribution}</footer>
+                            </blockquote>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* ARCHIVE SECTION */}
         <section id="episodes" className="px-8 pb-32 bg-black/70 backdrop-blur-xl">

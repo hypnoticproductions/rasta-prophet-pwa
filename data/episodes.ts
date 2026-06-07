@@ -316,13 +316,13 @@ export const episodes: Episode[] = [
     archive_url: "https://archive.org/download/show-5-31-2026-full-show/show%20%205%2031%202026%20full%20show.mp3",
     published_date: "2026-05-31"
   },
-  // June 7, 2026 Episodes
+  // June 7, 2026 Episodes — Featuring H.E. David Comissiong
   {
     id: "35",
     episode_number: 35,
     title: "Blessed Love Voice of Africa Show - June 7, 2026",
-    description: "Today's full broadcast bringing wisdom, truth, and enlightenment to the people.",
-    archive_url: "https://archive.org/download/show-6-7-2026/show.mp3",
+    description: "FEATURED GUEST: His Excellency David Comissiong, Barbados' Ambassador to CARICOM — Pan-African warrior on reparative justice, the Lagos-to-Barbados air bridge, and the reawakening of Global Africa.",
+    archive_url: "https://archive.org/download/show-on-6-7-2026-full-show-001/show%20on%206%207%202026%20full%20show-001.mp3",
     published_date: "2026-06-07"
   }
 ];
