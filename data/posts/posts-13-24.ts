@@ -49,23 +49,23 @@ export const posts_13_24: EpisodePost[] = [
   },
   {
     id: "15",
-    hook: "THE DOCTOR BABYLON TRIED TO SILENCE — AND COULDN'T",
+    hook: "THE DOCTOR WHO BEAT THE MEDICAL COUNCIL DECLARES WAR ON THE WHO",
     teaser:
-      "They stripped her license. They hit her with a $10,000 fine. For giving COVID patients Ivermectin, Dr. Mary Gilbertha St. Rose was branded a criminal by the Medical & Dental Council — so she dragged them to court and WON. Now she sits with Prophet Alem to name the corruption and call St. Lucia out of the WHO. Plus Gloria Dorsius.",
+      "Dr. Mary Gilbertha St. Rose — the St. Lucian doctor suspended and fined for prescribing Ivermectin, who won her license back in court — returns to launch the World Council for Health in St. Lucia. Her message: food and herb are not \"alternative\" medicine, they are PRIMARY care, and it is time to break free of the WHO. With Gloria Dorsius of the Freedom Coalition St. Lucia.",
     body:
-      "This is the interview Babylon did not want aired. For forty years Dr. Mary Gilbertha St. Rose served the people of Saint Lucia as doctor, dermatologist, and consultant medical herbalist — until she started prescribing Ivermectin to COVID-19 patients and watched them heal. The Medical & Dental Council answered not with gratitude but with punishment: a six-month suspension of her license and a $10,000 fine, accusing her of running an unauthorized clinical trial. She refused to bow. She called the Council out for possible infiltration and corruption, demanded it be dissolved, and took the matter to judicial review — winning her license back in February 2022. Sitting with Prophet Alem, she names this for what it is: medical tyranny, and a system that serves pharmaceutical interests over the lives of the people. She calls for Saint Lucia to walk away from the WHO entirely. Alongside her, Gloria Dorsius adds her own testimony of faith and resilience. This is not a calm reasoning. This is a doctor who stared down the system and lived to tell it. Sit with this one — and share it before they bury it.",
+      "This segment of Blessed Love: Voice of Africa brings a reasoning Babylon's health system does not want the people to hear. Dr. Mary Gilbertha St. Rose — integrative healthcare practitioner and herbalist, the same doctor the Medical & Dental Council once suspended and fined $10,000 for prescribing Ivermectin before she beat them in court and won her license back — sits with Prophet Alem to launch the World Council for Health (WCH) Country Council right here in Saint Lucia. Alongside her stands Gloria Dorsius of the Freedom Coalition St. Lucia. Together they examine the post-COVID health landscape and turn a critical eye on the World Health Organization, calling for a wholesale shift in the medical paradigm. Their charge is bold and simple: food and botanical medicines must not be shoved aside as mere \"complementary therapy\" — they are primary, palliative, quality-of-life care, and the birthright of the people. This is a reasoning on health autonomy, natural sovereignty, and the traditional botanicals that have kept African and Caribbean communities well for generations. The doctor who refused to bow now calls the whole island to reclaim its medical freedom. Sit with this one, and pass it on.",
     hashtags: [
       "BlessedLoveVoiceOfAfrica",
-      "MedicalFreedom",
+      "WorldCouncilForHealth",
       "GilberthaStRose",
-      "Ivermectin",
+      "HealthAutonomy",
       "SaintLucia",
-      "ExitTheWHO",
+      "NaturalSovereignty",
       "ProphetAlem",
       "Blazin993",
     ],
     guestAnte:
-      "EXCLUSIVE: The St. Lucian doctor they suspended and fined $10,000 for prescribing Ivermectin — Dr. Mary Gilbertha St. Rose — took the Medical Council to court, won her license back, and is now calling for St. Lucia to exit the WHO. Plus Gloria Dorsius. This is the conversation they tried to stop.",
+      "EXCLUSIVE: Dr. Mary Gilbertha St. Rose — the St. Lucian doctor who beat the Medical Council in court after they fined her for prescribing Ivermectin — launches the World Council for Health Country Council in St. Lucia and declares food and herb to be primary medicine, not \"alternative.\" With Gloria Dorsius of the Freedom Coalition St. Lucia. A frontal challenge to the WHO.",
   },
   {
     id: "16",

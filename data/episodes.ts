@@ -144,7 +144,7 @@ export const episodes: Episode[] = [
     id: "15",
     episode_number: 15,
     title: "Blessed Love Voice of Africa Show - Interview Segment",
-    description: "INTERVIEW: Dr. Mary Gilbertha St. Rose — the St. Lucian doctor they tried to silence. 40 years on the front line, stripped of her license and hit with a $10,000 fine for prescribing Ivermectin to COVID patients. She refused to bow — dragged the Medical & Dental Council to court, alleged infiltration and corruption, and won her license back in February 2022. Now she's calling it medical tyranny and demanding St. Lucia walk away from the WHO. Plus Gloria Dorsius.",
+    description: "INTERVIEW: Dr. Mary Gilbertha St. Rose — integrative doctor and herbalist, the St. Lucian who beat the Medical & Dental Council in court after they fined her for prescribing Ivermectin — launches the World Council for Health Country Council in St. Lucia. With Gloria Dorsius of the Freedom Coalition St. Lucia, she turns a critical eye on the WHO and argues that food and botanical medicine are not 'alternative' but PRIMARY care. A reasoning on health autonomy and natural sovereignty.",
     archive_url: "https://archive.org/download/show-1-18-2026-segment-interview/show%20%201%2018%202026%20segment%20two.mp3",
     published_date: "2026-01-18"
   },
