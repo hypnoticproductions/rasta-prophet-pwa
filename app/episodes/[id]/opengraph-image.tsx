@@ -1,6 +1,7 @@
 import { ImageResponse } from "next/og";
 import { getEpisodeById } from "@/data/episodes";
 import { getPostById } from "@/data/posts/index";
+import { isBlackStarPromo, BLACK_STAR_OG_STRIP } from "@/data/blackStarRoots";
 
 // Route segment config for the dynamic OG image.
 export const runtime = "edge";
@@ -27,6 +28,12 @@ export default async function OpengraphImage({
     post?.hook ??
     episode?.description ??
     "The Vibration of Truth — Voice of Africa";
+
+  // Promo-hour shows brand the bottom strip with Black Star Roots.
+  const promo = episode ? isBlackStarPromo(episode.id) : false;
+  const bottomStrip = promo
+    ? BLACK_STAR_OG_STRIP
+    : "Blessed Love · Voice of Africa · Blazin 99.3";
 
   return new ImageResponse(
     (
@@ -142,13 +149,13 @@ export default async function OpengraphImage({
         >
           <span
             style={{
-              color: "#E5E5E5",
+              color: promo ? GOLD : "#E5E5E5",
               fontSize: 24,
               letterSpacing: 3,
               textTransform: "uppercase",
             }}
           >
-            Blessed Love · Voice of Africa · Blazin 99.3
+            {bottomStrip}
           </span>
           <div style={{ display: "flex", marginLeft: "auto" }}>
             <div

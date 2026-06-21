@@ -9,6 +9,11 @@ import {
 import { getPostById } from "@/data/posts/index";
 import { featuredGuest } from "@/data/featured";
 import { getEpisodeImage } from "@/data/episodeImages";
+import {
+  isBlackStarPromo,
+  BLACK_STAR_TAGLINES,
+  BLACK_STAR_SHARE_TAGLINE,
+} from "@/data/blackStarRoots";
 
 // Sensible fallback so absolute URLs resolve even without an env var set.
 const BASE_URL =
@@ -37,7 +42,11 @@ export function generateMetadata({
   }
 
   const post = getPostById(params.id);
-  const description = post?.teaser ?? episode.description;
+  const baseDescription = post?.teaser ?? episode.description;
+  // Promo-hour shows carry the Black Star Roots tagline in their preview.
+  const description = isBlackStarPromo(episode.id)
+    ? `${baseDescription} ${BLACK_STAR_SHARE_TAGLINE}`
+    : baseDescription;
   const pageUrl = `${BASE_URL}/episodes/${episode.id}`;
   const ogImage = `${pageUrl}/opengraph-image`;
 
@@ -116,6 +125,7 @@ export default function EpisodePage({
   const heroImage = getEpisodeImage(episode.id);
   const pageUrl = `${BASE_URL}/episodes/${episode.id}`;
   const isFeatured = episode.id === featuredGuest.episodeId;
+  const isPromo = isBlackStarPromo(episode.id);
 
   return (
     <main className="relative min-h-screen bg-black text-stone-100 font-sans">
@@ -196,6 +206,28 @@ export default function EpisodePage({
             .
           </audio>
         </div>
+
+        {/* BLACK STAR ROOTS PROMO STRIP — promo-hour episodes only */}
+        {isPromo && (
+          <div className="mt-8 rounded-xl overflow-hidden border border-gold/30 bg-gradient-to-r from-red/20 via-black to-green/20 p-5 md:p-6">
+            <p className="text-red text-[10px] font-bold tracking-[0.3em] uppercase mb-1">
+              Promo Hour · Black Star Roots
+            </p>
+            <h3 className="text-gold font-black uppercase tracking-widest text-lg md:text-xl mb-3">
+              Roots Tonic Wine — 100% All Natural
+            </h3>
+            <div className="flex flex-wrap gap-2">
+              {BLACK_STAR_TAGLINES.map((phrase) => (
+                <span
+                  key={phrase}
+                  className="px-4 py-1.5 border border-gold/40 rounded-full text-gold text-[11px] md:text-xs font-bold uppercase tracking-[0.2em] bg-black/40"
+                >
+                  {phrase}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* TEASER */}
         <p className="mt-10 text-lg md:text-xl text-stone-200 leading-relaxed">
