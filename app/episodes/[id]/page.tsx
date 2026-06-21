@@ -8,6 +8,7 @@ import {
 } from "@/data/episodes";
 import { getPostById } from "@/data/posts/index";
 import { featuredGuest } from "@/data/featured";
+import { getGuestsForEpisode } from "@/data/guests";
 import { getEpisodeImage } from "@/data/episodeImages";
 import {
   isBlackStarPromo,
@@ -15,6 +16,8 @@ import {
   BLACK_STAR_SHARE_TAGLINE,
 } from "@/data/blackStarRoots";
 import { BASE_URL, SITE_NAME } from "@/lib/siteConfig";
+import ShareButtons from "@/components/ShareButtons";
+import FacebookPagePlugin from "@/components/FacebookPagePlugin";
 
 // Pre-render all 35 episode pages at build time.
 export function generateStaticParams() {
@@ -44,10 +47,26 @@ export function generateMetadata({
   const pageUrl = `${BASE_URL}/episodes/${episode.id}`;
   const ogImage = `${pageUrl}/opengraph-image`;
 
+  // Pull guest names + keywords into the episode's SEO so searches for the
+  // guest (e.g. "David Comissiong CARICOM") surface this broadcast.
+  const episodeGuests = getGuestsForEpisode(episode.id);
+  const guestNames = episodeGuests.map((g) => g.name);
+  const seoTitle = guestNames.length
+    ? `${episode.title} — ft. ${guestNames.join(" & ")}`
+    : episode.title;
+  const keywords = [
+    "Blessed Love Voice of Africa",
+    "The Rasta Prophet",
+    "Prophet Alem",
+    "Blazin 99.3",
+    ...episodeGuests.flatMap((g) => g.keywords),
+  ];
+
   return {
     metadataBase: new URL(BASE_URL),
-    title: episode.title,
+    title: seoTitle,
     description,
+    keywords,
     alternates: {
       canonical: pageUrl,
     },
@@ -121,9 +140,39 @@ export default function EpisodePage({
   const pageUrl = `${BASE_URL}/episodes/${episode.id}`;
   const isFeatured = episode.id === featuredGuest.episodeId;
   const isPromo = isBlackStarPromo(episode.id);
+  const episodeGuests = getGuestsForEpisode(episode.id);
+
+  // RadioEpisode structured data so Google understands this as an episode with
+  // an audio enclosure and (when present) named guests.
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "RadioEpisode",
+    name: episode.title,
+    datePublished: episode.published_date,
+    description: teaser,
+    url: pageUrl,
+    partOfSeries: {
+      "@type": "RadioSeries",
+      name: "Blessed Love Voice of Africa",
+    },
+    associatedMedia: {
+      "@type": "AudioObject",
+      contentUrl: episode.archive_url,
+      encodingFormat: "audio/mpeg",
+    },
+    actor: episodeGuests.map((g) => ({
+      "@type": "Person",
+      name: g.name,
+      url: `${BASE_URL}/guests/${g.slug}`,
+    })),
+  };
 
   return (
     <main className="relative min-h-screen bg-black text-stone-100 font-sans">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* HERO */}
       <section className="relative">
         <div className="absolute inset-0 z-0">
@@ -269,30 +318,58 @@ export default function EpisodePage({
           </div>
         )}
 
+        {/* GUEST CROSS-LINKS — drive SEO juice + deeper sessions */}
+        {episodeGuests.length > 0 && (
+          <div className="mt-12 border-t border-white/10 pt-8">
+            <p className="text-gold text-[10px] font-bold tracking-[0.3em] uppercase mb-4">
+              Featured Guests
+            </p>
+            <div className="space-y-3">
+              {episodeGuests.map((g) => (
+                <Link
+                  key={g.slug}
+                  href={`/guests/${g.slug}`}
+                  className="flex items-center gap-4 p-4 bg-zinc-900/60 border border-gold/20 rounded-lg hover:border-gold/60 transition-colors"
+                >
+                  {g.image && (
+                    /* eslint-disable-next-line @next/next/no-img-element */
+                    <img
+                      src={g.image}
+                      alt={g.name}
+                      className="w-14 h-14 rounded-full object-cover border border-gold/40"
+                    />
+                  )}
+                  <div>
+                    <p className="text-gold font-bold">
+                      {g.honorific ? g.honorific + " " : ""}
+                      {g.name} →
+                    </p>
+                    <p className="text-stone-400 text-xs">{g.title}</p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
+
         {/* SHARE */}
         <div className="mt-12 border-t border-white/10 pt-8">
           <p className="text-red text-[10px] font-bold tracking-[0.3em] uppercase mb-3">
             Share This Show
           </p>
-          <p className="text-stone-400 text-sm mb-3 leading-relaxed">
-            Spread the word and let Jah light reach the family. Share this link
-            anywhere — it carries a big-picture preview.
+          <p className="text-stone-400 text-sm mb-4 leading-relaxed">
+            Spread the word and let Jah light reach the family. Every share
+            carries a big-picture preview — and credits you in the movement.
           </p>
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-            <code className="flex-1 bg-zinc-900 border border-gold/20 rounded-lg px-4 py-3 text-sm text-gold break-all">
-              {pageUrl}
-            </code>
-            <a
-              href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
-                pageUrl
-              )}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-center px-6 py-3 bg-gold text-black font-bold uppercase tracking-[0.2em] text-xs hover:bg-gold/90 transition-colors rounded-lg"
-            >
-              Share on Facebook
-            </a>
-          </div>
+          <ShareButtons url={pageUrl} title={`${episode.title} — Blessed Love Voice of Africa`} />
+          <code className="mt-4 block bg-zinc-900 border border-gold/20 rounded-lg px-4 py-3 text-sm text-gold break-all">
+            {pageUrl}
+          </code>
+        </div>
+
+        {/* FACEBOOK WIDGET — closes the share loop */}
+        <div className="mt-12">
+          <FacebookPagePlugin />
         </div>
 
         {/* Back link */}

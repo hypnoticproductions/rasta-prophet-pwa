@@ -4,6 +4,7 @@ import './globals.css';
 import { WhatsAppButton } from '@/components/WhatsAppButton';
 import { ImageCredits } from '@/components/ImageCredits';
 import VibesLayer from '@/components/VibesLayer';
+import ReferralTracker from '@/components/ReferralTracker';
 import { BASE_URL, SITE_NAME, SITE_DESCRIPTION } from '@/lib/siteConfig';
 
 const inter = Inter({
@@ -75,6 +76,7 @@ export default function RootLayout({
       </head>
       <body className={`${inter.variable} ${bebasNeue.variable} bg-background text-white antialiased`}>
         {children}
+        <ReferralTracker />
         <ImageCredits />
         <WhatsAppButton />
         <VibesLayer />

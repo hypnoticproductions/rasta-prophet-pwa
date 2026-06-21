@@ -40,5 +40,14 @@ export const BASE_URL = resolveBaseUrl();
 
 export const SITE_NAME = "The Rasta Prophet — Blessed Love Voice of Africa";
 
+/**
+ * Official Facebook Page URL — powers the on-site Facebook Page Plugin widget
+ * and the "Follow on Facebook" calls to action. Set NEXT_PUBLIC_FACEBOOK_PAGE_URL
+ * to the real page (e.g. https://www.facebook.com/TheRastaProphet) to activate it.
+ * Empty string hides the widget so nothing broken ever renders.
+ */
+export const FACEBOOK_PAGE_URL =
+  process.env.NEXT_PUBLIC_FACEBOOK_PAGE_URL?.trim() || "";
+
 export const SITE_DESCRIPTION =
   "Blessed Love Voice of Africa — the vibration of truth. Listen to every broadcast of The Rasta Prophet: Pan-African reasoning, roots, and enlightenment.";
