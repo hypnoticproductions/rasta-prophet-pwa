@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Link from 'next/link';
 import { getAllEpisodes, getEpisodeById, Episode } from '@/data/episodes';
 import { featuredGuest } from '@/data/featured';
 
@@ -542,38 +543,46 @@ export default function App() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               {episodes.map((ep) => (
-                <motion.div
-                  key={ep.id}
-                  whileHover={{ backgroundColor: "rgba(255,255,255,0.05)", y: -5 }}
-                  className={`border border-white/5 p-6 transition-all cursor-pointer relative ${activeTrack?.id === ep.id ? 'border-gold/60 bg-white/5' : ''}`}
-                  onClick={() => handlePlay(ep)}
-                >
-                  <p className="text-red text-[9px] font-bold tracking-[0.2em] mb-1 uppercase">{getCategory(ep.title)}</p>
-                  <h4 className="text-xl font-bold mb-6 min-h-[3.5rem] leading-tight">{ep.title}</h4>
-                  <div className="flex items-center justify-between">
-                    <span className="text-[10px] text-stone-500 font-mono uppercase">
-                      {formatDate(ep.published_date)} {ep.duration ? `— ${ep.duration}` : ''}
-                    </span>
-                    <div className="flex items-center space-x-4">
-                      <button
-                        onClick={(e) => handleShare(ep, e)}
-                        aria-label="Share this show"
-                        className="text-stone-400 hover:text-gold transition-colors"
-                      >
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                          <circle cx="18" cy="5" r="3" />
-                          <circle cx="6" cy="12" r="3" />
-                          <circle cx="18" cy="19" r="3" />
-                          <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
-                          <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
-                        </svg>
-                      </button>
-                      <div className="text-gold text-lg">
-                        {activeTrack?.id === ep.id && isPlaying ? '⏸' : '▶'}
+                <Link key={ep.id} href={`/episodes/${ep.id}`} className="block">
+                  <motion.div
+                    whileHover={{ backgroundColor: "rgba(255,255,255,0.05)", y: -5 }}
+                    className={`border border-white/5 p-6 transition-all cursor-pointer relative ${activeTrack?.id === ep.id ? 'border-gold/60 bg-white/5' : ''}`}
+                  >
+                    <p className="text-red text-[9px] font-bold tracking-[0.2em] mb-1 uppercase">{getCategory(ep.title)}</p>
+                    <h4 className="text-xl font-bold mb-6 min-h-[3.5rem] leading-tight">{ep.title}</h4>
+                    <div className="flex items-center justify-between">
+                      <span className="text-[10px] text-stone-500 font-mono uppercase">
+                        {formatDate(ep.published_date)} {ep.duration ? `— ${ep.duration}` : ''}
+                      </span>
+                      <div className="flex items-center space-x-4">
+                        <button
+                          onClick={(e) => handleShare(ep, e)}
+                          aria-label="Share this show"
+                          className="text-stone-400 hover:text-gold transition-colors"
+                        >
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                            <circle cx="18" cy="5" r="3" />
+                            <circle cx="6" cy="12" r="3" />
+                            <circle cx="18" cy="19" r="3" />
+                            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
+                            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
+                          </svg>
+                        </button>
+                        <button
+                          onClick={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            handlePlay(ep);
+                          }}
+                          aria-label={activeTrack?.id === ep.id && isPlaying ? "Pause" : "Play"}
+                          className="text-gold text-lg hover:scale-110 transition-transform"
+                        >
+                          {activeTrack?.id === ep.id && isPlaying ? '⏸' : '▶'}
+                        </button>
                       </div>
                     </div>
-                  </div>
-                </motion.div>
+                  </motion.div>
+                </Link>
               ))}
             </div>
           </div>
