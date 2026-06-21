@@ -346,3 +346,17 @@ body {
   height: 4px;
   border-radius: 999px;
 }
+
+/* Ken-Burns Effect for Cinematic Hero */
+@keyframes kenBurns {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+  100% {
+    transform: scale(1.15) translate(-2%, -2%);
+  }
+}
+
+.ken-burns-container {
+  animation: kenBurns 20s ease-in-out infinite alternate;
+}

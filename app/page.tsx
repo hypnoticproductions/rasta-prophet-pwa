@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { getAllEpisodes, getEpisodeById, Episode } from '@/data/episodes';
 import { featuredGuest } from '@/data/featured';
+import CinematicHero from '@/components/CinematicHero';
 
 // --- CONFIGURATION & ASSETS ---
 const ASSETS = {
@@ -285,62 +286,67 @@ export default function App() {
         )}
       </AnimatePresence>
 
-      {/* BACKGROUND IMAGE - POSITIONED FOR CLEAR FACE VISIBILITY */}
-      <div className="fixed inset-0 z-0">
-        <motion.div
-          animate={{ scale: isPlaying ? 1.05 : 1, opacity: isPlaying ? 0.8 : 0.65 }}
-          transition={{ duration: 15, repeat: Infinity, repeatType: "mirror" }}
-          className="w-full h-full bg-cover bg-[center_15%]"
-          style={{ backgroundImage: `url(${ASSETS.prophetImg})` }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-black" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90" />
-      </div>
-
       <ProphetCanvas isPlaying={isPlaying} />
 
-      <div className="relative z-20 flex flex-col min-h-screen">
+      <div className="relative z-20">
 
-        {/* NAV */}
-        <nav className="p-6 md:p-10 flex justify-between items-center">
-          <div className="flex items-center space-x-4">
-            <div className="h-10 w-[2px] bg-red" />
-            <div>
-              <h3 className="text-gold font-bold tracking-[0.2em] text-sm md:text-lg uppercase text-shadow-glow">The Rasta Prophet</h3>
-              <p className="text-[9px] text-stone-400 uppercase tracking-widest">Blessed Love Voice of Africa</p>
+        {/* CINEMATIC HERO SECTION - 13 image crossfade with Ken-Burns effect */}
+        <CinematicHero
+          onPlayClick={() => episodes.length > 0 && handlePlay(episodes[0])}
+          isPlaying={isPlaying}
+        />
+
+        {/* IDENTITY STRIP - Prophet Alem */}
+        <section className="px-6 py-16 bg-gradient-to-b from-black to-[#0a0a0a] border-b border-white/5">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+              <div className="md:col-span-1">
+                <div className="relative rounded-lg overflow-hidden border-2 border-gold/30 shadow-[0_0_40px_rgba(212,175,55,0.2)]">
+                  <img
+                    src={ASSETS.prophetImg}
+                    alt="Prophet Alem - Rodneil Theodore"
+                    className="w-full h-auto object-cover aspect-[3/4]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-70" />
+                </div>
+              </div>
+              <div className="md:col-span-2 space-y-4">
+                <div className="flex items-center space-x-3">
+                  <div className="h-8 w-[3px] bg-red" />
+                  <div>
+                    <p className="text-red text-[10px] font-bold tracking-[0.3em] uppercase">The Voice</p>
+                    <h3 className="text-2xl md:text-4xl font-black uppercase italic tracking-tight text-white">
+                      Prophet Alem
+                    </h3>
+                  </div>
+                </div>
+                <p className="text-stone-300 text-base md:text-lg leading-relaxed">
+                  Broadcasting the unfiltered truth from the heart of the African diaspora.
+                  Rodneil Theodore, known as Prophet Alem, brings political reasoning, cultural heritage,
+                  and Pan-African consciousness to the airwaves every week on Blazin 99.3 FM.
+                </p>
+                <p className="text-gold font-serif text-sm md:text-base italic">
+                  &quot;The truth shall make you free, but first it will make you uncomfortable.&quot;
+                </p>
+              </div>
             </div>
           </div>
-          <img src={ASSETS.blazinLogo} alt="Blazin Logo" className="w-20 md:w-28 opacity-90 hover:opacity-100 transition-opacity" />
-        </nav>
-
-        {/* HERO SECTION */}
-        <section className="px-8 mt-auto mb-20 md:mb-28 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2 }}
-          >
-            <h2 className="text-gold text-sm md:text-base font-serif tracking-[0.5em] uppercase mb-4 opacity-80">The Vibration of Truth</h2>
-            <h1 className="text-5xl md:text-8xl font-black uppercase tracking-tighter mb-10 italic leading-none drop-shadow-2xl">
-              Join the <br/> <span className="text-red">Movement</span>
-            </h1>
-          </motion.div>
-
-          <button
-            onClick={() => episodes.length > 0 && handlePlay(episodes[0])}
-            className="group relative px-14 py-5 bg-transparent overflow-hidden border border-gold/40 hover:border-gold transition-colors"
-          >
-            <div className="absolute inset-0 bg-gold translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-            <span className="relative z-10 text-gold group-hover:text-black font-bold text-xl uppercase tracking-[0.25em]">
-              {isPlaying ? 'Pause Session' : 'Begin The Reasoning'}
-            </span>
-          </button>
         </section>
 
-        {/* NEW VIDEO SPOTLIGHT SECTION */}
+        {/* PROMOS SECTION - Black Star Roots Video */}
         <section className="px-8 py-20 bg-black/40 backdrop-blur-sm border-y border-white/5">
-           <div className="max-w-4xl mx-auto flex flex-col items-center">
-             <div className="w-full aspect-video rounded-lg overflow-hidden border-2 border-gold/20 shadow-[0_0_50px_rgba(212,175,55,0.15)] relative group">
+          <div className="max-w-6xl mx-auto">
+            <div className="flex items-center space-x-3 mb-10">
+              <div className="h-8 w-[3px] bg-gold" />
+              <div>
+                <p className="text-red text-[10px] font-bold tracking-[0.3em] uppercase">Featured Content</p>
+                <h2 className="text-2xl md:text-3xl font-bold uppercase italic tracking-tight text-white/90">
+                  Promos & Highlights
+                </h2>
+              </div>
+            </div>
+            <div className="max-w-4xl mx-auto flex flex-col items-center">
+              <div className="w-full aspect-video rounded-lg overflow-hidden border-2 border-gold/20 shadow-[0_0_50px_rgba(212,175,55,0.15)] relative group">
                 <video
                   className="w-full h-full object-cover"
                   src={ASSETS.bottleVideo}
@@ -354,15 +360,16 @@ export default function App() {
                   <h3 className="text-gold font-bold uppercase tracking-widest text-xl mb-1">Prophetic Sustenance</h3>
                   <p className="text-stone-300 text-xs italic">Pure Energy for the Royal Order</p>
                 </div>
-             </div>
-             <motion.p
-               initial={{ opacity: 0 }}
-               whileInView={{ opacity: 1 }}
-               className="mt-8 text-stone-400 text-sm md:text-base italic max-w-2xl text-center leading-relaxed"
-             >
-               &quot;Nourishing the temple is the first step to liberation. Observe the vessel of strength.&quot;
-             </motion.p>
-           </div>
+              </div>
+              <motion.p
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                className="mt-8 text-stone-400 text-sm md:text-base italic max-w-2xl text-center leading-relaxed"
+              >
+                &quot;Nourishing the temple is the first step to liberation. Observe the vessel of strength.&quot;
+              </motion.p>
+            </div>
+          </div>
         </section>
 
         {/* FEATURED GUEST SPOTLIGHT */}
