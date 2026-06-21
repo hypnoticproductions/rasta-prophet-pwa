@@ -212,4 +212,23 @@ export const posts_25_35: EpisodePost[] = [
     guestAnte:
       "EXCLUSIVE: His Excellency David Comissiong — the Ambassador of the Bridge — sits with Prophet Alem to reveal how the Lagos-to-Barbados air corridor, a US$5 billion Afreximbank push, and the Caribbean's united reparations demand are turning four centuries of prophecy into a boarding pass home. To call him a diplomat is to call the ocean only water. Do NOT miss this one.",
   },
+  {
+    id: "36",
+    hook: "JUNE 21 — THE SUMMER SOLSTICE WORD THAT BABYLON FEARS",
+    teaser:
+      "The longest day of the year and the Voice of Africa carried the longest truth. Prophet Alem dropped a full broadcast that measured the season we are living in — and called the people to rise with it. The light is winning.",
+    body:
+      "Blessed love to every conscious soul within the sound of this vibration. On June 21st — the summer solstice, when Jah's light reigns longest and brightest — Prophet Alem brought a full show that illuminated the week's events and revealed the unstoppable movement of the Most High. The bridge to Africa is open, the reparations drum is sounding across the Caribbean, and the people are waking from four centuries of imposed sleep. The Prophet reasoned on the rising tide of Pan-African unity, the truth behind Babylon's headlines, and the spiritual discipline required to walk this narrow road to freedom. As the sun stood still over the northern lands, Jah's word stood firm over Blazin 99.3. Listen now and let the longest light guide your path forward. Africa shall stretch forth her hands — and the Voice will not be silenced.",
+    hashtags: [
+      "BlessedLoveVoiceOfAfrica",
+      "Blazin993FM",
+      "ProphetAlem",
+      "Rastafari",
+      "PanAfrican",
+      "SummerSolstice",
+      "GlobalAfrica",
+      "JahLight",
+    ],
+    guestAnte: "",
+  },
 ];
