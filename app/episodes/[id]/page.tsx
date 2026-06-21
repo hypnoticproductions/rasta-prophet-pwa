@@ -14,13 +14,7 @@ import {
   BLACK_STAR_TAGLINES,
   BLACK_STAR_SHARE_TAGLINE,
 } from "@/data/blackStarRoots";
-
-// Sensible fallback so absolute URLs resolve even without an env var set.
-const BASE_URL =
-  process.env.NEXT_PUBLIC_BASE_URL?.replace(/\/$/, "") ??
-  "https://therastaprophet.com";
-
-const SITE_NAME = "The Rasta Prophet — Blessed Love Voice of Africa";
+import { BASE_URL, SITE_NAME } from "@/lib/siteConfig";
 
 // Pre-render all 35 episode pages at build time.
 export function generateStaticParams() {
