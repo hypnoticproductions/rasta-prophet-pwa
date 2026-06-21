@@ -155,22 +155,23 @@ export const posts_25_35: EpisodePost[] = [
   },
   {
     id: "33",
-    hook: "MAY 24: THE DAY THE BRIDGE TO AFRICA BECAME REAL",
+    hook: "THE GANJA GENERAL WHO FORCED A GOVERNMENT'S HAND",
     teaser:
-      "History moved while the world slept. The May 24th broadcast marked a turning point four hundred years in the making. You will want to remember exactly where you were when you heard this.",
+      "For a decade Andre \"Poncho\" DeCaires chaired the Cannabis Movement and refused to let St. Lucia bury the herb. When legalization finally came, he saw the trap — foreign money moving in while the original growers still face prison. He sits with Prophet Alem and Dr. Marshall Immanuel to defend Rastafari sacramental rights and the farmers who built this.",
     body:
-      "Blessed love to the people of the Most High. On May 24th the Voice of Africa carried a full show charged with the energy of a historic season — the very window when the direct road between the Caribbean and the Motherland was opening wide. Prophet Alem grounded the listeners in what the moment truly means: the prophecies of repatriation stepping out of song and into reality. He called the people to seize the hour, to travel, to trade, to learn, and to return. The ancestors waited generations for a day like this. Tune in and feel the bridge open beneath your feet.",
+      "Blessed love to the people of the Most High. On May 24th the Voice of Africa brought the ganja fight straight home. For roughly a decade, Andre \"Poncho\" DeCaires stood as chairman of the Cannabis Movement of Saint Lucia, pressing a government that stalled and dragged its feet while Rastafari and small farmers were criminalized for the holy herb. When reform finally arrived, he stepped down from the chair — not to rest, but to build a growers' Cooperative, because he saw the trap clearly: investors and the well-connected lining up to cash in while the original cultivators who risked prison stay shut out. In a heartical reasoning with Prophet Alem and Dr. Marshall Immanuel, DeCaires lays out the real stakes — social equity, restorative justice, Rastafari sacramental rights, public health standards, the future of local farmers, and the rise of ganja tourism. The warning runs through it all: an industry built for the haves while the roots remain in chains is no liberation at all. This is the reasoning on who truly owns the herb when the law finally changes. Tune in, reason along, and stand with the growers.",
     hashtags: [
       "BlessedLoveVoiceOfAfrica",
       "Blazin993FM",
       "ProphetAlem",
       "Rastafari",
-      "Repatriation",
-      "LagosToBarbados",
-      "GlobalAfrica",
-      "Motherland",
+      "Cannabis",
+      "SaintLucia",
+      "SocialEquity",
+      "RestorativeJustice",
     ],
-    guestAnte: "",
+    guestAnte:
+      "EXCLUSIVE: Andre \"Poncho\" DeCaires — the man who chaired St. Lucia's Cannabis Movement for a decade and forced legalization onto the table — sits with Prophet Alem and Dr. Marshall Immanuel to expose the trap: foreign money cashing in while the original growers still face prison. Sacramental rights, social equity, and who really owns the herb.",
   },
   {
     id: "34",

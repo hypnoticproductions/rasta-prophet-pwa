@@ -43,6 +43,10 @@ const OVERRIDES: Record<string, string> = {
   "13": "/backgrounds/maduro-venezuela.jpg",
   // Caribbean Under Siege
   "12": "/backgrounds/half-way-tree-clock.jpg",
+  // Interview: Dr. Mary Gilbertha St. Rose — Saint Lucian doctor / medical freedom
+  "15": "/backgrounds/pitons-st-lucia.jpg",
+  // Interview: Andre "Poncho" DeCaires — Saint Lucia cannabis / Rastafari rights
+  "33": "/backgrounds/petit-piton.jpg",
   // Featured guest: David Comissiong — Barbados / Pan-African bridge to Africa
   "35": "/backgrounds/renaissance-monument-dakar.jpg",
 };

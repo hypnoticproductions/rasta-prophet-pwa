@@ -49,23 +49,23 @@ export const posts_13_24: EpisodePost[] = [
   },
   {
     id: "15",
-    hook: "TWO POWERFUL DAUGHTERS SPEAK — STORIES THAT MOVE THE SPIRIT!",
+    hook: "THE DOCTOR BABYLON TRIED TO SILENCE — AND COULDN'T",
     teaser:
-      "Some stories carry the weight of generations. Mary Gilbertha St. Rose and Gloria Dorsius sit with Prophet Alem to share truth straight from the heart. You will not leave this reasoning the same.",
+      "They stripped her license. They hit her with a $10,000 fine. For giving COVID patients Ivermectin, Dr. Mary Gilbertha St. Rose was branded a criminal by the Medical & Dental Council — so she dragged them to court and WON. Now she sits with Prophet Alem to name the corruption and call St. Lucia out of the WHO. Plus Gloria Dorsius.",
     body:
-      "This special interview segment of Blessed Love: Voice of Africa welcomes two remarkable guests — Mary Gilbertha St. Rose and Gloria Dorsius — for a heartical reasoning of lived experience, faith, and resilience. They share their journeys, their wisdom, and the lessons forged through struggle and grace, the kind of testimony that uplifts and instructs the whole community. Prophet Alem draws out the deeper truths, weaving their voices into the larger story of African dignity and survival in a Babylon system. These are the elders and daughters whose words become guidance for the rising generation. Their honesty is medicine; their courage is contagious. Sit with this one, give thanks, and carry their light forward.",
+      "This is the interview Babylon did not want aired. For forty years Dr. Mary Gilbertha St. Rose served the people of Saint Lucia as doctor, dermatologist, and consultant medical herbalist — until she started prescribing Ivermectin to COVID-19 patients and watched them heal. The Medical & Dental Council answered not with gratitude but with punishment: a six-month suspension of her license and a $10,000 fine, accusing her of running an unauthorized clinical trial. She refused to bow. She called the Council out for possible infiltration and corruption, demanded it be dissolved, and took the matter to judicial review — winning her license back in February 2022. Sitting with Prophet Alem, she names this for what it is: medical tyranny, and a system that serves pharmaceutical interests over the lives of the people. She calls for Saint Lucia to walk away from the WHO entirely. Alongside her, Gloria Dorsius adds her own testimony of faith and resilience. This is not a calm reasoning. This is a doctor who stared down the system and lived to tell it. Sit with this one — and share it before they bury it.",
     hashtags: [
       "BlessedLoveVoiceOfAfrica",
-      "Rastafari",
-      "PanAfrican",
-      "WomenOfWisdom",
-      "Interview",
-      "AfricanDignity",
+      "MedicalFreedom",
+      "GilberthaStRose",
+      "Ivermectin",
+      "SaintLucia",
+      "ExitTheWHO",
       "ProphetAlem",
       "Blazin993",
     ],
     guestAnte:
-      "Mary Gilbertha St. Rose and Gloria Dorsius — two voices, one unforgettable testimony. This is the conversation people will be quoting for weeks.",
+      "EXCLUSIVE: The St. Lucian doctor they suspended and fined $10,000 for prescribing Ivermectin — Dr. Mary Gilbertha St. Rose — took the Medical Council to court, won her license back, and is now calling for St. Lucia to exit the WHO. Plus Gloria Dorsius. This is the conversation they tried to stop.",
   },
   {
     id: "16",
