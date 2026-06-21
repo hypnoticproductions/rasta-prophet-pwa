@@ -200,12 +200,21 @@ export default function App() {
       } else {
         audioRef.current?.play();
         setIsPlaying(true);
+        celebrateVibes();
       }
     } else {
       setCurrentTime(0);
       setDuration(0);
       setActiveTrack(track);
       setIsPlaying(true);
+      celebrateVibes();
+    }
+  };
+
+  // Fire a big lion+fire celebration burst (handled by VibesLayer).
+  const celebrateVibes = () => {
+    if (typeof window !== 'undefined') {
+      window.dispatchEvent(new CustomEvent('vibes:celebrate'));
     }
   };
 
