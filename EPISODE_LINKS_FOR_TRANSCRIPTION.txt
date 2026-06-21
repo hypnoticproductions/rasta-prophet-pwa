@@ -1,0 +1,219 @@
+================================================================================
+BLESSED LOVE: VOICE OF AFRICA - EPISODE ARCHIVE LINKS FOR TRANSCRIPTION
+================================================================================
+
+PURPOSE:
+This file contains all Archive.org MP3 URLs for the "Blessed Love: Voice of Africa"
+podcast episodes, formatted for easy handoff to transcription services or agents.
+
+TOTAL EPISODES: 35
+DATE RANGE: December 21, 2025 - June 7, 2026
+TOTAL DURATION: Approximately 60+ hours of content
+
+RECOMMENDED TRANSCRIPTION APPROACH:
+- OpenAI Whisper API (accurate for speech, supports long files)
+- AssemblyAI (good for interviews and multi-speaker detection)
+- Deepgram (fast, cost-effective for large batches)
+- Local Whisper (free but slower, good for sensitive content)
+
+BATCH PROCESSING TIP:
+Process in chronological order or by broadcast date. Some episodes are segments
+of the same broadcast (see dates and titles). Consider combining segments from
+the same date for contextual continuity.
+
+================================================================================
+EPISODE LINKS
+================================================================================
+
+Episode #1 - 2025-12-21 - Blessed Love: Voice of Africa - Segment 1
+Duration: 3:34:14
+https://archive.org/download/BLESSEDLOVESEG1EPISODE21122025/save%20on%201%20a.mp3
+---
+
+Episode #2 - 2025-12-21 - Blessed Love: Voice of Africa - Segment 2
+Duration: 3:23:50
+https://archive.org/download/blessedloveseg2episode21122025/save%20on%201%20b.mp3
+---
+
+Episode #3 - 2025-12-21 - Blessed Love: Voice of Africa - Segment 3
+Duration: 49:04
+https://archive.org/download/BLESSEDLOVESEG3EPISODE21122025/save%20on%201%20c.mp3
+---
+
+Episode #4 - 2025-12-21 - Blessed Love: Voice of Africa - Segment 4
+Duration: 50:54
+https://archive.org/download/BLESSEDLOVESEG4EPISODE21122025/save%20on2-001.mp3
+---
+
+Episode #5 - 2025-12-21 - Blessed Love: Voice of Africa - Final Segment
+Duration: 26:24
+https://archive.org/download/last-segment/last%20segment%20.mp3
+---
+
+Episode #6 - 2025-12-28 - Blessed Love: Voice of Africa - December 28, Segment 1
+Duration: 1:01:18
+https://archive.org/download/blessedlovevoiceofafricashow12-28-2025-sgm-one/show%20on%2012%2028%202025%20sgm%20one.mp3
+---
+
+Episode #7 - 2025-12-28 - Blessed Love: Voice of Africa - December 28, Segment 2
+Duration: 1:42:25
+https://archive.org/download/blessedlovevoiceofafricashow12-28-2025-sgm2/show%20on%2012%2028%202025%20sgm%20two.mp3
+---
+
+Episode #8 - 2025-12-28 - Blessed Love: Voice of Africa - Black Roots Promo Hour
+Duration: 1:42:35
+https://archive.org/download/show-on-12-28-2025-sgm-three-black-roots-promo-hr/show%20on%2012%2028%202025%20sgm%20THREE%20black%20roots%20promo%20hr.mp3
+---
+
+Episode #9 - 2026-01-04 - Blessed Love Africa Show - Segment Three Venezuela Up In Arms
+Duration: Not specified
+https://archive.org/download/show-on-1-4-2026-segment-three-venezuela-up-in-arms/show%20on%201%204%202026%20segment%20three%20%20venezuela%20up%20in%20arms.mp3
+---
+
+Episode #10 - 2026-01-04 - Blessed Love Voice of Africa - Segment Four Venezuela Up In Arms
+Duration: Not specified
+https://archive.org/download/show-on-1-4-2026-segment-four-venezuela-up-in-arms/show%20on%201%204%202026%20segment%20four%20%20venezuela%20up%20in%20arms.mp3
+---
+
+Episode #11 - 2026-01-04 - Blessed Love Voice of Africa Show - Segment Five Venezuela Up In Arms BLACKROOTS PROMO
+Duration: Not specified
+https://archive.org/download/show-on-1-4-2026-segment-five-venezuela-up-in-arms-blkroots-promo-hr/show%20on%201%204%202026%20segment%20five%20%20venezuela%20up%20in%20arms.mp3
+---
+
+Episode #12 - 2026-01-11 - Blessed Love Voice of Africa Show - Segment One CARIBBEAN UNDER SIEGE
+Duration: Not specified
+https://archive.org/download/show-1-11-2026-segment-one/show%201%2011%202026%20segment%20one.mp3
+---
+
+Episode #13 - 2026-01-11 - Blessed Love Voice of Africa - Segment VENEZUELA HIJACKED CARIBBEAN UNDER SIEGE
+Duration: Not specified
+https://archive.org/download/show-1-11-2026-segment-venezuela-hijacked/show%201%2011%202026%20segment%20VENEZUELA%20HIJACKED.mp3
+---
+
+Episode #14 - 2026-01-18 - Blessed Love Voice of Africa Show - Segment One
+Duration: Not specified
+https://archive.org/download/show-1-18-2026-segment-one/show%20%201%2018%202026%20segment%20one.mp3
+---
+
+Episode #15 - 2026-01-18 - Blessed Love Voice of Africa Show - Interview Segment
+Duration: Not specified
+https://archive.org/download/show-1-18-2026-segment-interview/show%20%201%2018%202026%20segment%20two.mp3
+---
+
+Episode #16 - 2026-01-18 - Blessed Love Voice of Africa Show - Segment Three Black Star Roots Promo Hour
+Duration: Not specified
+https://archive.org/download/show-1-18-2026-segment-three-black-star-roots-promo-hour/show%20%201%2018%202026%20segment%20three%20black%20star%20roots%20promo%20hour.mp3
+---
+
+Episode #17 - 2026-01-25 - Blessed Love Voice of Africa Show - January 25, 2026
+Duration: Not specified
+https://archive.org/download/blessed-love-program-voice-africa-show-1-25-2026/blessed%20love%20program%20voice%20africa%20show%201%2025%202026.mp3
+---
+
+Episode #18 - 2026-01-25 - Blessed Love Voice of Africa Show - January 25, 2026 Segment 2
+Duration: Not specified
+https://archive.org/download/blessed-love-program-voice-africa-show-1-25-2026-segment-2/blessed%20love%20program%20voice%20africa%20show%201%2025%202026%20SEGMENT%202.mp3
+---
+
+Episode #19 - 2026-02-01 - Blessed Love Voice of Africa Show - February 1, 2026
+Duration: Not specified
+https://archive.org/download/show-on-2-1-2026/show%20on%202%201%202026.mp3
+---
+
+Episode #20 - 2026-02-01 - Blessed Love Voice of Africa Show - February 1, 2026 Segment 2
+Duration: Not specified
+https://archive.org/download/show-on-2-1-2026-segment-2/show%20on%202%201%202026%20SEGMENT%202.mp3
+---
+
+Episode #21 - 2026-02-08 - Blessed Love Voice of Africa Show - February 8, 2026 Full Show
+Duration: Not specified
+https://archive.org/download/show-2-8-2026-full-show/show%202%208%202026%20full%20show.mp3
+---
+
+Episode #22 - 2026-02-22 - Blessed Love Voice of Africa Show - February 22, 2026
+Duration: Not specified
+https://archive.org/download/show-2-22-2026/show%202%2022%202026.mp3
+---
+
+Episode #23 - 2026-03-08 - Blessed Love Voice of Africa Show - March 8, 2026
+Duration: Not specified
+https://archive.org/download/show-3-8-2026/show%20%203%208%202026.mp3
+---
+
+Episode #24 - 2026-03-15 - Blessed Love Voice of Africa Show - March 15, 2026
+Duration: Not specified
+https://archive.org/download/show-on-3-15-2026/show%20on%203%2015%202026.mp3
+---
+
+Episode #25 - 2026-03-22 - Blessed Love Voice of Africa Show - March 22, 2026
+Duration: Not specified
+https://archive.org/download/show-on-3-22-2026/show%20on%20%203%2022%202026%20.mp3
+---
+
+Episode #26 - 2026-03-29 - Blessed Love Voice of Africa Show - March 29, 2026
+Duration: Not specified
+https://archive.org/download/show-on-3-29-2026/show%20on%20%203%2029%202026%20.mp3
+---
+
+Episode #27 - 2026-04-12 - Blessed Love Voice of Africa Show - April 12, 2026
+Duration: Not specified
+https://archive.org/download/show-on-4-12-2026/show%20on%20%204%2012%202026%20FIX.mp3
+---
+
+Episode #28 - 2026-04-19 - Blessed Love Voice of Africa Show - April 19, 2026
+Duration: Not specified
+https://archive.org/download/show-on-4-19-2026/show%20on%20%204%2019%202026%20.mp3
+---
+
+Episode #29 - 2026-04-26 - Blessed Love Voice of Africa Show - April 26, 2026
+Duration: Not specified
+https://archive.org/download/show-on-4-26-2026/show%20on%20%204%20%2026%202026.mp3
+---
+
+Episode #30 - 2026-05-03 - Blessed Love Voice of Africa Show - May 3, 2026
+Duration: Not specified
+https://archive.org/download/show-on-may-3-2026-full/show%20on%20may%203%202026%20%20full%20.mp3
+---
+
+Episode #31 - 2026-05-10 - Blessed Love Voice of Africa Show - May 10, 2026
+Duration: Not specified
+https://archive.org/download/show-on-5-10-2026-full-show-001/show%20on%20%205%2010%202026%20full%20show-001.mp3
+---
+
+Episode #32 - 2026-05-17 - Blessed Love Voice of Africa Show - May 17, 2026
+Duration: Not specified
+https://archive.org/download/show-on-may-17-2026-fulll-1/show%20on%20%20may%2017%202026%20fulll%201.mp3
+---
+
+Episode #33 - 2026-05-24 - Blessed Love Voice of Africa Show - May 24, 2026
+Duration: Not specified
+https://archive.org/download/show-5-24-202-full-show/show%205%2024%20202%20full%20show.mp3
+---
+
+Episode #34 - 2026-05-31 - Blessed Love Voice of Africa Show - May 31, 2026
+Duration: Not specified
+https://archive.org/download/show-5-31-2026-full-show/show%20%205%2031%202026%20full%20show.mp3
+---
+
+Episode #35 - 2026-06-07 - Blessed Love Voice of Africa Show - June 7, 2026
+Duration: Not specified
+FEATURED GUEST: H.E. David Comissiong, Barbados' Ambassador to CARICOM
+https://archive.org/download/show-on-6-7-2026-full-show-001/show%20on%206%207%202026%20full%20show-001.mp3
+---
+
+================================================================================
+END OF EPISODE LIST
+================================================================================
+
+NOTES FOR TRANSCRIPTION AGENT:
+- Episodes 1-5 are all from the same broadcast day (Dec 21, 2025)
+- Episodes 6-8 are from Dec 28, 2025
+- Episodes 9-11 cover Venezuela theme (Jan 4, 2026)
+- Episodes 12-13 cover Caribbean/Venezuela (Jan 11, 2026)
+- Episodes 14-16 are from Jan 18, 2026 broadcast
+- Episodes 17-18 are from Jan 25, 2026 broadcast
+- Episodes 19-20 are from Feb 1, 2026 broadcast
+- Episodes 21-35 are mostly full shows (one per week)
+- Episode 35 features special guest H.E. David Comissiong
+
+Consider batch processing by broadcast date for better contextual understanding.
