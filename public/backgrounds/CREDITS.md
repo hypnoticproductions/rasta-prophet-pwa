@@ -1,19 +1,39 @@
 # Hero Background Image Credits
 
-All images below are sourced from Wikimedia Commons under Creative Commons or
-Public Domain licenses and are safe for public/commercial use with attribution.
+Imagery for the "Voice of Africa" cinematic hero reel. Two sources:
+**Wikimedia Commons** (Creative Commons / Public Domain — safe to publish with
+attribution) and **Instagram** (curated current shots of specific places;
+credited to the original posters).
 
-| File | Subject | Author | License | Source |
-|------|---------|--------|---------|--------|
-| `pitons-st-lucia.jpg` | Gros Piton & Petit Piton, Saint Lucia | Aneil Lutchman | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Gros_Piton_and_Petit_Piton_in_Saint_Lucia.JPG |
-| `petit-piton.jpg` | Petit Piton, Saint Lucia | Konstantin Krismer | Public Domain | https://commons.wikimedia.org/wiki/File:Petit_Piton.JPG |
-| `victoria-falls.jpg` | Victoria Falls, Zambia/Zimbabwe | Diego Delso | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Cataratas_Victoria,_Zambia-Zimbabue,_2018-07-27,_DD_05.jpg |
-| `table-mountain.jpg` | Table Mountain, Cape Town | South African Tourism | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Table_Mountain_-_South_Africa_(2418536788).jpg |
-| `great-mosque-djenne.jpg` | Great Mosque of Djenné, Mali | Ferdinand Reus | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Mali_-_mosque_in_Djenn%C3%A9.jpg |
+## Wikimedia Commons (license-clean)
 
-## Attribution Notes
-- CC BY / CC BY-SA require visible author + license credit. These are surfaced
-  in the site footer credits section.
-- Public Domain images require no attribution but are credited as a courtesy.
-- Images were downloaded at 1280px width via the Wikimedia thumbnail service
-  for web performance.
+| File | Subject | Author | License |
+|------|---------|--------|---------|
+| `pitons-st-lucia.jpg` | Gros Piton & Petit Piton, Saint Lucia | Aneil Lutchman | CC BY-SA 2.0 |
+| `petit-piton.jpg` | Petit Piton, Saint Lucia | Konstantin Krismer | Public Domain |
+| `victoria-falls.jpg` | Victoria Falls, Zambia/Zimbabwe | Diego Delso | CC BY-SA 4.0 |
+| `table-mountain.jpg` | Table Mountain, Cape Town | South African Tourism | CC BY 2.0 |
+| `great-mosque-djenne.jpg` | Great Mosque of Djenné, Mali | Ferdinand Reus | CC BY-SA 2.0 |
+| `kaieteur-falls.jpg` | Kaieteur Falls, Guyana | Bill Cameron | CC BY-SA 3.0 |
+| `lekki-ikoyi-bridge.jpg` | Lekki-Ikoyi Link Bridge, Lagos, Nigeria | Chippla | CC BY-SA 3.0 |
+| `half-way-tree-clock.jpg` | Half Way Tree clock tower, Kingston, Jamaica | Raw9345 | CC BY-SA 3.0 |
+
+## Instagram (current shots — credited to original posters)
+
+| File | Subject | Source post (Instagram) |
+|------|---------|-------------------------|
+| `pitons-soufriere-town.jpg` | Both Pitons over Soufrière town, Saint Lucia | @froggy_frog80 |
+| `piton-peak.jpg` | Piton peak rising from the sea, Saint Lucia | @euwy.muji.rousseau |
+| `makola-market.jpg` | Makola Market, Accra, Ghana | @omri.eliyahu |
+| `renaissance-monument-dakar.jpg` | African Renaissance Monument, Dakar, Senegal | @badro_off |
+| `angel-falls-venezuela.jpg` | Angel Falls (Salto Ángel), Venezuela | @rosidegwitz |
+
+## Notes
+- CC BY / CC BY-SA require visible author + license credit — surfaced in the
+  site footer credits section.
+- Public Domain images need no attribution but are credited as courtesy.
+- Instagram images are the property of their original posters and are used as
+  current location imagery; handles are credited. If any poster requests
+  removal, replace with the corresponding Wikimedia CC alternative.
+- Wikimedia images downloaded at 1280px via the thumbnail service for web
+  performance.
