@@ -360,3 +360,160 @@ body {
 .ken-burns-container {
   animation: kenBurns 20s ease-in-out infinite alternate;
 }
+
+/* ============================================================
+   HEAVY ROTATION — Reggae Roots Engagement / Vibes Layer
+   ============================================================ */
+
+/* The Lion of Judah striding across the bottom of the screen */
+@keyframes lionStride {
+  0% {
+    left: -90px;
+    transform: scaleX(1) translateY(0);
+  }
+  100% {
+    left: 100vw;
+    transform: scaleX(1) translateY(0);
+  }
+}
+
+/* Natural bob/gallop while striding */
+@keyframes lionBob {
+  0%, 100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+  25% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+  50% {
+    transform: translateY(-2px) rotate(2deg);
+  }
+  75% {
+    transform: translateY(-12px) rotate(-1deg);
+  }
+}
+
+.vibes-lion {
+  position: fixed;
+  bottom: 6px;
+  left: -90px;
+  z-index: 60;
+  font-size: 44px;
+  line-height: 1;
+  pointer-events: none;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.6))
+          drop-shadow(0 0 6px rgba(212, 175, 55, 0.45));
+  animation: lionStride 18s linear infinite;
+  will-change: left;
+}
+
+.vibes-lion > span {
+  display: inline-block;
+  animation: lionBob 0.55s ease-in-out infinite;
+}
+
+/* Dust / spark trail behind the lion */
+@keyframes trailFade {
+  0% {
+    opacity: 0.9;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(6px) scale(0.4);
+  }
+}
+
+.vibes-trail {
+  position: fixed;
+  bottom: 10px;
+  z-index: 59;
+  pointer-events: none;
+  font-size: 16px;
+  animation: trailFade 0.9s ease-out forwards;
+}
+
+/* Ambient floaters drifting up the screen */
+@keyframes floatUp {
+  0% {
+    opacity: 0;
+    transform: translateY(0) translateX(0) rotate(0deg) scale(0.8);
+  }
+  10% {
+    opacity: 0.85;
+  }
+  90% {
+    opacity: 0.85;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-90vh) translateX(var(--drift, 30px)) rotate(220deg) scale(1.1);
+  }
+}
+
+.vibes-floater {
+  position: fixed;
+  bottom: -40px;
+  z-index: 58;
+  pointer-events: none;
+  font-size: 26px;
+  filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.4));
+  animation: floatUp var(--dur, 9s) linear forwards;
+}
+
+/* Click burst — emojis pop outward from the pointer */
+@keyframes burstPop {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) scale(0.4) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--bx, 0), var(--by, 0)) scale(1.3) rotate(var(--br, 90deg));
+  }
+}
+
+.vibes-burst {
+  position: fixed;
+  z-index: 9998;
+  pointer-events: none;
+  font-size: 22px;
+  animation: burstPop 0.75s cubic-bezier(0.2, 0.7, 0.3, 1) forwards;
+}
+
+/* Lion pops above any CTA on hover */
+@keyframes lionHopUp {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 6px) scale(0.5);
+  }
+  40% {
+    opacity: 1;
+    transform: translate(-50%, -14px) scale(1.15);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -30px) scale(0.9);
+  }
+}
+
+.vibes-hover-lion {
+  position: fixed;
+  z-index: 9997;
+  pointer-events: none;
+  font-size: 28px;
+  transform: translate(-50%, 0);
+  animation: lionHopUp 0.8s ease-out forwards;
+  filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.5));
+}
+
+/* Honour reduced-motion: kill the vibes layer entirely */
+@media (prefers-reduced-motion: reduce) {
+  .vibes-lion,
+  .vibes-trail,
+  .vibes-floater,
+  .vibes-burst,
+  .vibes-hover-lion {
+    display: none !important;
+  }
+}

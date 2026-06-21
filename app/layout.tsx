@@ -3,6 +3,7 @@ import { Inter, Bebas_Neue } from 'next/font/google';
 import './globals.css';
 import { WhatsAppButton } from '@/components/WhatsAppButton';
 import { ImageCredits } from '@/components/ImageCredits';
+import VibesLayer from '@/components/VibesLayer';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -54,6 +55,7 @@ export default function RootLayout({
         {children}
         <ImageCredits />
         <WhatsAppButton />
+        <VibesLayer />
       </body>
     </html>
   );
