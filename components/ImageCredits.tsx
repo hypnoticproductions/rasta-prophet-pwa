@@ -86,6 +86,41 @@ const wikimediaCredits: WikimediaCredit[] = [
     author: 'Raw9345',
     license: 'CC BY-SA 3.0',
     licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0/'
+  },
+  {
+    file: 'bwindi-silverback-gorilla.jpg',
+    subject: 'Silverback mountain gorilla, Bwindi Impenetrable Forest, Uganda',
+    author: 'RomanoPhileas',
+    license: 'CC BY-SA 4.0',
+    licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/'
+  },
+  {
+    file: 'bwindi-mountain-gorilla.jpg',
+    subject: 'Mountain gorilla, Bwindi Impenetrable Forest, Uganda',
+    author: 'Diego Delso',
+    license: 'CC BY-SA 4.0',
+    licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/'
+  },
+  {
+    file: 'lalibela-st-george-cross.jpg',
+    subject: 'Church of Saint George (Bete Giyorgis), Lalibela, Ethiopia',
+    author: 'Jialiang Gao',
+    license: 'CC BY-SA 3.0',
+    licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0/'
+  },
+  {
+    file: 'lalibela-bete-giyorgis.jpg',
+    subject: 'Bete Giyorgis rock-hewn church, Lalibela, Ethiopia',
+    author: 'Bernard Gagnon',
+    license: 'CC BY-SA 3.0',
+    licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0/'
+  },
+  {
+    file: 'lalibela-church-green.jpg',
+    subject: 'Bete Giyorgis in the green season, Lalibela, Ethiopia',
+    author: 'Tmanahan344',
+    license: 'CC BY-SA 3.0',
+    licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0/'
   }
 ];
 
@@ -113,12 +148,6 @@ const instagramCredits: InstagramCredit[] = [
     subject: 'African Renaissance Monument, Dakar, Senegal',
     source: '@badro_off',
     url: 'https://instagram.com/badro_off'
-  },
-  {
-    file: 'angel-falls-venezuela.jpg',
-    subject: 'Angel Falls (Salto Ángel), Venezuela',
-    source: '@rosidegwitz',
-    url: 'https://instagram.com/rosidegwitz'
   }
 ];
 

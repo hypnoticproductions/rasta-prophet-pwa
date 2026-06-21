@@ -19,13 +19,17 @@ const DEFAULT_IMAGE = "/backgrounds/piton-peak.jpg";
 const ROTATION: string[] = [
   "/backgrounds/pitons-soufriere-town.jpg",
   "/backgrounds/makola-market.jpg",
-  "/backgrounds/angel-falls-venezuela.jpg",
+  "/backgrounds/bwindi-silverback-gorilla.jpg",
   "/backgrounds/kaieteur-falls.jpg",
+  "/backgrounds/lalibela-st-george-cross.jpg",
   "/backgrounds/victoria-falls.jpg",
   "/backgrounds/table-mountain.jpg",
   "/backgrounds/great-mosque-djenne.jpg",
+  "/backgrounds/bwindi-mountain-gorilla.jpg",
   "/backgrounds/lekki-ikoyi-bridge.jpg",
+  "/backgrounds/lalibela-bete-giyorgis.jpg",
   "/backgrounds/piton-peak.jpg",
+  "/backgrounds/lalibela-church-green.jpg",
   "/backgrounds/pitons-st-lucia.jpg",
   "/backgrounds/petit-piton.jpg",
 ];

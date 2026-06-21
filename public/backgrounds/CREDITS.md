@@ -17,6 +17,11 @@ credited to the original posters).
 | `kaieteur-falls.jpg` | Kaieteur Falls, Guyana | Bill Cameron | CC BY-SA 3.0 |
 | `lekki-ikoyi-bridge.jpg` | Lekki-Ikoyi Link Bridge, Lagos, Nigeria | Chippla | CC BY-SA 3.0 |
 | `half-way-tree-clock.jpg` | Half Way Tree clock tower, Kingston, Jamaica | Raw9345 | CC BY-SA 3.0 |
+| `bwindi-silverback-gorilla.jpg` | Silverback mountain gorilla, Bwindi Impenetrable Forest, Uganda | RomanoPhileas | CC BY-SA 4.0 |
+| `bwindi-mountain-gorilla.jpg` | Mountain gorilla, Bwindi Impenetrable Forest, Uganda | Diego Delso | CC BY-SA 4.0 |
+| `lalibela-st-george-cross.jpg` | Church of Saint George (Bete Giyorgis), Lalibela, Ethiopia | Jialiang Gao | CC BY-SA 3.0 |
+| `lalibela-bete-giyorgis.jpg` | Bete Giyorgis rock-hewn church, Lalibela, Ethiopia | Bernard Gagnon | CC BY-SA 3.0 |
+| `lalibela-church-green.jpg` | Bete Giyorgis in the green season, Lalibela, Ethiopia | Tmanahan344 | CC BY-SA 3.0 |
 
 ## Instagram (current shots — credited to original posters)
 
@@ -26,7 +31,6 @@ credited to the original posters).
 | `piton-peak.jpg` | Piton peak rising from the sea, Saint Lucia | @euwy.muji.rousseau |
 | `makola-market.jpg` | Makola Market, Accra, Ghana | @omri.eliyahu |
 | `renaissance-monument-dakar.jpg` | African Renaissance Monument, Dakar, Senegal | @badro_off |
-| `angel-falls-venezuela.jpg` | Angel Falls (Salto Ángel), Venezuela | @rosidegwitz |
 
 ## Editorial / News imagery
 

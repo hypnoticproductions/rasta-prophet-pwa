@@ -34,7 +34,10 @@ const HERITAGE_IMAGES = [
   '/backgrounds/piton-peak.jpg',
   '/backgrounds/makola-market.jpg',
   '/backgrounds/renaissance-monument-dakar.jpg',
-  '/backgrounds/angel-falls-venezuela.jpg',
+  '/backgrounds/lalibela-st-george-cross.jpg',
+  '/backgrounds/bwindi-silverback-gorilla.jpg',
+  '/backgrounds/lalibela-bete-giyorgis.jpg',
+  '/backgrounds/bwindi-mountain-gorilla.jpg',
 ];
 
 const CROSSFADE_DURATION = 7000; // 7 seconds per image
