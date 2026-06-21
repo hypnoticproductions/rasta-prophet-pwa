@@ -42,7 +42,7 @@ the Wikimedia/Instagram scenic imagery above.
 
 | File | Subject | Type | Source origin |
 |------|---------|------|---------------|
-| `maduro-venezuela.jpg` | Venezuelan President Nicolás Maduro in dark sunglasses (iconic defiant look) | Editorial / news photo (AP, fair-use editorial) | www.wsls.com (Graham Media Group / cloudinary CDN) |
+| `maduro-venezuela.jpg` | Venezuelan President Nicolás Maduro in custody — dark blackout visor and over-ear sound-limiting headphones | Editorial / news photo (fair-use editorial) | News/wire editorial release |
 
 ## Notes
 - CC BY / CC BY-SA require visible author + license credit — surfaced in the

@@ -154,9 +154,9 @@ const instagramCredits: InstagramCredit[] = [
 const editorialCredits: EditorialCredit[] = [
   {
     file: 'maduro-venezuela.jpg',
-    subject: 'Venezuelan President Nicolás Maduro in dark sunglasses (iconic defiant look)',
-    type: 'Editorial / news photo (AP, fair-use editorial)',
-    source: 'www.wsls.com (Graham Media Group / cloudinary CDN)'
+    subject: 'Venezuelan President Nicolás Maduro in custody — dark blackout visor and over-ear sound-limiting headphones',
+    type: 'Editorial / news photo (fair-use editorial)',
+    source: 'News/wire editorial release'
   }
 ];
 
