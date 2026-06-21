@@ -1,13 +1,24 @@
 import { ImageResponse } from "next/og";
-import { getEpisodeById } from "@/data/episodes";
+import { getAllEpisodes, getEpisodeById } from "@/data/episodes";
 import { getPostById } from "@/data/posts/index";
 import { isBlackStarPromo, BLACK_STAR_OG_STRIP } from "@/data/blackStarRoots";
 
-// Route segment config for the dynamic OG image.
-export const runtime = "edge";
+// Route segment config for the OG image.
+// NOTE: This is a static-export site (`output: 'export'`), so the image must be
+// prerendered to a real PNG at build time. The edge runtime would disable static
+// generation and the file would be dropped from the export (Facebook would get a
+// 404 and show no preview). Keeping the default Node runtime + generateStaticParams
+// makes Next.js emit a static .png for every episode.
+export const dynamic = "force-static";
 export const alt = "Blessed Love Voice of Africa — The Rasta Prophet";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
+
+// Prerender one OG image per episode at build time so the static export contains
+// a real PNG for each /episodes/[id]/opengraph-image route.
+export function generateStaticParams() {
+  return getAllEpisodes().map((ep) => ({ id: ep.id }));
+}
 
 // Brand colors (match the site palette).
 const GOLD = "#D4AF37";

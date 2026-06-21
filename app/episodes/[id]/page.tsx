@@ -69,6 +69,7 @@ export function generateMetadata({
           width: 1200,
           height: 630,
           alt: episode.title,
+          type: "image/png",
         },
       ],
       audio: [
