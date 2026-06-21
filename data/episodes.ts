@@ -303,7 +303,7 @@ export const episodes: Episode[] = [
     id: "33",
     episode_number: 33,
     title: "Blessed Love Voice of Africa Show - May 24, 2026",
-    description: "Today's full broadcast bringing wisdom, truth, and enlightenment to the people.",
+    description: "FEATURED GUESTS: Andre \"Poncho\" DeCaires & Dr. Marshall Immanuel — The ganja fight comes home. DeCaires spent a decade as chairman of the Cannabis Movement, pushing Saint Lucia's government on legalization while they stalled and dragged their feet. When reform finally came in 2020, he walked away from the chair to build a growers' Cooperative — because he saw the trap: foreign investors ready to cash in while the original farmers who risked prison stay criminalized. This is the reasoning on Rastafari sacramental rights, social equity, restorative justice, ganja tourism, and who really owns the herb when the law finally changes.",
     archive_url: "https://archive.org/download/show-5-24-202-full-show/show%205%2024%20202%20full%20show.mp3",
     published_date: "2026-05-24"
   },
