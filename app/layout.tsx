@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import { Inter, Bebas_Neue } from 'next/font/google';
 import './globals.css';
 import { WhatsAppButton } from '@/components/WhatsAppButton';
+import { ImageCredits } from '@/components/ImageCredits';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -51,6 +52,7 @@ export default function RootLayout({
       </head>
       <body className={`${inter.variable} ${bebasNeue.variable} bg-background text-white antialiased`}>
         {children}
+        <ImageCredits />
         <WhatsAppButton />
       </body>
     </html>
