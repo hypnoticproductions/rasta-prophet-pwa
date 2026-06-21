@@ -28,6 +28,18 @@ credited to the original posters).
 | `renaissance-monument-dakar.jpg` | African Renaissance Monument, Dakar, Senegal | @badro_off |
 | `angel-falls-venezuela.jpg` | Angel Falls (Salto Ángel), Venezuela | @rosidegwitz |
 
+## Editorial / News imagery
+
+Used as the background/preview image for the Venezuela-themed episodes
+("Venezuela Up In Arms", "Venezuela Hijacked"), replacing the scenic waterfall.
+This is a news photograph used in a fair-use editorial context for political
+commentary — not a license-clean stock/CC image, and not interchangeable with
+the Wikimedia/Instagram scenic imagery above.
+
+| File | Subject | Type | Source origin |
+|------|---------|------|---------------|
+| `maduro-venezuela.jpg` | Venezuelan President Nicolás Maduro in dark sunglasses (iconic defiant look) | Editorial / news photo (AP, fair-use editorial) | www.wsls.com (Graham Media Group / cloudinary CDN) |
+
 ## Notes
 - CC BY / CC BY-SA require visible author + license credit — surfaced in the
   site footer credits section.
