@@ -301,6 +301,10 @@ body {
   .tabular-nums {
     font-variant-numeric: tabular-nums;
   }
+
+  .bg-gradient-radial {
+    background: radial-gradient(circle, var(--tw-gradient-stops));
+  }
 }
 
 /* Audio player seek bar */

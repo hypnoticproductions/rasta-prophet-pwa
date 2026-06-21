@@ -73,14 +73,18 @@ export default function CinematicHero({ onPlayClick, isPlaying }: CinematicHeroP
           >
             <div
               className="ken-burns-container w-full h-full bg-cover bg-center"
-              style={{ backgroundImage: `url(${HERITAGE_IMAGES[currentImageIndex]})` }}
+              style={{
+                backgroundImage: `url(${HERITAGE_IMAGES[currentImageIndex]})`,
+                filter: "contrast(1.3) saturate(1.5) brightness(0.8)",
+              }}
             />
           </motion.div>
         </AnimatePresence>
 
-        {/* Dark overlay for text readability */}
+        {/* Dark overlay for text readability + dramatic vignette */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black" />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90" />
+        <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-black/50" />
       </div>
 
       {/* Hero content */}

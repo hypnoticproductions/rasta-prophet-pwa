@@ -132,9 +132,13 @@ export default function EpisodePage({
             src={heroImage}
             alt={episode.title}
             className="w-full h-full object-cover"
+            style={{
+              filter: "contrast(1.25) saturate(1.4) brightness(0.85)",
+            }}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black" />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-black/40" />
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-8 pt-10 pb-16">
