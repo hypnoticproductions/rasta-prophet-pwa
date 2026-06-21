@@ -357,16 +357,31 @@ export default function App() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
                 <div className="absolute bottom-6 left-6 text-left">
-                  <h3 className="text-gold font-bold uppercase tracking-widest text-xl mb-1">Prophetic Sustenance</h3>
-                  <p className="text-stone-300 text-xs italic">Pure Energy for the Royal Order</p>
+                  <p className="text-red text-[10px] font-bold tracking-[0.3em] uppercase mb-1">Black Star Roots</p>
+                  <h3 className="text-gold font-bold uppercase tracking-widest text-xl mb-1">Roots Tonic Wine</h3>
+                  <p className="text-white font-black uppercase tracking-[0.2em] text-sm">Stamina For Life</p>
                 </div>
               </div>
+
+              {/* Black Star Roots — marketing catch phrases */}
+              <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+                {['Stamina For Life', 'The Natural Machine', 'Look Out For It'].map((phrase) => (
+                  <span
+                    key={phrase}
+                    className="px-5 py-2 border border-gold/40 rounded-full text-gold text-xs md:text-sm font-bold uppercase tracking-[0.2em] bg-black/30"
+                  >
+                    {phrase}
+                  </span>
+                ))}
+              </div>
+
               <motion.p
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                className="mt-8 text-stone-400 text-sm md:text-base italic max-w-2xl text-center leading-relaxed"
+                className="mt-6 text-stone-400 text-sm md:text-base italic max-w-2xl text-center leading-relaxed"
               >
-                &quot;Nourishing the temple is the first step to liberation. Observe the vessel of strength.&quot;
+                &quot;100% all natural roots tonic wine — Bois Bande, Gomier, Kalkuh roots and
+                more. Nourish the temple. The Natural Machine. Look out for it.&quot;
               </motion.p>
             </div>
           </div>
