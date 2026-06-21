@@ -23,11 +23,31 @@ const VIBES_IMAGES = {
   lionWalk: '/vibes/lion-walk.png',
   lionHead: '/vibes/lion-head.png',
   ganjaLeaf: '/vibes/ganja-leaf.png',
+  flame: '/vibes/flame.png',
+  goldStar: '/vibes/gold-star.png',
+  nyabinghiDrum: '/vibes/nyabinghi-drum.png',
 };
 
-const ROOTS_EMOJI = ['💛', '💚', '❤️', '⭐', '🔥', '🥁', '🇪🇹'];
-const FLOATER_EMOJI = ['🔥', '⭐', '💛', '💚', '❤️'];
-const CELEBRATE_EMOJI = ['🔥', '⭐', '💛', '💚', '❤️'];
+// Photorealistic images for all vibes elements
+const FLOATER_IMAGES = [
+  VIBES_IMAGES.flame,
+  VIBES_IMAGES.goldStar,
+  VIBES_IMAGES.ganjaLeaf,
+  VIBES_IMAGES.nyabinghiDrum,
+];
+
+const BURST_IMAGES = [
+  VIBES_IMAGES.flame,
+  VIBES_IMAGES.goldStar,
+  VIBES_IMAGES.nyabinghiDrum,
+];
+
+const CELEBRATE_IMAGES = [
+  VIBES_IMAGES.flame,
+  VIBES_IMAGES.goldStar,
+  VIBES_IMAGES.lionHead,
+  VIBES_IMAGES.nyabinghiDrum,
+];
 const VIBES_PREF_KEY = 'rastaprophet:vibes';
 
 interface Ephemeral {
@@ -118,44 +138,25 @@ export default function VibesLayer() {
       for (let i = 0; i < count; i++) {
         const angle = (Math.PI * 2 * i) / count + Math.random() * 0.5;
         const dist = 70 + Math.random() * 110;
-        const useLion = i % 3 === 0; // Every 3rd burst is a lion head
+        const image = CELEBRATE_IMAGES[Math.floor(Math.random() * CELEBRATE_IMAGES.length)];
 
-        if (useLion) {
-          add(
-            {
-              image: VIBES_IMAGES.lionHead,
-              isImage: true,
-              className: 'vibes-burst vibes-burst-image',
-              style: {
-                left: `${cx}px`,
-                top: `${cy}px`,
-                width: `${32 + Math.random() * 16}px`,
-                height: `${32 + Math.random() * 16}px`,
-                ['--bx' as string]: `${Math.cos(angle) * dist}px`,
-                ['--by' as string]: `${Math.sin(angle) * dist - 40}px`,
-                ['--br' as string]: `${(Math.random() - 0.5) * 320}deg`,
-              },
+        add(
+          {
+            image,
+            isImage: true,
+            className: 'vibes-burst vibes-burst-image',
+            style: {
+              left: `${cx}px`,
+              top: `${cy}px`,
+              width: `${32 + Math.random() * 16}px`,
+              height: `${32 + Math.random() * 16}px`,
+              ['--bx' as string]: `${Math.cos(angle) * dist}px`,
+              ['--by' as string]: `${Math.sin(angle) * dist - 40}px`,
+              ['--br' as string]: `${(Math.random() - 0.5) * 320}deg`,
             },
-            850
-          );
-        } else {
-          const emoji = CELEBRATE_EMOJI[Math.floor(Math.random() * CELEBRATE_EMOJI.length)];
-          add(
-            {
-              emoji,
-              className: 'vibes-burst',
-              style: {
-                left: `${cx}px`,
-                top: `${cy}px`,
-                fontSize: `${24 + Math.random() * 14}px`,
-                ['--bx' as string]: `${Math.cos(angle) * dist}px`,
-                ['--by' as string]: `${Math.sin(angle) * dist - 40}px`,
-                ['--br' as string]: `${(Math.random() - 0.5) * 320}deg`,
-              },
-            },
-            850
-          );
-        }
+          },
+          850
+        );
       }
     };
     window.addEventListener('vibes:celebrate', onCelebrate as EventListener);
@@ -167,40 +168,23 @@ export default function VibesLayer() {
     if (!enabled) return;
     const spawn = () => {
       const dur = 8 + Math.random() * 6; // 8–14s
-      const useGanja = Math.random() < 0.4; // 40% chance of ganja leaf
+      const image = FLOATER_IMAGES[Math.floor(Math.random() * FLOATER_IMAGES.length)];
 
-      if (useGanja) {
-        add(
-          {
-            image: VIBES_IMAGES.ganjaLeaf,
-            isImage: true,
-            className: 'vibes-floater vibes-floater-image',
-            style: {
-              left: `${Math.random() * 100}vw`,
-              ['--dur' as string]: `${dur}s`,
-              ['--drift' as string]: `${(Math.random() - 0.5) * 160}px`,
-              width: `${28 + Math.random() * 20}px`,
-              height: `${28 + Math.random() * 20}px`,
-            },
+      add(
+        {
+          image,
+          isImage: true,
+          className: 'vibes-floater vibes-floater-image',
+          style: {
+            left: `${Math.random() * 100}vw`,
+            ['--dur' as string]: `${dur}s`,
+            ['--drift' as string]: `${(Math.random() - 0.5) * 160}px`,
+            width: `${28 + Math.random() * 20}px`,
+            height: `${28 + Math.random() * 20}px`,
           },
-          dur * 1000 + 200
-        );
-      } else {
-        const emoji = FLOATER_EMOJI[Math.floor(Math.random() * FLOATER_EMOJI.length)];
-        add(
-          {
-            emoji,
-            className: 'vibes-floater',
-            style: {
-              left: `${Math.random() * 100}vw`,
-              ['--dur' as string]: `${dur}s`,
-              ['--drift' as string]: `${(Math.random() - 0.5) * 160}px`,
-              fontSize: `${20 + Math.random() * 16}px`,
-            },
-          },
-          dur * 1000 + 200
-        );
-      }
+        },
+        dur * 1000 + 200
+      );
     };
     const interval = setInterval(spawn, 2600);
     spawn();
@@ -215,11 +199,17 @@ export default function VibesLayer() {
     trailTimer.current = setInterval(() => {
       const t = ((performance.now() - start) % STRIDE_MS) / STRIDE_MS;
       const x = -90 + t * (window.innerWidth + 90);
+      const image = Math.random() > 0.5 ? VIBES_IMAGES.goldStar : VIBES_IMAGES.flame;
       add(
         {
-          emoji: Math.random() > 0.5 ? '✨' : '·',
-          className: 'vibes-trail',
-          style: { left: `${x}px` },
+          image,
+          isImage: true,
+          className: 'vibes-trail vibes-trail-image',
+          style: {
+            left: `${x}px`,
+            width: `${8 + Math.random() * 6}px`,
+            height: `${8 + Math.random() * 6}px`,
+          },
         },
         900
       );
@@ -235,16 +225,19 @@ export default function VibesLayer() {
     const onClick = (e: MouseEvent) => {
       const count = 7;
       for (let i = 0; i < count; i++) {
-        const emoji = ROOTS_EMOJI[Math.floor(Math.random() * ROOTS_EMOJI.length)];
+        const image = BURST_IMAGES[Math.floor(Math.random() * BURST_IMAGES.length)];
         const angle = (Math.PI * 2 * i) / count + Math.random();
         const dist = 40 + Math.random() * 60;
         add(
           {
-            emoji,
-            className: 'vibes-burst',
+            image,
+            isImage: true,
+            className: 'vibes-burst vibes-burst-image',
             style: {
               left: `${e.clientX}px`,
               top: `${e.clientY}px`,
+              width: `${20 + Math.random() * 12}px`,
+              height: `${20 + Math.random() * 12}px`,
               ['--bx' as string]: `${Math.cos(angle) * dist}px`,
               ['--by' as string]: `${Math.sin(angle) * dist - 30}px`,
               ['--br' as string]: `${(Math.random() - 0.5) * 240}deg`,
