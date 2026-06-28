@@ -333,6 +333,15 @@ export const episodes: Episode[] = [
     description: "Today's full broadcast bringing wisdom, truth, and enlightenment to the people.",
     archive_url: "https://archive.org/download/show-6-21-2026-full-show-001/show%206%2021%202026%20full%20show-001.mp3",
     published_date: "2026-06-21"
+  },
+  // June 28, 2026 Episode
+  {
+    id: "37",
+    episode_number: 37,
+    title: "Blessed Love Voice of Africa Show - June 28, 2026",
+    description: "A deep reggae current and a sermon-like word: Prophet Alem chants Marcus Garvey's gospel of black self-reliance, exposes the false 'leaders' Babylon parades — entertainers and athletes handed crumbs while the people starve for direction — and warns of the coming clash of civilizations. Callers reason on 'skinfolk who are not kinfolk,' the colonial trap hidden in our education, and a generation losing its power to think. Closes on the anthem 'Black Star Roots.'",
+    archive_url: "https://archive.org/download/show-on-6-28-2026-full/show%20on%20%206%2028%202026%20full.mp3",
+    published_date: "2026-06-28"
   }
 ];
 

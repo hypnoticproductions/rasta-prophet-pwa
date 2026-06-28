@@ -232,4 +232,23 @@ export const posts_25_35: EpisodePost[] = [
     ],
     guestAnte: "",
   },
+  {
+    id: "37",
+    hook: "GARVEY'S FIRE: THE FALSE LEADERS BABYLON HANDED YOU ARE A TRAP",
+    teaser:
+      "Prophet Alem came on a deep reggae current and named it plain: the entertainers and athletes paraded as 'leaders' are crumbs thrown to a starving people. A sermon on Marcus Garvey, black self-reliance, and the coming clash of civilizations — plus callers reasoning on 'skinfolk who are not kinfolk' and the colonial trap still buried in our schools.",
+    body:
+      "Blessed love, family. This week the Voice of Africa moved on a deep reggae current, and Honorable Prophet Alem carried a sermon-like word of righteousness, black consciousness, and prophetic warning. He lifted up the Most High and the divine order, then grounded the reasoning in the teachings of Marcus Garvey — black self-reliance, the remembrance of our heritage, and the eternal cry of Africa for the Africans. The Prophet chanted down the false 'leaders' Babylon parades before us: entertainers and athletes handed crumbs while the people starve for true direction. He warned the listeners to prepare for the impending clash of civilizations and the shaking of the world system. The callers fanned the fire — one giving thanks for Garvey's word and for a station bold enough to broadcast it; another reasoning hard on 'skinfolk who are not kinfolk,' the colonial trap still hidden inside our education systems, the overstimulation and programming of mainstream media, and the danger of a generation losing its power of critical thought. The show closed on the heartical anthem 'Black Star Roots' — a reminder that the roots of redemption run deep, and the people must rise spiritually, mentally, and as one. Press play and sharpen your mind.",
+    hashtags: [
+      "BlessedLoveVoiceOfAfrica",
+      "Blazin993FM",
+      "ProphetAlem",
+      "MarcusGarvey",
+      "BlackConsciousness",
+      "Rastafari",
+      "PanAfrican",
+      "BlackStarRoots",
+    ],
+    guestAnte: "",
+  },
 ];
