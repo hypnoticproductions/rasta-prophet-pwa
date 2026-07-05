@@ -44,6 +44,7 @@ export const guests: Guest[] = [
     honorific: "Dr.",
     title:
       "Integrative Doctor, Herbalist & World Council for Health St. Lucia",
+    image: "/guests/gilbertha-st-rose.png",
     heroImage: "/backgrounds/pitons-st-lucia.jpg",
     episodeIds: ["15", "38"],
     metaDescription:

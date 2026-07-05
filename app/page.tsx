@@ -9,7 +9,7 @@ import CinematicHero from '@/components/CinematicHero';
 
 // --- CONFIGURATION & ASSETS ---
 const ASSETS = {
-  prophetImg: "https://res.cloudinary.com/dd6z9fx5m/image/upload/v1769202027/Generated_Image_January_23_2026_-_4_44PM_i9awnk.jpg",
+  prophetImg: "/prophet-alem.png",
   blazinLogo: "https://www.blazin993.com/uploads/1/2/5/0/125013032/editor/blazin-logo.png?1661003091",
   whatsappLink: "https://wa.me/17584863825?text=Blessings%20Rodniel%2C%20I%20am%20reaching%20out%20from%20The%20Rasta%20Prophet%20App.",
   bottleVideo: "https://res.cloudinary.com/dd6z9fx5m/video/upload/v1769210282/grok-video-ec8ab583-f70a-4ae5-9f75-f7de21d4dced_q1kceu.mp4"
