@@ -45,7 +45,7 @@ export const guests: Guest[] = [
     title:
       "Integrative Doctor, Herbalist & World Council for Health St. Lucia",
     heroImage: "/backgrounds/pitons-st-lucia.jpg",
-    episodeIds: ["15"],
+    episodeIds: ["15", "38"],
     metaDescription:
       "Dr. Mary Gilbertha St. Rose — the St. Lucian doctor who beat the Medical Council in court after they fined her for prescribing Ivermectin — on launching the World Council for Health and exiting the WHO.",
     lead: "The St. Lucian doctor Babylon's medical system tried to silence — and couldn't. Dr. Mary Gilbertha St. Rose turned a license suspension into a courtroom victory, and now she is launching a movement for health autonomy.",
