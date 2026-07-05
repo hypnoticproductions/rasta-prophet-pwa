@@ -418,26 +418,39 @@ export default function App() {
               <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
                 {/* LEFT — Guest portrait + player */}
                 <div className="lg:col-span-2">
-                  <div className="relative rounded-xl overflow-hidden border-2 border-gold/30 shadow-[0_0_60px_rgba(212,175,55,0.18)]">
-                    <div className="aspect-[4/5] w-full overflow-hidden">
-                      <img
-                        src={featuredGuest.image}
-                        alt={`${featuredGuest.honorific} ${featuredGuest.name}`}
-                        className="w-full h-full object-cover object-top"
-                      />
+                  <div className="rounded-xl overflow-hidden border-2 border-gold/30 shadow-[0_0_60px_rgba(212,175,55,0.18)]">
+                    {/* Host + Guest, side by side */}
+                    <div className="grid grid-cols-2">
+                      <div className="relative aspect-[4/5] overflow-hidden border-r border-gold/20">
+                        <img
+                          src={ASSETS.prophetImg}
+                          alt="Honorable Prophet Alem"
+                          className="w-full h-full object-cover object-top"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent" />
+                        <p className="absolute bottom-2 left-0 right-0 text-center text-gold text-[9px] font-bold tracking-[0.18em] uppercase">Host · Prophet Alem</p>
+                      </div>
+                      <div className="relative aspect-[4/5] overflow-hidden">
+                        <img
+                          src={featuredGuest.image}
+                          alt={`${featuredGuest.honorific} ${featuredGuest.name}`}
+                          className="w-full h-full object-cover object-top"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent" />
+                        <p className="absolute bottom-2 left-0 right-0 text-center text-gold text-[9px] font-bold tracking-[0.18em] uppercase">Guest · {featuredGuest.honorific} {featuredGuest.name}</p>
+                        {featuredIsActive && isPlaying && (
+                          <div className="absolute top-3 right-3 flex items-center space-x-2 bg-black/70 px-3 py-1 rounded-full">
+                            <div className="w-1.5 h-1.5 bg-red rounded-full animate-pulse" />
+                            <span className="text-[9px] text-gold font-bold uppercase tracking-widest">On Air</span>
+                          </div>
+                        )}
+                      </div>
                     </div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
-                    <div className="absolute bottom-0 left-0 right-0 p-5">
-                      <p className="text-gold text-[10px] font-bold tracking-[0.25em] uppercase mb-1">{featuredGuest.honorific}</p>
-                      <h3 className="text-2xl font-black uppercase leading-none mb-1">{featuredGuest.name}</h3>
+                    {/* Caption bar */}
+                    <div className="bg-black/60 px-4 py-3 border-t border-gold/20">
+                      <p className="text-gold text-[10px] font-bold tracking-[0.25em] uppercase mb-1">{featuredGuest.honorific} {featuredGuest.name}</p>
                       <p className="text-stone-300 text-[11px] leading-snug">{featuredGuest.title}</p>
                     </div>
-                    {featuredIsActive && isPlaying && (
-                      <div className="absolute top-4 right-4 flex items-center space-x-2 bg-black/70 px-3 py-1 rounded-full">
-                        <div className="w-1.5 h-1.5 bg-red rounded-full animate-pulse" />
-                        <span className="text-[9px] text-gold font-bold uppercase tracking-widest">On Air</span>
-                      </div>
-                    )}
                   </div>
 
                   {/* Player + share for the featured show */}
