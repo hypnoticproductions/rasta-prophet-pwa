@@ -342,6 +342,15 @@ export const episodes: Episode[] = [
     description: "A deep reggae current and a sermon-like word: Prophet Alem chants Marcus Garvey's gospel of black self-reliance, exposes the false 'leaders' Babylon parades — entertainers and athletes handed crumbs while the people starve for direction — and warns of the coming clash of civilizations. Callers reason on 'skinfolk who are not kinfolk,' the colonial trap hidden in our education, and a generation losing its power to think. Closes on the anthem 'Black Star Roots.'",
     archive_url: "https://archive.org/download/show-on-6-28-2026-full/show%20on%20%206%2028%202026%20full.mp3",
     published_date: "2026-06-28"
+  },
+  // July 5, 2026 Episode
+  {
+    id: "38",
+    episode_number: 38,
+    title: "Blessed Love Voice of Africa Show - July 5, 2026",
+    description: "\"Masters of our faith, owners of our wealth\" — Prophet Alem opens like a trumpet at the gate with Emperor Haile Selassie I's charge on education, calling for a reset of the Black mind and lifting the island's young scholars, especially Princess Aida, as a sacred battlefield. The broadcast's heaviest chamber returns to Dr. Gilbertha St. Rose of Eden Herbs — the St. Lucian doctor suspended, fined $10,000 EC and stripped of her licence after prescribing ivermectin, reinstated by the High Court yet still pursued by the Medical & Dental Council in April 2026. She calls in herself, without shame: \"No complicity, no compromise.\" Plus the COVID questions the island was never allowed to ask, and one law above all — great health is great wealth. Jah Rastafari.",
+    archive_url: "https://archive.org/download/show-7-5-2026-the-full-show/show%20%207%205%202026%20the%20full%20show.mp3",
+    published_date: "2026-07-05"
   }
 ];
 

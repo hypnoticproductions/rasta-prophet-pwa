@@ -251,4 +251,25 @@ export const posts_25_35: EpisodePost[] = [
     ],
     guestAnte: "",
   },
+  {
+    id: "38",
+    hook: "THE DOCTOR THEY BANNED — AND THE EDUCATION THAT SETS US FREE",
+    teaser:
+      "July 5th opened like a trumpet at the gate. Prophet Alem placed Emperor Haile Selassie I's charge on education before the people and called for a reset of the Black mind — then came home to the unfinished business of Dr. Gilbertha St. Rose, the St. Lucian doctor banned, fined $10,000 and stripped of her licence for prescribing ivermectin, now vindicated as the world studies the same medicine. She called in herself, without shame.",
+    body:
+      "Blessed love, family. The July 5th broadcast did not open like entertainment — it opened like a trumpet at the gate. Honorable Prophet Alem placed the words of Emperor Haile Selassie I before the people — \"masters of our faith, owners of our wealth\" — and called for a reset of the Black mind: not cosmetic reform, but a turning away from the education that teaches the children of Africa to doubt themselves and bow to every imported narrative. He lifted the island's young scholars, especially Princess Aida, as proof that the youth are a sacred battlefield: if they are not taught to think, Babylon will think for them. Then the broadcast turned into its heaviest chamber — the COVID segment, the questions the island was never allowed to ask out loud. And it came home: Dr. Gilbertha St. Rose, integrative practitioner and Managing Director of Eden Herbs, made a clinical decision to prescribe ivermectin and educate her patients — and came on this very program to say so. Within the same week ivermectin was banned in Saint Lucia; she was suspended, fined $10,000 EC, her licence revoked. The High Court ordered her reinstatement, yet in April 2026 the Medical & Dental Council came again. She called in herself, without shame: \"No complicity, no compromise. A time will come when they will deal with the atrocities that they have done.\" The Prophet closed where he began — on knowledge, love and understanding, and the type of education we give the youth. Not Babylon's curriculum. The education that begins with the truth, however expensive the truth turns out to be. Great health is great wealth. Keep the fire burning. Jah Rastafari.",
+    hashtags: [
+      "BlessedLoveVoiceOfAfrica",
+      "HaileSelassieI",
+      "GilberthaStRose",
+      "Ivermectin",
+      "MedicalFreedom",
+      "HealthIsWealth",
+      "ProphetAlem",
+      "Rastafari",
+      "SaintLucia",
+    ],
+    guestAnte:
+      "Dr. Gilbertha St. Rose called into the show herself — the doctor Saint Lucia banned, fined $10,000 and stripped of her licence for prescribing ivermectin, reinstated by the High Court yet still pursued in April 2026. \"No complicity, no compromise.\" The medicine they banned is now studied worldwide.",
+  },
 ];
