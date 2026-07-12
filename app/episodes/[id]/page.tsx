@@ -18,6 +18,9 @@ import {
 import { BASE_URL, SITE_NAME } from "@/lib/siteConfig";
 import ShareButtons from "@/components/ShareButtons";
 import FacebookPagePlugin from "@/components/FacebookPagePlugin";
+import EpisodeCarousel from "@/components/EpisodeCarousel";
+import FeatureVideo from "@/components/FeatureVideo";
+import { getEpisodeMedia } from "@/data/episodeMedia";
 
 // Pre-render all 35 episode pages at build time.
 export function generateStaticParams() {
@@ -233,6 +236,15 @@ export default function EpisodePage({
             <p className="text-gold font-serif text-base md:text-lg italic leading-snug">
               {featuredGuest.tagline}
             </p>
+          </div>
+        )}
+
+        {getEpisodeMedia(episode.id) && (
+          <div className="mb-8">
+            <EpisodeCarousel cards={getEpisodeMedia(episode.id)!.cards} />
+            <div className="mt-6">
+              <FeatureVideo src={getEpisodeMedia(episode.id)!.videoUrl} />
+            </div>
           </div>
         )}
 
