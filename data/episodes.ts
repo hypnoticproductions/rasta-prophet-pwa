@@ -358,7 +358,7 @@ export const episodes: Episode[] = [
     episode_number: 39,
     title: "Blessed Love Voice of Africa Show - July 12, 2026",
     description: "ONE DAY NEARER HOME — THE ANTICS EXPOSED. Prophet Alem opens on Rastafari, King Emmanuel VII, Selassie I and the Universal Declaration of Human Rights, then turns the fire on CARICOM: Saint Lucia's PM takes the chair while the island fills with 'talking shops as usual' — and an Al Jazeera correspondent has his mic cut for pressing the PM on two Saint Lucian men killed in a U.S. strike at sea. From there: the muzzled press, the Sahel rising, empire's impunity, the CIP passport sellout, and the people's burden of taxes and food insecurity. No justice, no peace. Selassie I. Blessed Love.",
-    archive_url: "https://res.cloudinary.com/dd6z9fx5m/video/upload/v1783884233/7_12_2026_qbkml1.mp4",
+    archive_url: "https://archive.org/download/show-7-12-2026-full-show/show%207%2012%202026%20%20full%20show.mp3",
     published_date: "2026-07-12"
   }
 ];
