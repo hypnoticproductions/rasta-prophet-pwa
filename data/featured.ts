@@ -33,13 +33,13 @@ export interface FeaturedGuest {
 export const featuredGuest: FeaturedGuest = {
   episodeId: "39",
   showDate: "July 12, 2026",
-  name: "One Day Nearer Home",
+  name: "King of Kings, Lord of Lords",
   honorific: "",
-  title: "The Antics Exposed — CARICOM's mask slips, and they cut the mic.",
-  image: "/media/cards/they-cut-the-mic.png",
+  title: "Haile Selassie I — remember your crown. One Day Nearer Home · July 12.",
+  image: "/media/cards/king-of-kings.png",
   imageCredit: "Blessed Love · Voice of Africa · Blazing 99.3 FM",
   tagline:
-    "They cut the mic to bury the question — so we put it on the front page. One day nearer home, and the antics exposed.",
+    "One day nearer home. Prophet Alem opens on the eternal foundation — Selassie I, King Emmanuel VII — and the truth that African dignity is not given, it is reigned.",
   intro: [
     "Blessed love, family. The July 12th reasoning did not open like entertainment — it opened like a trumpet at the gate: Rastafari, King Emmanuel VII, Selassie I, and the Universal Declaration of Human Rights held up as the standard by which we measure a world that keeps coming up wanting.",
     "Then the fire fell on CARICOM. Saint Lucia's Prime Minister took the chairmanship, the island filled with summits and talking shops — and the mask slipped in one moment: an Al Jazeera correspondent pressed the PM on two Saint Lucian men killed in a U.S. strike at sea, and his microphone was cut.",

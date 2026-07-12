@@ -7,7 +7,6 @@ import { getAllEpisodes, getEpisodeById, Episode } from '@/data/episodes';
 import { featuredGuest } from '@/data/featured';
 import CinematicHero from '@/components/CinematicHero';
 import EpisodeCarousel from '@/components/EpisodeCarousel';
-import FeatureVideo from '@/components/FeatureVideo';
 import { getEpisodeMedia } from '@/data/episodeMedia';
 
 // --- CONFIGURATION & ASSETS ---
@@ -411,10 +410,7 @@ export default function App() {
                   <h2 className="text-2xl md:text-4xl font-black uppercase italic tracking-tight text-white">One Day Nearer Home — The Antics Exposed</h2>
                 </div>
               </div>
-              <FeatureVideo src={thisWeekMedia.videoUrl} />
-              <div className="mt-6">
-                <EpisodeCarousel cards={thisWeekMedia.cards} />
-              </div>
+              <EpisodeCarousel cards={thisWeekMedia.cards} />
               <div className="mt-6 text-center">
                 <a href="/episodes/39" className="inline-block px-8 py-3 bg-gold text-black font-bold uppercase tracking-[0.2em] text-sm hover:bg-gold/90 transition-colors rounded-lg">Hear the Full Reasoning</a>
               </div>
