@@ -431,7 +431,7 @@ export default function App() {
                   <div className="h-8 w-[3px] bg-gold" />
                   <div>
                     <p className="text-red text-[10px] font-bold tracking-[0.3em] uppercase">Featured Reasoning</p>
-                    <h2 className="text-2xl md:text-3xl font-bold uppercase italic tracking-tight text-white/90">Today&apos;s Guest — {featuredGuest.showDate}</h2>
+                    <h2 className="text-2xl md:text-3xl font-bold uppercase italic tracking-tight text-white/90">This Week&apos;s Reasoning — {featuredGuest.showDate}</h2>
                   </div>
                 </div>
                 <div className="hidden md:flex items-center space-x-2">
@@ -443,37 +443,23 @@ export default function App() {
               <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
                 {/* LEFT — Guest portrait + player */}
                 <div className="lg:col-span-2">
-                  <div className="rounded-xl overflow-hidden border-2 border-gold/30 shadow-[0_0_60px_rgba(212,175,55,0.18)]">
-                    {/* Host + Guest, side by side */}
-                    <div className="grid grid-cols-2">
-                      <div className="relative aspect-[4/5] overflow-hidden border-r border-gold/20">
-                        <img
-                          src={ASSETS.prophetImg}
-                          alt="Honorable Prophet Alem"
-                          className="w-full h-full object-cover object-top"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent" />
-                        <p className="absolute bottom-2 left-0 right-0 text-center text-gold text-[9px] font-bold tracking-[0.18em] uppercase">Host · Prophet Alem</p>
-                      </div>
-                      <div className="relative aspect-[4/5] overflow-hidden">
-                        <img
-                          src={featuredGuest.image}
-                          alt={`${featuredGuest.honorific} ${featuredGuest.name}`}
-                          className="w-full h-full object-cover object-top"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent" />
-                        <p className="absolute bottom-2 left-0 right-0 text-center text-gold text-[9px] font-bold tracking-[0.18em] uppercase">Guest · {featuredGuest.honorific} {featuredGuest.name}</p>
-                        {featuredIsActive && isPlaying && (
-                          <div className="absolute top-3 right-3 flex items-center space-x-2 bg-black/70 px-3 py-1 rounded-full">
-                            <div className="w-1.5 h-1.5 bg-red rounded-full animate-pulse" />
-                            <span className="text-[9px] text-gold font-bold uppercase tracking-widest">On Air</span>
-                          </div>
-                        )}
-                      </div>
+                  <div className="relative rounded-xl overflow-hidden border-2 border-gold/30 shadow-[0_0_60px_rgba(212,175,55,0.18)]">
+                    <div className="w-full bg-black flex items-center justify-center">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={featuredGuest.image}
+                        alt={featuredGuest.name}
+                        className="w-full h-auto object-contain"
+                      />
                     </div>
-                    {/* Caption bar */}
+                    {featuredIsActive && isPlaying && (
+                      <div className="absolute top-4 right-4 flex items-center space-x-2 bg-black/70 px-3 py-1 rounded-full">
+                        <div className="w-1.5 h-1.5 bg-red rounded-full animate-pulse" />
+                        <span className="text-[9px] text-gold font-bold uppercase tracking-widest">On Air</span>
+                      </div>
+                    )}
                     <div className="bg-black/60 px-4 py-3 border-t border-gold/20">
-                      <p className="text-gold text-[10px] font-bold tracking-[0.25em] uppercase mb-1">{featuredGuest.honorific} {featuredGuest.name}</p>
+                      <p className="text-gold text-[13px] font-black uppercase tracking-[0.15em] mb-1">{featuredGuest.name}</p>
                       <p className="text-stone-300 text-[11px] leading-snug">{featuredGuest.title}</p>
                     </div>
                   </div>
