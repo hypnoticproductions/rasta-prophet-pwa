@@ -14,6 +14,7 @@ credited to the original posters).
 | `victoria-falls.jpg` | Victoria Falls, Zambia/Zimbabwe | Diego Delso | CC BY-SA 4.0 |
 | `table-mountain.jpg` | Table Mountain, Cape Town | South African Tourism | CC BY 2.0 |
 | `great-mosque-djenne.jpg` | Great Mosque of Djenné, Mali | Ferdinand Reus | CC BY-SA 2.0 |
+| `djenne-mosque-wide.jpg` | Great Mosque of Djenné, Mali (ultra-wide hero) | BluesyPete | CC BY-SA 3.0 |
 | `kaieteur-falls.jpg` | Kaieteur Falls, Guyana | Bill Cameron | CC BY-SA 3.0 |
 | `lekki-ikoyi-bridge.jpg` | Lekki-Ikoyi Link Bridge, Lagos, Nigeria | Chippla | CC BY-SA 3.0 |
 | `half-way-tree-clock.jpg` | Half Way Tree clock tower, Kingston, Jamaica | Raw9345 | CC BY-SA 3.0 |
