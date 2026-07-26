@@ -36,6 +36,8 @@ const ROTATION: string[] = [
 
 // Explicit thematic overrides keyed by episode id.
 const OVERRIDES: Record<string, string> = {
+  // July 26, 2026 — Burkina Faso / Sahel reasoning
+  "40": "/backgrounds/great-mosque-djenne.jpg",
   // Venezuela "Up In Arms" / "Hijacked" episodes
   "9": "/backgrounds/maduro-venezuela.jpg",
   "10": "/backgrounds/maduro-venezuela.jpg",

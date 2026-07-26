@@ -272,4 +272,29 @@ export const posts_25_35: EpisodePost[] = [
     guestAnte:
       "Dr. Gilbertha St. Rose called into the show herself — the doctor Saint Lucia banned, fined $10,000 and stripped of her licence for prescribing ivermectin, reinstated by the High Court yet still pursued in April 2026. \"No complicity, no compromise.\" The medicine they banned is now studied worldwide.",
   },
+  {
+    id: "40",
+    hook: "HIS WEAPON IS A SHOVEL. HIS BATTLEFIELD IS THE FARM.",
+    teaser:
+      "On the Sabbath after the July 23rd earthday of Emperor Haile Selassie I, Prophet Alem lifts up Captain Ibrahim Traore and the Burkina Faso revolution Babylon cannot report: prisons turned into farms, the discarded turned into providers. Then the mirror turns to America, where the prison system is a slavery system. One nation buries its children in cages. Another plants them in the soil.",
+    body:
+      "Blessed love, family. On this Sabbath \u2014 in the same week InI give thanks for the 23rd of July, the earthday of His Imperial Majesty Emperor Haile Selassie I, King of Kings, Lord of Lords, Conquering Lion of the Tribe of Judah \u2014 the Honorable Prophet Alem carried the Voice of Africa straight to the heart of the matter: rehabilitation, redemption, and the rising of a continent.\n\nThis week the Prophet lifted up Captain Ibrahim Traore and the Burkina Faso revolution that Babylon does not know how to report. Not with bullets, but with seed. Prisons turned into farms. The discarded turned into providers \u2014 men and women once buried in shame now feeding whole communities, earning wages, reclaiming the land. Africa's true wealth is not buried underground in minerals; it is walking, breathing, and ready to be restored. The spirit of Sankara rises again. The spirit of Joshua rises again \u2014 for Moses saw the promised land, but Joshua entered it, from the river to where the sun sets: the continent of Africa.\n\nThen the Prophet held up the mirror to Babylon's answer to the same question. In America they built a prison system that is a slavery system \u2014 a people barely a tenth of the population, yet the majority behind the bars. One nation buries its children in cages; another plants them in the soil and watches them grow. Judge for yourself which one fears its people, and which one frees them.\n\nFrom there the reasoning ran deep: Africa for the Africans, at home and abroad \u2014 repatriation with compensation, and the truth that the world will not see peace until the Black man gets his justice. The so-called world wars named for what they were: tribal wars among the Europeans that dragged us into their disputes. A warning to a sleeping generation, with our young ones imprisoned in the screens while gas prices soar and the rich grow richer. And the call that answers it all \u2014 know thyself. Study your history, your geography, your bloodline in the right context, and you will know how great you are, for the African is the mother and father of all creation.\n\nWithout the Prophet there is no vision. Without the Priest there is no order. Without the King the people perish. The blueprint of our destiny is already in our hands \u2014 it is for us to study it, and put it into action. Emancipate yourselves from mental slavery. Give thanks.",
+    hashtags: [
+      "BlessedLove",
+      "VoiceOfAfrica",
+      "Blazing993FM",
+      "IbrahimTraore",
+      "BurkinaFaso",
+      "Sankara",
+      "HaileSelassieI",
+      "PanAfrican",
+      "Rastafari",
+      "AfricaForAfricans",
+      "KnowThyself",
+      "PrisonToFarm",
+      "Sovereignty",
+      "Garvey",
+    ],
+    guestAnte: "",
+  },
 ];
