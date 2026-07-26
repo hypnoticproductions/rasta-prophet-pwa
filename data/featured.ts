@@ -31,42 +31,42 @@ export interface FeaturedGuest {
 }
 
 export const featuredGuest: FeaturedGuest = {
-  episodeId: "39",
-  showDate: "July 12, 2026",
-  name: "King of Kings, Lord of Lords",
+  episodeId: "40",
+  showDate: "July 26, 2026",
+  name: "His Weapon Is A Shovel",
   honorific: "",
-  title: "Haile Selassie I — remember your crown. One Day Nearer Home · July 12.",
-  image: "/media/cards/king-of-kings.png",
+  title: "Prisons turned into farms — Traore, Sankara, and the rising of a continent.",
+  image: "/backgrounds/makola-market.jpg",
   imageCredit: "Blessed Love · Voice of Africa · Blazing 99.3 FM",
   tagline:
-    "One day nearer home. Prophet Alem opens on the eternal foundation — Selassie I, King Emmanuel VII — and the truth that African dignity is not given, it is reigned.",
+    "Africa's true wealth is not buried underground in minerals — it is walking, breathing, and ready to be restored.",
   intro: [
-    "Blessed love, family. The July 12th reasoning did not open like entertainment — it opened like a trumpet at the gate: Rastafari, King Emmanuel VII, Selassie I, and the Universal Declaration of Human Rights held up as the standard by which we measure a world that keeps coming up wanting.",
-    "Then the fire fell on CARICOM. Saint Lucia's Prime Minister took the chairmanship, the island filled with summits and talking shops — and the mask slipped in one moment: an Al Jazeera correspondent pressed the PM on two Saint Lucian men killed in a U.S. strike at sea, and his microphone was cut.",
+    "Blessed love, family. On this Sabbath — in the same week InI give thanks for the 23rd of July, the earthday of His Imperial Majesty Emperor Haile Selassie I, King of Kings, Lord of Lords, Conquering Lion of the Tribe of Judah — the Honorable Prophet Alem carried the Voice of Africa straight to the heart of the matter: rehabilitation, redemption, and the rising of a continent.",
+    "This week the Prophet lifted up Captain Ibrahim Traore and the Burkina Faso revolution that Babylon does not know how to report. Not with bullets — with seed.",
   ],
   sections: [
     {
-      heading: "The Muzzle",
+      heading: "Prisons Turned Into Farms",
       body: [
-        "Free press silenced behind CARICOM's fancy antics. The Prophet named it plain: don't matter what they tell you about dictators — give them the chance, they'd all love to be one. We saw it during COVID. The Caribbean should not be used as a prop.",
-        "Two of our sons — killed, no trial, no charge, no answers. The question that got the mic cut is the one we refuse to drop: does the empire have immunity to kill our citizens in our own sea?",
+        "The discarded turned into providers — men and women once buried in shame now feeding whole communities, earning wages, reclaiming the land. The spirit of Sankara rises again. The spirit of Joshua rises again, for Moses saw the promised land but Joshua entered it, from the river to where the sun sets: the continent of Africa.",
+        "Africa's true wealth is not buried underground in minerals. It is walking, breathing, and ready to be restored.",
       ],
     },
     {
-      heading: "Fleas on a Dog — and the Sahel Rising",
+      heading: "Babylon's Answer — Cages",
       body: [
-        "To the empire, the whole Caribbean is nothing but fleas on a dog — a giant that scratches when it pleases. But fleas outlive the dog. Across the water the Sahel is rising: Burkina Faso building eight-lane highways while oil-rich Nigeria stays poor, Mali recapturing ground, Africa's gold and uranium as real leverage the Caribbean does not yet hold.",
-        "From the CIP passport sellout to supermarket profits and taxes stacked on freight, duty and insurance — the people carry the burden while the birthright is put on sale. No justice, no peace.",
+        "The Prophet held up the mirror. In America they built a prison system that is a slavery system — a people barely a tenth of the population, yet the majority behind the bars. One nation buries its children in cages; another plants them in the soil and watches them grow. Judge for yourself which one fears its people, and which one frees them.",
+        "From there the reasoning ran deep: repatriation with compensation, the so-called world wars named for what they were, a generation imprisoned in the screens — and the one command that answers it all. Know thyself.",
       ],
     },
   ],
   quotes: [
     {
-      text: "Don't matter what they tell you about dictators — give them the chance, they'd all love to be one. We saw it during COVID.",
-      attribution: "Prophet Alem",
+      text: "Africa's true wealth isn't buried underground in minerals — it's walking, breathing, and ready to be restored.",
+      attribution: "On the Burkina Faso revolution",
     },
     {
-      text: "Freedom, redemption, and international repatriation remain the only points of peace — under our own vine and fig tree.",
+      text: "Without the Prophet there is no vision. Without the Priest there is no order. Without the King the people perish.",
       attribution: "Prophet Alem",
     },
   ],
@@ -74,13 +74,14 @@ export const featuredGuest: FeaturedGuest = {
     "BlessedLove",
     "VoiceOfAfrica",
     "Blazing993FM",
-    "ProphetAlem",
-    "TheAnticsExposed",
-    "TheyCutTheMic",
-    "CARICOM",
-    "Reparations",
+    "IbrahimTraore",
+    "BurkinaFaso",
+    "Sankara",
     "HaileSelassieI",
-    "SahelRising",
-    "SaintLucia",
+    "PanAfrican",
+    "Rastafari",
+    "AfricaForAfricans",
+    "KnowThyself",
+    "PrisonToFarm",
   ],
 };

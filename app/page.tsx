@@ -170,7 +170,7 @@ export default function App() {
 
   // The episode tied to this week's featured guest
   const featuredEpisode = getEpisodeById(featuredGuest.episodeId);
-  const thisWeekMedia = getEpisodeMedia("39");
+  const thisWeekMedia = getEpisodeMedia(featuredGuest.episodeId);
   const featuredIsActive = activeTrack?.id === featuredGuest.episodeId;
 
   useEffect(() => {
@@ -407,7 +407,7 @@ export default function App() {
                 <div className="h-9 w-[3px] bg-red" />
                 <div>
                   <p className="text-red text-[10px] font-bold tracking-[0.35em] uppercase">This Week On Air</p>
-                  <h2 className="text-2xl md:text-4xl font-black uppercase italic tracking-tight text-white">One Day Nearer Home — The Antics Exposed</h2>
+                  <h2 className="text-2xl md:text-4xl font-black uppercase italic tracking-tight text-white">{featuredGuest.name}</h2>
                 </div>
               </div>
               <EpisodeCarousel cards={thisWeekMedia.cards} />
