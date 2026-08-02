@@ -31,57 +31,57 @@ export interface FeaturedGuest {
 }
 
 export const featuredGuest: FeaturedGuest = {
-  episodeId: "40",
-  showDate: "July 26, 2026",
-  name: "His Weapon Is A Shovel",
-  honorific: "",
-  title: "Prisons turned into farms — Traore, Sankara, and the rising of a continent.",
-  image: "/backgrounds/makola-market.jpg",
+  episodeId: "41",
+  showDate: "August 2, 2026",
+  name: "Tamunokuro Iyo Obietonbara",
+  honorific: "Special Guest",
+  title: "Nigerian Historian · Author of \"Rebirthing the African Consciousness\" · Founder, AfriSankofa360",
+  image: "/guest-poster/opengraph-image",
   imageCredit: "Blessed Love · Voice of Africa · Blazing 99.3 FM",
   tagline:
-    "Africa's true wealth is not buried underground in minerals — it is walking, breathing, and ready to be restored.",
+    "Emancipation Day — but are we free? The shackle came off the feet in 1834; the chain was re-strategized onto the mind.",
   intro: [
-    "Blessed love, family. On this Sabbath — in the same week InI give thanks for the 23rd of July, the earthday of His Imperial Majesty Emperor Haile Selassie I, King of Kings, Lord of Lords, Conquering Lion of the Tribe of Judah — the Honorable Prophet Alem carried the Voice of Africa straight to the heart of the matter: rehabilitation, redemption, and the rising of a continent.",
-    "This week the Prophet lifted up Captain Ibrahim Traore and the Burkina Faso revolution that Babylon does not know how to report. Not with bullets — with seed.",
+    "Blessed love, family. On the sacred weekend of August 1st — Emancipation Day — the Honorable Prophet Alem opened the Voice of Africa with a hard truth: the shackle came off our feet in 1834, but the chain was re-strategized onto our minds.",
+    "Then the Prophet welcomed a mighty guest: Tamunokuro Iyo Obietonbara, a Nigerian historian who calls himself a child of Africa — and he brought the blueprint.",
   ],
   sections: [
     {
-      heading: "Prisons Turned Into Farms",
+      heading: "Follow The Money Of Abolition",
       body: [
-        "The discarded turned into providers — men and women once buried in shame now feeding whole communities, earning wages, reclaiming the land. The spirit of Sankara rises again. The spirit of Joshua rises again, for Moses saw the promised land but Joshua entered it, from the river to where the sun sets: the continent of Africa.",
-        "Africa's true wealth is not buried underground in minerals. It is walking, breathing, and ready to be restored.",
+        "Britain paid £20 million to the slave owners — a debt its own taxpayers only finished settling in 2015 — while the enslaved received nothing. Emancipation was compensation for the masters, not justice for the people.",
+        "From the land of Saint Lucia sold from under our feet to the slow-walking of the herb, the Prophet showed how false independence, divide-and-rule and mental slavery still hold the Caribbean in bondage.",
       ],
     },
     {
-      heading: "Babylon's Answer — Cages",
+      heading: "The Theft Of Your VIPs",
       body: [
-        "The Prophet held up the mirror. In America they built a prison system that is a slavery system — a people barely a tenth of the population, yet the majority behind the bars. One nation buries its children in cages; another plants them in the soil and watches them grow. Judge for yourself which one fears its people, and which one frees them.",
-        "From there the reasoning ran deep: repatriation with compensation, the so-called world wars named for what they were, a generation imprisoned in the screens — and the one command that answers it all. Know thyself.",
+        "Colonization was never just about land and resources, the guest teaches — it was about stealing a people's VIPs: their Values, their Interests, their Principles. Even when you think you have liberated yourself, as long as you live by the colonizer's values, you will always end up serving his interest.",
+        "He held up China as the mirror: after their century of humiliation they purged the foreign programming and rebuilt on their authentic identity — the very work Africa and her diaspora have yet to finish. Decolonize even the image of God. The Sahel has already cracked the code.",
       ],
     },
   ],
   quotes: [
     {
-      text: "Africa's true wealth isn't buried underground in minerals — it's walking, breathing, and ready to be restored.",
-      attribution: "On the Burkina Faso revolution",
+      text: "Even when you think you've liberated yourself, as long as you live by the colonizer's values, you will always end up serving his interest.",
+      attribution: "Tamunokuro Iyo Obietonbara",
     },
     {
-      text: "Without the Prophet there is no vision. Without the Priest there is no order. Without the King the people perish.",
-      attribution: "Prophet Alem",
+      text: "The shackle came off our feet in 1834 — but the chain was re-strategized onto our minds.",
+      attribution: "Prophet Alem, Emancipation Day",
     },
   ],
   hashtags: [
     "BlessedLove",
     "VoiceOfAfrica",
     "Blazing993FM",
-    "IbrahimTraore",
-    "BurkinaFaso",
-    "Sankara",
-    "HaileSelassieI",
+    "EmancipationDay",
+    "MentalSlavery",
+    "DecolonizeYourMind",
+    "Tamunokuro",
     "PanAfrican",
     "Rastafari",
-    "AfricaForAfricans",
+    "MarcusGarvey",
     "KnowThyself",
-    "PrisonToFarm",
+    "SahelRising",
   ],
 };
