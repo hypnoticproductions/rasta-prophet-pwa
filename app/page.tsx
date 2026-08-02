@@ -244,7 +244,7 @@ export default function App() {
     e?.stopPropagation();
     const shareUrl =
       typeof window !== 'undefined'
-        ? `${window.location.origin}/?ep=${episode.id}`
+        ? `${window.location.origin}/episodes/${episode.id}`
         : episode.archive_url;
     const shareData = {
       title: episode.title,

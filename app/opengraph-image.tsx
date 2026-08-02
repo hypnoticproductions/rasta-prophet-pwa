@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import { featuredGuest } from "@/data/featured";
 
 // Default share image for the homepage / any page without its own OG image.
 // Static-export safe: no edge runtime, so it is prerendered to a real PNG and
@@ -69,24 +70,36 @@ export default function HomeOpengraphImage() {
           <span
             style={{
               color: "#FFFFFF",
-              fontSize: 72,
+              fontSize: 58,
               fontWeight: 700,
               lineHeight: 1.05,
               letterSpacing: -1,
             }}
           >
-            The Vibration of Truth
+            {featuredGuest.name}
           </span>
           <span
             style={{
-              marginTop: 28,
+              marginTop: 14,
+              color: "#FF3B30",
+              fontSize: 26,
+              fontWeight: 700,
+              letterSpacing: 2,
+              textTransform: "uppercase",
+            }}
+          >
+            This Week · {featuredGuest.showDate}
+          </span>
+          <span
+            style={{
+              marginTop: 20,
               color: GOLD,
-              fontSize: 30,
+              fontSize: 25,
               fontStyle: "italic",
               lineHeight: 1.3,
             }}
           >
-            Pan-African reasoning, roots & enlightenment — every broadcast.
+            {featuredGuest.tagline}
           </span>
         </div>
 
