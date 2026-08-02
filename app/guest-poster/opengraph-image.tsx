@@ -39,18 +39,21 @@ export default function GuestPoster() {
           </span>
         </div>
 
-        {/* portrait */}
+        {/* portrait — explicit img so the crop is deterministic in Satori */}
         <div style={{ display: 'flex', justifyContent: 'center', marginTop: 24 }}>
           <div
             style={{
-              display: 'flex', width: 430, height: 540, borderRadius: 18,
+              display: 'flex',
+              width: 430,
+              height: 520,
+              borderRadius: 18,
               border: '5px solid #D4AF37',
-              backgroundImage: `url(${GUEST_IMG})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center top',
-              backgroundRepeat: 'no-repeat',
+              overflow: 'hidden',
             }}
-          />
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={GUEST_IMG} width={430} height={957} alt="Tamunokuro Iyo Obietonbara" />
+          </div>
         </div>
 
         {/* name block */}
