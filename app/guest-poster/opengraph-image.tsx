@@ -46,8 +46,9 @@ export default function GuestPoster() {
               display: 'flex', width: 470, height: 470, borderRadius: 235,
               border: '6px solid #D4AF37',
               backgroundImage: `url(${GUEST_IMG})`,
-              backgroundSize: '210% auto',
-              backgroundPosition: '22% 14%',
+              backgroundSize: '250% auto',
+              backgroundPosition: '20% 12%',
+              backgroundRepeat: 'no-repeat',
             }}
           />
         </div>
@@ -70,6 +71,18 @@ export default function GuestPoster() {
         <div style={{ display: 'flex', margin: '24px 56px 0 56px', borderLeft: '4px solid #D4AF37', paddingLeft: 18 }}>
           <span style={{ color: '#EDEDED', fontSize: 24, fontStyle: 'italic', lineHeight: 1.32 }}>
             “Even when you think you’ve liberated yourself, as long as you live by the colonizer’s values, you will always end up serving his interest.”
+          </span>
+        </div>
+
+        {/* tune-in strip */}
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: 30, padding: '0 46px' }}>
+          <div style={{ display: 'flex', backgroundColor: 'rgba(212,175,55,0.12)', border: '1px solid #D4AF37', borderRadius: 10, padding: '14px 26px' }}>
+            <span style={{ color: '#FFFFFF', fontSize: 25, fontWeight: 700, letterSpacing: 1, textAlign: 'center' }}>
+              THE THEFT OF YOUR V.I.P.s — VALUES · INTERESTS · PRINCIPLES
+            </span>
+          </div>
+          <span style={{ color: '#B9B9B9', fontSize: 21, marginTop: 16, textAlign: 'center' }}>
+            Tune in. Reason with us. Rise with us.
           </span>
         </div>
 
