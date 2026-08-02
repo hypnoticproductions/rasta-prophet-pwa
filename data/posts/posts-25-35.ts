@@ -297,4 +297,32 @@ export const posts_25_35: EpisodePost[] = [
     ],
     guestAnte: "",
   },
+  {
+    id: "41",
+    hook: "EMANCIPATION DAY \u2014 BUT ARE WE FREE?",
+    teaser:
+      "The shackle came off the feet in 1834 \u2014 but the chain was re-strategized onto the mind. Prophet Alem opens Emancipation weekend with the receipts, then welcomes Nigerian historian Tamunokuro Iyo Obietonbara, who hands over the blueprint: colonization was never only about land. It was the theft of a people's Values, Interests and Principles.",
+    body:
+      "Blessed love, family. On the sacred weekend of August 1st \u2014 Emancipation Day \u2014 the Honorable Prophet Alem opened the Voice of Africa with a hard truth: the shackle came off our feet in 1834, but the chain was re-strategized onto our minds.\n\nHe laid out the receipts. Britain paid \u00a320 million to the slave owners \u2014 a debt its own taxpayers only finished settling in 2015 \u2014 while the enslaved received nothing. Emancipation was compensation for the masters, not justice for the people. From there to the land of Saint Lucia being sold from under our feet, and the slow-walking of the herb, the Prophet showed how false independence, divide-and-rule and mental slavery still hold the Caribbean in bondage. He lifted up King Emmanuel Charles Edwards and the founding of the EABIC, the prophecy of Marcus Mosiah Garvey, and the rising of the Sahel \u2014 Traore, Burkina Faso, Mali, Niger \u2014 as the black revolution that this time will not be overthrown.\n\nThen the Prophet welcomed a mighty guest: Tamunokuro Iyo Obietonbara, a Nigerian historian who calls himself a child of Africa \u2014 and he brought the blueprint. Colonization, he teaches, was never just about land and resources. It was about stealing a people's VIPs: their Values, their Interests, their Principles. Even when you think you have liberated yourself, as long as you live by the colonizer's values, you will always end up serving his interest. He held up China as the mirror: after their century of humiliation they purged the foreign programming and rebuilt on their authentic identity \u2014 the very work Africa and her diaspora have yet to finish. He called us to decolonize even our religion, asking why our God does not look like us; reminded us that on Wall Street the first stocks and bonds were livestock in bondage; and saluted the Sahel for cracking the code.\n\nTwo voices \u2014 one prophetic, one scholarly \u2014 reasoning the same fire. The Prophet sounds the alarm; the guest hands over the toolkit. One tells you the house is on fire; the other shows you where the exit is. There is a war on our consciousness, and the only way home is to remember who we are. Emancipate yourselves from mental slavery.",
+    hashtags: [
+      "BlessedLove",
+      "VoiceOfAfrica",
+      "Blazing993FM",
+      "EmancipationDay",
+      "August1",
+      "MentalSlavery",
+      "DecolonizeYourMind",
+      "Tamunokuro",
+      "PanAfrican",
+      "Rastafari",
+      "MarcusGarvey",
+      "KnowThyself",
+      "IbrahimTraore",
+      "SahelRising",
+      "EABIC",
+      "WarOnConsciousness",
+    ],
+    guestAnte:
+      "Tamunokuro Iyo Obietonbara \u2014 Nigerian historian, lecturer and author of 'Rebirthing the African Consciousness,' founder of AfriSankofa360. His blueprint: colonization stole a people's Values, Interests and Principles \u2014 and China proved the theft can be reversed.",
+  },
 ];

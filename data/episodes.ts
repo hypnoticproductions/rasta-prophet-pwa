@@ -369,6 +369,15 @@ export const episodes: Episode[] = [
     description: "HIS WEAPON IS A SHOVEL. HIS BATTLEFIELD IS THE FARM. In the same week InI give thanks for the July 23rd earthday of His Imperial Majesty Emperor Haile Selassie I, Prophet Alem carries the Voice of Africa to rehabilitation, redemption and the rising of a continent. He lifts up Captain Ibrahim Traore and the Burkina Faso revolution Babylon does not know how to report \u2014 prisons turned into farms, the discarded turned into providers, the spirit of Sankara risen again. Then he holds the mirror to Babylon's answer: a prison system that is a slavery system. One nation buries its children in cages; another plants them in the soil. Plus repatriation with compensation, the so-called world wars named for what they were, a generation imprisoned in the screens, and the one command that answers it all \u2014 know thyself.",
     archive_url: "https://archive.org/download/show-on-7-26-2026/show%20on%207%2026%202026.mp3",
     published_date: "2026-07-26"
+  },
+  // August 2, 2026 Episode — Emancipation Day
+  {
+    id: "41",
+    episode_number: 41,
+    title: "Blessed Love Voice of Africa Show - August 2, 2026",
+    description: "EMANCIPATION DAY \u2014 BUT ARE WE FREE? On the sacred weekend of August 1st, Prophet Alem opens with a hard truth: the shackle came off the feet in 1834, but the chain was re-strategized onto the mind. From the \u00a320 million Britain paid the slave owners \u2014 a debt its own taxpayers only finished settling in 2015, while the enslaved received nothing \u2014 to the land of Saint Lucia sold from under our feet, he lays out how false independence and mental slavery still hold the Caribbean. Then a mighty guest: Tamunokuro Iyo Obietonbara, Nigerian historian, author of 'Rebirthing the African Consciousness,' who brings the blueprint \u2014 colonization was the theft of a people's VIPs: Values, Interests, Principles. Two voices, one fire: there is a war on our consciousness, and the only way home is to remember who we are.",
+    archive_url: "https://archive.org/download/show-on-8-2-2026-full-show/show%20on%208%202%202026%20full%20show%20.mp3",
+    published_date: "2026-08-02"
   }
 ];
 
