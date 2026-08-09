@@ -325,4 +325,31 @@ export const posts_25_35: EpisodePost[] = [
     guestAnte:
       "Tamunokuro Iyo Obietonbara \u2014 Nigerian historian, lecturer and author of 'Rebirthing the African Consciousness,' founder of AfriSankofa360. His blueprint: colonization stole a people's Values, Interests and Principles \u2014 and China proved the theft can be reversed.",
   },
+  {
+    id: "42",
+    hook: "SEVENTY-FIVE THOUSAND DOLLARS FOR A SON",
+    teaser:
+      "The August 9th broadcast opened in worship and turned straight into what this island would rather not discuss. The High Court has ruled the State failed the mother of Chakadan Daniel \u2014 the Rastafari youth unlawfully killed in a police cell in 2013 \u2014 and awarded her EC$75,000. The Prophet calls it crumbs, and sets it beside the millions this same system pays its own.",
+    body:
+      "Blessed love, family. The August 9th broadcast opened the way it always does \u2014 in worship \u2014 and then turned its face straight into the things this island would rather not discuss.\n\nProphet Alem set the foundation first: the aim of this program is to liberate the Black mind, the Black soul, and the man and woman in flesh. Freedom, redemption, international repatriation. Africa for the Africans, those at home and those abroad; every people under their own vine and fig tree \u2014 the only real point of peace. He gave thanks for the Universal Declaration of Human Rights, Articles 1 to 30, and for the order of prophet, priest and king: without the prophet there is no vision, without the king the people perish, without the priest there is no ceremonial order.\n\nThen the reasoning came home. We must know where we came from to know which direction to go. On the first of August the shackles came off our feet, and that was called independence \u2014 but the Prophet traced how the colonial spell was simply re-applied: new stages, new flags, faces that look like us sitting in seats that do not work in our favour, while the people remain at the bottom of the pyramid. His call was concrete: get African studies into the school curriculum, get the teachings of Marcus Mosiah Garvey into the textbooks. And he reminded the listeners who carried this word first \u2014 King Emmanuel Charles Edwards was raising the red, gold and green and the red, black and green from the 1930s, before those banners rose in Ghana. He gave thanks for His Imperial Majesty holding off Mussolini's fascist regime, for had Ethiopia fallen the last free ground in Africa would have gone with it.\n\nFull independence, he insisted, is economic independence. We are going to take our resources \u2014 it must happen, it will happen, and it is happening. On reparations he was unambiguous: every nation that profited from slavery owes the Black nation reparations WITH repatriation, and the Ethiopia Africa Black International Congress does not seek its reparations down here in Babylon. We want our reparations in the land of Africa, so we can build the continent.\n\nThen the hardest segment. The Prophet returned to Chakadan Daniel, the young Rastafari man found dead in a police cell in 2013, whose inquest found he had been unlawfully killed. This program covered that case extensively in the early days, when his father was still alive. Now the High Court has ruled that the State breached his mother's constitutional right to the protection of the law by failing to complete a prompt and effective investigation \u2014 and awarded her EC$75,000. The Prophet called it what he sees: crumbs. He set it against the millions this same court system awards when a man of the establishment has his rights infringed, and asked the plain question.\n\nFrom there to the herb. Rastafari has been telling this system about the plant for decades, yet still has no recognised right to grow, harvest, use and sell as a people, and the case brought in 2021 is still without judgment heading toward 2027. The Prophet widened the lens to a system that never brings its own to justice, reasoned on the difference between nationality and ethnicity, turned to Jeremiah 29 \u2014 build your houses, plant your vineyards, raise your families \u2014 and called for support for our brothers in the Sahel. He closed on the warning and the comfort together: the wars now spreading will merge into one, and the people must secure themselves. Food security is key. But the worst is behind us.",
+    hashtags: [
+      "BlessedLove",
+      "VoiceOfAfrica",
+      "Blazing993FM",
+      "ProphetAlem",
+      "ChakadanDaniel",
+      "JusticeForRastafari",
+      "MarcusGarvey",
+      "KingEmmanuel",
+      "EABIC",
+      "Reparations",
+      "Repatriation",
+      "AfricanStudies",
+      "SahelRising",
+      "FoodSecurity",
+      "SaintLucia",
+      "Rastafari",
+    ],
+    guestAnte: "",
+  },
 ];
