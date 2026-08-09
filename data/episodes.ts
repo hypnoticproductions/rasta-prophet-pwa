@@ -378,6 +378,15 @@ export const episodes: Episode[] = [
     description: "EMANCIPATION DAY \u2014 BUT ARE WE FREE? On the sacred weekend of August 1st, Prophet Alem opens with a hard truth: the shackle came off the feet in 1834, but the chain was re-strategized onto the mind. From the \u00a320 million Britain paid the slave owners \u2014 a debt its own taxpayers only finished settling in 2015, while the enslaved received nothing \u2014 to the land of Saint Lucia sold from under our feet, he lays out how false independence and mental slavery still hold the Caribbean. Then a mighty guest: Tamunokuro Iyo Obietonbara, Nigerian historian, author of 'Rebirthing the African Consciousness,' who brings the blueprint \u2014 colonization was the theft of a people's VIPs: Values, Interests, Principles. Two voices, one fire: there is a war on our consciousness, and the only way home is to remember who we are.",
     archive_url: "https://archive.org/download/show-on-8-2-2026-full-show/show%20on%208%202%202026%20full%20show%20.mp3",
     published_date: "2026-08-02"
+  },
+  // August 9, 2026 Episode
+  {
+    id: "42",
+    episode_number: 42,
+    title: "Blessed Love Voice of Africa Show - August 9, 2026",
+    description: "SEVENTY-FIVE THOUSAND DOLLARS FOR A SON. Prophet Alem sets the foundation \u2014 liberate the Black mind, freedom, redemption, international repatriation, and every people under their own vine and fig tree \u2014 then turns to what this island avoids. The shackles came off our feet on the first of August, but the colonial spell was re-applied with faces that look like us. He calls for African studies and the teachings of Marcus Mosiah Garvey in the school curriculum, and reminds us King Emmanuel Charles Edwards raised the banners from the 1930s, before Ghana. On reparations he is plain: reparations WITH repatriation, and the EABIC wants them in the land of Africa, not down here in Babylon. Then the hardest word of the broadcast \u2014 the EC$75,000 awarded to the mother of Chakadan Daniel, the Rastafari youth unlawfully killed in a police cell in 2013, which the Prophet calls crumbs beside the millions this system pays its own. Plus the cannabis judgment still unwritten since 2021, nationality versus ethnicity, Jeremiah 29, support for the Sahel, and one closing instruction: food security is key.",
+    archive_url: "https://archive.org/download/show-on-8-9-2026/show%20on%208%209%202026.mp3",
+    published_date: "2026-08-09"
   }
 ];
 
