@@ -40,6 +40,8 @@ const OVERRIDES: Record<string, string> = {
   "40": "/backgrounds/djenne-mosque-wide.jpg",
   // August 9, 2026 — Chakadan Daniel ruling / Saint Lucia
   "42": "/backgrounds/pitons-st-lucia.jpg",
+  // August 16, 2026 — Marcus Garvey earthday
+  "43": "/backgrounds/renaissance-monument-dakar.jpg",
   // Venezuela "Up In Arms" / "Hijacked" episodes
   "9": "/backgrounds/maduro-venezuela.jpg",
   "10": "/backgrounds/maduro-venezuela.jpg",
