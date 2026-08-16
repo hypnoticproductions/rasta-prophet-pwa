@@ -31,57 +31,57 @@ export interface FeaturedGuest {
 }
 
 export const featuredGuest: FeaturedGuest = {
-  episodeId: "42",
-  showDate: "August 9, 2026",
-  name: "Seventy-Five Thousand Dollars For A Son",
+  episodeId: "43",
+  showDate: "August 16, 2026",
+  name: "No Saviour Is Coming From The Sky",
   honorific: "",
-  title: "The Chakadan Daniel ruling, reparations with repatriation, and the herb still unwritten.",
-  image: "/backgrounds/pitons-st-lucia.jpg",
+  title: "Honouring the Right Excellent Marcus Mosiah Garvey — born August 17, 1887.",
+  image: "/media/cards/king-of-kings.png",
   imageCredit: "Blessed Love · Voice of Africa · Blazing 99.3 FM",
   tagline:
-    "They do not chop our locks on the street anymore. The war on Rastafari simply became subtle — it moved from the baton to the paperwork.",
+    "The voice of the people is the voice of God. The strength of the people is the strength of God. See yourself. Know yourself.",
   intro: [
-    "Blessed love, family. The August 9th broadcast opened the way it always does — in worship — and then turned its face straight into the things this island would rather not discuss.",
-    "Prophet Alem set the foundation first: liberate the Black mind, the Black soul, and the man and woman in flesh. Freedom, redemption, international repatriation — and every people under their own vine and fig tree.",
+    "Selassie I. Jah Rastafari. Blessed love once more, Africa — at home and abroad. This week the Blessed Love Program stands on holy ground, because tomorrow the sun rises on the 17th of August 1887, the earthday of the Right Excellent Marcus Mosiah Garvey.",
+    "The Prophet reminds us: without the prophet there is no vision. That same spirit that walked as Jeremiah, as Elijah, as John the Baptist dropped in Garvey and gave us the blueprint for how we, as Africans globally, liberate ourselves.",
   ],
   sections: [
     {
-      heading: "Seventy-Five Thousand Dollars For A Son",
+      heading: "Heaven Is Right Here On Earth",
       body: [
-        "The Prophet returned to Chakadan Daniel, the young Rastafari man found dead in a police cell in 2013, whose inquest found he had been unlawfully killed. The High Court has now ruled that the State breached his mother's constitutional right to the protection of the law by failing to complete a prompt and effective investigation — and awarded her EC$75,000.",
-        "The Prophet called it what he sees: crumbs. He set it against the millions this same court system awards when a man of the establishment has his rights infringed. They do not chop our locks on the street anymore — the war simply moved from the baton to the paperwork, to the delayed file and the judgment that never comes.",
+        "Africa for the Africans — those at home and those scattered abroad. Every man, woman and child under their own vine and fig tree, standing on Article 1 of the Universal Declaration of Human Rights: all human beings are born free and equal in dignity and rights. The paperwork of Babylon already condemns Babylon.",
+        "The earth is the Lord's and the fullness thereof. So do not let them point you to the sky and pick your pocket on the ground — Africa is the black man's heaven, and it is rightfully ours. We knew ourselves as gods and goddesses on this earth long before they taught us to kneel to a stranger in the clouds.",
       ],
     },
     {
-      heading: "Reparations With Repatriation",
+      heading: "No Saviour Is Coming From The Sky",
       body: [
-        "Full independence is economic independence. We are going to take our resources — it must happen, it will happen, and it is happening. Every nation that profited from slavery owes the Black nation reparations WITH repatriation.",
-        "And the Ethiopia Africa Black International Congress does not seek its reparations down here in Babylon. We want our reparations in the land of Africa, so we can build the continent. Plus the call for African studies and Garvey's teachings in the school curriculum — and the reminder that King Emmanuel Charles Edwards raised the banners from the 1930s, before Ghana.",
+        "The Prophet names the injustice system plain: where the rich man buys his freedom and the poor man cannot buy his rights, that is not a justice system. And when a people can find no justice in the court, history tells you what road they take next. Garvey's prophecy stands.",
+        "And we salute the Sahel — this is the spark that will light the rest of Africa. If you cannot give financially, give physically; if you cannot give physically, give spiritually. The closing charge cuts to the bone: no saviour is coming from the sky. We are the ones.",
       ],
     },
   ],
   quotes: [
     {
-      text: "We do not seek reparations down here in the Western world. We want our reparations in the land of Africa, so we can help build the continent.",
-      attribution: "Prophet Alem, on the EABIC position",
+      text: "No saviour is coming from the sky. We are the ones. The voice of the people is the voice of God; the strength of the people is the strength of God.",
+      attribution: "Prophet Alem",
     },
     {
-      text: "We need to know where we came from for us to know in what direction we need to go.",
-      attribution: "Prophet Alem",
+      text: "Do not let them point you to the sky and pick your pocket on the ground. Africa is the black man's heaven, and it is rightfully ours.",
+      attribution: "Prophet Alem, on Garvey's earthday",
     },
   ],
   hashtags: [
     "BlessedLove",
     "VoiceOfAfrica",
     "Blazing993FM",
-    "ChakadanDaniel",
-    "JusticeForRastafari",
-    "Reparations",
-    "Repatriation",
     "MarcusGarvey",
-    "KingEmmanuel",
-    "AfricanStudies",
-    "SaintLucia",
+    "August17",
+    "HaileSelassieI",
     "Rastafari",
+    "KingEmmanuel",
+    "PanAfrican",
+    "AfricaForTheAfricans",
+    "HeavenOnEarth",
+    "KnowThyself",
   ],
 };

@@ -387,6 +387,15 @@ export const episodes: Episode[] = [
     description: "SEVENTY-FIVE THOUSAND DOLLARS FOR A SON. Prophet Alem sets the foundation \u2014 liberate the Black mind, freedom, redemption, international repatriation, and every people under their own vine and fig tree \u2014 then turns to what this island avoids. The shackles came off our feet on the first of August, but the colonial spell was re-applied with faces that look like us. He calls for African studies and the teachings of Marcus Mosiah Garvey in the school curriculum, and reminds us King Emmanuel Charles Edwards raised the banners from the 1930s, before Ghana. On reparations he is plain: reparations WITH repatriation, and the EABIC wants them in the land of Africa, not down here in Babylon. Then the hardest word of the broadcast \u2014 the EC$75,000 awarded to the mother of Chakadan Daniel, the Rastafari youth unlawfully killed in a police cell in 2013, which the Prophet calls crumbs beside the millions this system pays its own. Plus the cannabis judgment still unwritten since 2021, nationality versus ethnicity, Jeremiah 29, support for the Sahel, and one closing instruction: food security is key.",
     archive_url: "https://archive.org/download/show-on-8-9-2026/show%20on%208%209%202026.mp3",
     published_date: "2026-08-09"
+  },
+  // August 16, 2026 Episode — Marcus Garvey earthday weekend
+  {
+    id: "43",
+    episode_number: 43,
+    title: "Blessed Love Voice of Africa Show - August 16, 2026",
+    description: "NO SAVIOUR IS COMING FROM THE SKY. WE ARE THE ONES. On the eve of the 17th of August \u2014 the earthday of the Right Excellent Marcus Mosiah Garvey, born 1887 \u2014 the Blessed Love Program stands on holy ground. Prophet Alem teaches that the same spirit that walked as Jeremiah, Elijah and John the Baptist dropped in Garvey and gave Africans globally the blueprint for liberation \u2014 strategic, methodical, so all things may be fulfilled. Africa for the Africans, at home and abroad, every man under his own vine and fig tree, standing on Article 1 of the Universal Declaration of Human Rights. Heaven is right here on earth \u2014 do not let them point you to the sky and pick your pocket on the ground. Divinity in the flesh; the medicinal herb the whole world now follows; the injustice system where the rich buy freedom and the poor cannot buy their rights; Garvey's prophecy of the reckoning; and a salute to the Sahel. The closing charge cuts to the bone: no saviour is coming from the sky. The voice of the people is the voice of God. See yourself. Know yourself.",
+    archive_url: "https://archive.org/download/show-on-8-16-2026-full-show/show%20on%208%2016%202026%20full%20show.mp3",
+    published_date: "2026-08-16"
   }
 ];
 

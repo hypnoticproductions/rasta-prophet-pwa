@@ -352,4 +352,30 @@ export const posts_25_35: EpisodePost[] = [
     ],
     guestAnte: "",
   },
+  {
+    id: "43",
+    hook: "NO SAVIOUR IS COMING FROM THE SKY. WE ARE THE ONES.",
+    teaser:
+      "On the eve of Marcus Garvey's earthday \u2014 August 17, 1887 \u2014 the Blessed Love Program stands on holy ground. Prophet Alem teaches that the same prophetic spirit that walked as Jeremiah and Elijah dropped in Garvey and handed Africans the blueprint for liberation. Heaven is right here on earth; do not let them point you to the sky and pick your pocket on the ground.",
+    body:
+      "Selassie I. Jah Rastafari. Blessed love once more, Africa \u2014 at home and abroad. This week the Blessed Love Program stands on holy ground, because tomorrow the sun rises on the 17th of August 1887, the earthday of the Right Excellent Marcus Mosiah Garvey. The Prophet reminds us: without the prophet there is no vision. That same spirit that walked as Jeremiah, as Elijah, as John the Baptist \u2014 spirit drop flesh and spirit pick up flesh \u2014 that spirit dropped in Garvey and gave us the blueprint for how we, as Africans globally, liberate ourselves. Strategically. Methodically. So that all things may be fulfilled.\n\nAfrica for the Africans \u2014 those at home and those scattered abroad. Every man, woman and child under their own vine and fig tree. And under it all, the Prophet stands on the Universal Declaration of Human Rights, Article 1: all human beings are born free and equal in dignity and rights. The paperwork of Babylon already condemns Babylon.\n\nHeaven is right here on earth. The Psalmist said the earth is the Lord\u2019s and the fullness thereof; Micah 4 says all nations shall go up to the hill to learn the ways of God. So do not let them point you to the sky and pick your pocket on the ground \u2014 Africa is the black man\u2019s heaven, and it is rightfully ours. The Prophet reasons on the divine in man, and reminds us we knew ourselves as gods and goddesses on this earth long before they taught us to kneel to a stranger in the clouds. Rastafari came speaking equal rights and justice and carrying the truth of the healing cannabis \u2014 and watch how the whole world has followed.\n\nHe names the injustice system plain: where the rich man buys his freedom and the poor man cannot buy his rights, that is not a justice system. And when a people can find no justice in the court, history tells you what road they take next. Garvey\u2019s prophecy stands, the judgment reaching those who mislead the people. And we salute the Sahel \u2014 to our revolutionary brothers holding the line against all the propaganda thrown at them, this is the spark that will light the rest of Africa. If you cannot give financially, give physically; if you cannot give physically, give spiritually \u2014 meditate on their survival.\n\nAnd the Prophet\u2019s closing charge cuts to the bone: no saviour is coming from the sky. We are the ones. The voice of the people is the voice of God; the strength of the people is the strength of God. See yourself. Know yourself. A black man\u2019s back is against the wall \u2014 so we push back. Honour Marcus Garvey. Give thanks.",
+    hashtags: [
+      "BlessedLove",
+      "VoiceOfAfrica",
+      "Blazing993FM",
+      "MarcusGarvey",
+      "August17",
+      "HaileSelassieI",
+      "Rastafari",
+      "KingEmmanuel",
+      "PanAfrican",
+      "AfricaForTheAfricans",
+      "HeavenOnEarth",
+      "SahelRising",
+      "KnowThyself",
+      "EABIC",
+      "SaintLucia",
+    ],
+    guestAnte: "",
+  },
 ];
