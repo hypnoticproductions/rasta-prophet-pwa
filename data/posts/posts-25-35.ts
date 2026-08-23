@@ -378,4 +378,31 @@ export const posts_25_35: EpisodePost[] = [
     ],
     guestAnte: "",
   },
+  {
+    id: "44",
+    hook: "WHO OWNS YOUR HEALTH? \u2014 AND YOUR DATA?",
+    teaser:
+      "Prophet Alem welcomes two mighty guests: Dr. Gilbertha St. Rose, the St. Lucian doctor punished for prescribing ivermectin, and Tesla la Touche, CEO of the Canadian health-innovation company Zymonetics. Their warning is the new frontier of the fight \u2014 health data is the new oil, and whoever owns the information has control.",
+    body:
+      "Blessed love, family. This week the Voice of Africa opened on holy ground \u2014 freedom, redemption, repatriation, every man and woman under their own vine and fig tree \u2014 and Prophet Alem named the propaganda machine plain: the same hand that smeared His Imperial Majesty Haile Selassie I, Marcus Mosiah Garvey and King Emmanuel Charles Edwards also smeared Idi Amin. Who controls the narrative controls the mind. And on reparations he held the line: repatriation WITH reparations, in the land of Africa, never handed to the same false leaders down here in Babylon.\n\nThen two mighty guests joined the reasoning. Dr. Gilbertha St. Rose \u2014 the integrative practitioner and herbalist this island punished for prescribing ivermectin, now vindicated \u2014 and Tesla la Touche, CEO of the Canadian health-innovation company Zymonetics, who calls the Caribbean home. Together they carried the fight for medical freedom onto its newest frontier: your data.\n\nHealth data is the new oil, they warned, and whoever owns the information has control. They reasoned on AI and who trains it, on genomics and who holds your DNA after the test is done, on the vaccine schedule and the right to say no, and on why a Caribbean nation must build its digital-health infrastructure with partners of the region \u2014 not hand foreign corporations carte-blanche access to the people's data. Dr. St. Rose grounded it in the deeper truth: since the 1940s the aim has been to denounce natural medicine and make disease a market. The World Council for Health, she said, is the better way, and it starts with accountability.\n\nThe callers carried it home \u2014 the danger of centralizing all information under AI controlled by the same forces, and the public humiliation of Dr. St. Rose by the Medical and Dental Council. The charge for the people was simple: slow down, read the label, ask the questions, and take back your knowing. The power of the people is greater than the people in power \u2014 but we have to work together. Give thanks.",
+    hashtags: [
+      "BlessedLove",
+      "VoiceOfAfrica",
+      "Blazing993FM",
+      "MedicalFreedom",
+      "GilberthaStRose",
+      "TeslaLaTouche",
+      "Zymonetics",
+      "HealthDataSovereignty",
+      "YourDNA",
+      "AI",
+      "WorldCouncilForHealth",
+      "Rastafari",
+      "PanAfrican",
+      "SaintLucia",
+      "KnowThyself",
+    ],
+    guestAnte:
+      "Tesla la Touche \u2014 CEO of Zymonetics, a Canadian health-innovation company \u2014 joins returning guest Dr. Gilbertha St. Rose. Their warning: health data is the new oil, and whoever owns the information has control.",
+  },
 ];

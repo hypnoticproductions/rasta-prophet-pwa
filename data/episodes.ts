@@ -396,6 +396,15 @@ export const episodes: Episode[] = [
     description: "NO SAVIOUR IS COMING FROM THE SKY. WE ARE THE ONES. On the eve of the 17th of August \u2014 the earthday of the Right Excellent Marcus Mosiah Garvey, born 1887 \u2014 the Blessed Love Program stands on holy ground. Prophet Alem teaches that the same spirit that walked as Jeremiah, Elijah and John the Baptist dropped in Garvey and gave Africans globally the blueprint for liberation \u2014 strategic, methodical, so all things may be fulfilled. Africa for the Africans, at home and abroad, every man under his own vine and fig tree, standing on Article 1 of the Universal Declaration of Human Rights. Heaven is right here on earth \u2014 do not let them point you to the sky and pick your pocket on the ground. Divinity in the flesh; the medicinal herb the whole world now follows; the injustice system where the rich buy freedom and the poor cannot buy their rights; Garvey's prophecy of the reckoning; and a salute to the Sahel. The closing charge cuts to the bone: no saviour is coming from the sky. The voice of the people is the voice of God. See yourself. Know yourself.",
     archive_url: "https://archive.org/download/show-on-8-16-2026-full-show/show%20on%208%2016%202026%20full%20show.mp3",
     published_date: "2026-08-16"
+  },
+  // August 23, 2026 Episode — guests Dr. Gilbertha St. Rose & Tesla la Touche
+  {
+    id: "44",
+    episode_number: 44,
+    title: "Blessed Love Voice of Africa Show - August 23, 2026",
+    description: "WHO OWNS YOUR HEALTH? Prophet Alem opens on freedom, redemption and repatriation with reparations \u2014 in the land of Africa, not in Babylon \u2014 and names the propaganda machine that smeared Haile Selassie I, Marcus Garvey, King Emmanuel Charles Edwards and Idi Amin: who controls the narrative controls the mind. Then two mighty guests. Dr. Gilbertha St. Rose \u2014 the St. Lucian doctor punished for prescribing ivermectin, now vindicated \u2014 and Tesla la Touche, CEO of the Canadian health-innovation company Zymonetics, on the fight for medical freedom and the new frontier: your health data. Health data is the new oil, and whoever owns the information has control. They reason on AI and data sovereignty, genomics and who holds your DNA, the vaccine schedule, and why a Caribbean nation must own its own digital-health infrastructure. Callers carry it further \u2014 the centralization of information under AI, and the public humiliation of Dr. St. Rose. The power of the people is greater than the people in power.",
+    archive_url: "https://archive.org/download/blessed-love-voice-of-africa-show-on-8-23-2026/BLESSED%20LOVE%20VOICE%20OF%20AFRICA%20SHOW%20ON%20%208%2023%202026.mp3",
+    published_date: "2026-08-23"
   }
 ];
 
