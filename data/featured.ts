@@ -31,57 +31,57 @@ export interface FeaturedGuest {
 }
 
 export const featuredGuest: FeaturedGuest = {
-  episodeId: "43",
-  showDate: "August 16, 2026",
-  name: "No Saviour Is Coming From The Sky",
-  honorific: "",
-  title: "Honouring the Right Excellent Marcus Mosiah Garvey — born August 17, 1887.",
-  image: "/media/cards/king-of-kings.png",
+  episodeId: "44",
+  showDate: "August 23, 2026",
+  name: "Dr. Gilbertha St. Rose & Tesla la Touche",
+  honorific: "Special Guests",
+  title: "Medical freedom, AI and the new frontier of the fight — who owns your health data?",
+  image: "/guests-poster/opengraph-image",
   imageCredit: "Blessed Love · Voice of Africa · Blazing 99.3 FM",
   tagline:
-    "The voice of the people is the voice of God. The strength of the people is the strength of God. See yourself. Know yourself.",
+    "Health data is the new oil — and whoever owns the information has control.",
   intro: [
-    "Selassie I. Jah Rastafari. Blessed love once more, Africa — at home and abroad. This week the Blessed Love Program stands on holy ground, because tomorrow the sun rises on the 17th of August 1887, the earthday of the Right Excellent Marcus Mosiah Garvey.",
-    "The Prophet reminds us: without the prophet there is no vision. That same spirit that walked as Jeremiah, as Elijah, as John the Baptist dropped in Garvey and gave us the blueprint for how we, as Africans globally, liberate ourselves.",
+    "Blessed love, family. This week the Voice of Africa opened on holy ground and named the propaganda machine plain: the same hand that smeared Haile Selassie I, Marcus Garvey and King Emmanuel Charles Edwards also smeared Idi Amin. Who controls the narrative controls the mind.",
+    "Then two mighty guests joined the reasoning — Dr. Gilbertha St. Rose, the doctor this island punished for prescribing ivermectin, and Tesla la Touche, CEO of the Canadian health-innovation company Zymonetics.",
   ],
   sections: [
     {
-      heading: "Heaven Is Right Here On Earth",
+      heading: "Medical Freedom & The Better Way",
       body: [
-        "Africa for the Africans — those at home and those scattered abroad. Every man, woman and child under their own vine and fig tree, standing on Article 1 of the Universal Declaration of Human Rights: all human beings are born free and equal in dignity and rights. The paperwork of Babylon already condemns Babylon.",
-        "The earth is the Lord's and the fullness thereof. So do not let them point you to the sky and pick your pocket on the ground — Africa is the black man's heaven, and it is rightfully ours. We knew ourselves as gods and goddesses on this earth long before they taught us to kneel to a stranger in the clouds.",
+        "Since the 1940s, Dr. St. Rose reasoned, the aim has been to denounce natural medicine and make disease a market. The revelation of COVID was that those placed in charge of our health did not, and still do not, have our best interests at heart. The World Council for Health is the better way — and it starts with accountability.",
+        "Only about 20% of clinical decisions rest on the highest level of evidence, Tesla explained, and our populations are barely represented in the trials that shape new drugs. So we must organize ourselves a seat at the table — and empower the people to slow down, read the label, and say no.",
       ],
     },
     {
-      heading: "No Saviour Is Coming From The Sky",
+      heading: "Health Data Is The New Oil",
       body: [
-        "The Prophet names the injustice system plain: where the rich man buys his freedom and the poor man cannot buy his rights, that is not a justice system. And when a people can find no justice in the court, history tells you what road they take next. Garvey's prophecy stands.",
-        "And we salute the Sahel — this is the spark that will light the rest of Africa. If you cannot give financially, give physically; if you cannot give physically, give spiritually. The closing charge cuts to the bone: no saviour is coming from the sky. We are the ones.",
+        "The newest frontier of the fight is your data. Whoever owns the information has control. They reasoned on AI and who trains it, on genomics and who holds your DNA after the test is done, and on why a Caribbean nation must build its digital-health infrastructure with partners of the region — not hand foreign corporations carte-blanche access to the people's data.",
+        "The power of the people is greater than the people in power — but we have to work together. Take back your knowing, and take a stance for it.",
       ],
     },
   ],
   quotes: [
     {
-      text: "No saviour is coming from the sky. We are the ones. The voice of the people is the voice of God; the strength of the people is the strength of God.",
-      attribution: "Prophet Alem",
+      text: "Health data is the new oil — and whoever owns the information has control.",
+      attribution: "The reasoning with Tesla la Touche & Dr. St. Rose",
     },
     {
-      text: "Do not let them point you to the sky and pick your pocket on the ground. Africa is the black man's heaven, and it is rightfully ours.",
-      attribution: "Prophet Alem, on Garvey's earthday",
+      text: "The power of the people is greater than the people in power — but we have to work together.",
+      attribution: "Tesla la Touche",
     },
   ],
   hashtags: [
     "BlessedLove",
     "VoiceOfAfrica",
     "Blazing993FM",
-    "MarcusGarvey",
-    "August17",
-    "HaileSelassieI",
+    "MedicalFreedom",
+    "GilberthaStRose",
+    "TeslaLaTouche",
+    "HealthDataSovereignty",
+    "YourDNA",
+    "WorldCouncilForHealth",
     "Rastafari",
-    "KingEmmanuel",
-    "PanAfrican",
-    "AfricaForTheAfricans",
-    "HeavenOnEarth",
+    "SaintLucia",
     "KnowThyself",
   ],
 };
