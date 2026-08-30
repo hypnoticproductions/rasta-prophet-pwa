@@ -44,6 +44,8 @@ const OVERRIDES: Record<string, string> = {
   "43": "/backgrounds/renaissance-monument-dakar.jpg",
   // August 23, 2026 — medical freedom / two guests
   "44": "/backgrounds/pitons-st-lucia.jpg",
+  // August 30, 2026 — roots / Bobo Shanti / Nyabinghi
+  "45": "/backgrounds/lalibela-bete-giyorgis.jpg",
   // Venezuela "Up In Arms" / "Hijacked" episodes
   "9": "/backgrounds/maduro-venezuela.jpg",
   "10": "/backgrounds/maduro-venezuela.jpg",

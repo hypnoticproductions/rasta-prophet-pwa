@@ -405,4 +405,29 @@ export const posts_25_35: EpisodePost[] = [
     guestAnte:
       "Tesla la Touche \u2014 CEO of Zymonetics, a Canadian health-innovation company \u2014 joins returning guest Dr. Gilbertha St. Rose. Their warning: health data is the new oil, and whoever owns the information has control.",
   },
+  {
+    id: "45",
+    hook: "RECLAIM THE SOUND. RECLAIM THE STORY.",
+    teaser:
+      "Reasoning is better than preaching, saith the Most High. This week the Voice of Africa went to the roots \u2014 the foundation of the faith, the sacred Trinity of Bobo Shanti, and the vibration of music from Nyabinghi to reggae. The Prophet showed how the modern industry diluted Black culture and twisted the image of the Black woman into something that was never ours.",
+    body:
+      "Blessed love, family. This week the Voice of Africa went to the roots \u2014 the foundation of the faith, the fire of Black consciousness, and the sound that carries the message. Reasoning is better than preaching, saith the Most High.\n\nProphet Alem opened on the eternal aim: repatriation and freedom, to land every man, woman and child under their own vine and fig tree, and the Universal Declaration of Human Rights, Article 1 to 30, that the whole world still refuses to honour. He named the wound plainly: Africa is the richest land on earth, yet poverty runs rampant, because our resources are stolen, hijacked and looted. But the tide is turning \u2014 revolution has started, and the nations once called poorest are rising.\n\nThen the Prophet took us deep into the house of Bobo Shanti \u2014 the Ethiopia Africa Black International Congress, a government within a government. He broke down the sacred Trinity that holds the order together: the Prophet, the Priest and the King. Without the prophet there is no vision, without the priest there is no ceremonial order, and without the king the people shall surely perish. He gave thanks for King Emmanuel Charles Edwards, for His Imperial Majesty Emperor Haile Selassie I, and hailed Marcus Mosiah Garvey as the greatest prophet born of the womb of a woman in this dispensation of time.\n\nHe called for unity above all \u2014 quoting Malcolm X: put down the book. Muslim, Christian or Rastaman, come together as Black people, because no matter what religion you are, as a Black person you are still oppressed, wherever you are in the world. And he reminded us that to practice racism, you need power.\n\nThe heart of the show was the vibration of music. From Nyabinghi \u2014 the one-two heartbeat drum, the original church sound \u2014 through reggae, the Prophet reasoned on how the beat itself carries spirit, how conscious sound built the movement, and how the modern industry has diluted Black culture and twisted the image of the Black woman into something that was never ours. They make us believe it is our culture, but it is not. The call: reclaim the sound, reclaim the story, preserve the culture, love yourself as a people. He closed on his own rights and freedom \u2014 Article 19, freedom of expression \u2014 and named King Emmanuel Charles Edwards the crown champion of human rights within the works of Rastafari. Cutting and clearing, renting and tearing, bringing down spiritual wickedness in high and low places.",
+    hashtags: [
+      "BlessedLove",
+      "VoiceOfAfrica",
+      "Blazing993FM",
+      "Rastafari",
+      "BoboShanti",
+      "Nyabinghi",
+      "MarcusGarvey",
+      "MalcolmX",
+      "HaileSelassieI",
+      "KingEmmanuel",
+      "BlackConsciousness",
+      "PanAfrican",
+      "AfricaForTheAfricans",
+      "ReclaimTheSound",
+    ],
+    guestAnte: "",
+  },
 ];

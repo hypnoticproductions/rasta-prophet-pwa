@@ -405,6 +405,15 @@ export const episodes: Episode[] = [
     description: "WHO OWNS YOUR HEALTH? Prophet Alem opens on freedom, redemption and repatriation with reparations \u2014 in the land of Africa, not in Babylon \u2014 and names the propaganda machine that smeared Haile Selassie I, Marcus Garvey, King Emmanuel Charles Edwards and Idi Amin: who controls the narrative controls the mind. Then two mighty guests. Dr. Gilbertha St. Rose \u2014 the St. Lucian doctor punished for prescribing ivermectin, now vindicated \u2014 and Tesla la Touche, CEO of the Canadian health-innovation company Zymonetics, on the fight for medical freedom and the new frontier: your health data. Health data is the new oil, and whoever owns the information has control. They reason on AI and data sovereignty, genomics and who holds your DNA, the vaccine schedule, and why a Caribbean nation must own its own digital-health infrastructure. Callers carry it further \u2014 the centralization of information under AI, and the public humiliation of Dr. St. Rose. The power of the people is greater than the people in power.",
     archive_url: "https://archive.org/download/blessed-love-voice-of-africa-show-on-8-23-2026/BLESSED%20LOVE%20VOICE%20OF%20AFRICA%20SHOW%20ON%20%208%2023%202026.mp3",
     published_date: "2026-08-23"
+  },
+  // August 30, 2026 Episode — the roots: Bobo Shanti, the Trinity, and the sound
+  {
+    id: "45",
+    episode_number: 45,
+    title: "Blessed Love Voice of Africa Show - August 30, 2026",
+    description: "REASONING IS BETTER THAN PREACHING. This week the Voice of Africa went to the roots \u2014 the foundation of the faith, the fire of Black consciousness, and the sound that carries the message. Prophet Alem opens on the eternal aim: repatriation and freedom, every man, woman and child under their own vine and fig tree, and the Universal Declaration of Human Rights the world still refuses to honour. He names the wound plain \u2014 Africa is the richest land on earth yet poverty runs rampant, because our resources are stolen, hijacked and looted \u2014 but the tide is turning and the nations once called poorest are rising. Then he takes us deep into the house of Bobo Shanti, the Ethiopia Africa Black International Congress, and the sacred Trinity that holds the order: the Prophet, the Priest and the King. He hails King Emmanuel Charles Edwards, His Imperial Majesty Haile Selassie I, and Marcus Mosiah Garvey. Quoting Malcolm X \u2014 put down the book \u2014 he calls for unity above religion: no matter your faith, as a Black person you are still oppressed. And the heart of the show is the vibration of music \u2014 from Nyabinghi, the one-two heartbeat drum, through reggae \u2014 and how the modern industry diluted Black culture and twisted the image of the Black woman. Reclaim the sound. Reclaim the story. Love yourself as a people.",
+    archive_url: "https://archive.org/download/show-on-8-30-2026-full-show/SHOW%20ON%20%208%2030%20%202026%20full%20show.mp3",
+    published_date: "2026-08-30"
   }
 ];
 
