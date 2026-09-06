@@ -31,43 +31,43 @@ export interface FeaturedGuest {
 }
 
 export const featuredGuest: FeaturedGuest = {
-  episodeId: "45",
-  showDate: "August 30, 2026",
-  name: "Reclaim The Sound. Reclaim The Story.",
+  episodeId: "46",
+  showDate: "September 6, 2026",
+  name: "Do Not Surrender Your Mind",
   honorific: "",
-  title: "The roots — Bobo Shanti, the sacred Trinity, and the vibration of Nyabinghi.",
-  image: "/media/cards/king-of-kings.png",
+  title: "Wake up, know yourself, study your history — and organise around a righteous future.",
+  image: "/backgrounds/renaissance-monument-dakar.jpg",
   imageCredit: "Blessed Love · Voice of Africa · Blazing 99.3 FM",
   tagline:
-    "They make us believe it's our culture — but it's not. Reclaim the sound. Reclaim the story. Love yourself as a people.",
+    "Do not surrender your mind, your history, or your power. Give thanks. Stay conscious. Keep the fire burning.",
   intro: [
-    "Blessed love, family. This week the Voice of Africa went to the roots — the foundation of the faith, the fire of Black consciousness, and the sound that carries the message. Reasoning is better than preaching, saith the Most High.",
-    "Prophet Alem opened on the eternal aim: repatriation and freedom, every man, woman and child under their own vine and fig tree — and named the wound plain: Africa is the richest land on earth, yet poverty runs rampant, because our resources are stolen, hijacked and looted. But the tide is turning.",
+    "Blessed love, family. This September 6th edition of the Voice of Africa came with a clear trumpet call: wake up, know yourself, study your history, and prepare for a future built on justice, dignity and self-determination.",
+    "Rooted in the Ethiopia Africa Black International Congress, the Prophet moved through the responsibilities of the prophet, priest and king, the call to place every person under their own vine and fig tree, and the Rastafari commitment to African consciousness, repatriation and economic liberation.",
   ],
   sections: [
     {
-      heading: "The House Of Bobo Shanti",
+      heading: "Selassie I Against Fascism",
       body: [
-        "The Prophet took us deep into the Ethiopia Africa Black International Congress — a government within a government — and the sacred Trinity that holds the order together: the Prophet, the Priest and the King. Without the prophet there is no vision, without the priest there is no ceremonial order, and without the king the people shall surely perish.",
-        "He hailed King Emmanuel Charles Edwards, His Imperial Majesty Emperor Haile Selassie I, and Marcus Mosiah Garvey — the greatest prophet born of the womb of a woman in this dispensation of time. And quoting Malcolm X — put down the book — he called for unity above religion: no matter your faith, as a Black person you are still oppressed.",
+        "The broadcast revisited the Italian invasion of Ethiopia and gave thanks for Emperor Haile Selassie I's resistance to fascism — connecting that history to today's debates about power, propaganda, war, borders and the unequal application of international law.",
+        "It challenged the language of 'independence' when political systems remain economically dependent, and urged the listeners to look beyond nationality toward ancestry, identity, land and collective responsibility.",
       ],
     },
     {
-      heading: "The Vibration Of The Sound",
+      heading: "From The Sahel To Haiti",
       body: [
-        "The heart of the show was the music. From Nyabinghi — the one-two heartbeat drum, the original church sound — through reggae, the Prophet reasoned on how the beat itself carries spirit, and how conscious sound built the movement.",
-        "But the modern industry has diluted Black culture and twisted the image of the Black woman into something that was never ours. They make us believe it's our culture — but it's not. The call: reclaim the sound, reclaim the story, preserve the culture, love yourself as a people.",
+        "The programme turned its lens toward the reported trafficking and exploitation of Africans in Libya, the treatment of Haitian people in the Caribbean, the struggle for Rastafari rights, and the need for prison systems to become places of education and rehabilitation rather than cycles of punishment.",
+        "From the Sahel to Haiti to the wider African world, the message was vigilance and constructive self-liberation: support food security, build knowledge, defend human rights, reject manipulation, and organise around a righteous future.",
       ],
     },
   ],
   quotes: [
     {
-      text: "Without the prophet there is no vision, without the priest there is no ceremonial order, and without the king the people shall surely perish.",
-      attribution: "Prophet Alem, on the sacred Trinity",
+      text: "Do not surrender your mind, your history, or your power.",
+      attribution: "Prophet Alem",
     },
     {
-      text: "No matter what religion you are, as a Black person, you are still oppressed, wherever you are in the world.",
-      attribution: "Prophet Alem, quoting the spirit of Malcolm X",
+      text: "It is us today. It will be you tomorrow.",
+      attribution: "Emperor Haile Selassie I, before the League of Nations",
     },
   ],
   hashtags: [
@@ -75,13 +75,13 @@ export const featuredGuest: FeaturedGuest = {
     "VoiceOfAfrica",
     "Blazing993FM",
     "Rastafari",
-    "BoboShanti",
-    "Nyabinghi",
-    "MarcusGarvey",
-    "MalcolmX",
+    "KnowThyself",
     "HaileSelassieI",
-    "KingEmmanuel",
-    "BlackConsciousness",
-    "ReclaimTheSound",
+    "Repatriation",
+    "SahelRising",
+    "Haiti",
+    "FoodSecurity",
+    "PanAfrican",
+    "SelfLiberation",
   ],
 };

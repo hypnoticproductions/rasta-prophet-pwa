@@ -46,6 +46,8 @@ const OVERRIDES: Record<string, string> = {
   "44": "/backgrounds/pitons-st-lucia.jpg",
   // August 30, 2026 — roots / Bobo Shanti / Nyabinghi
   "45": "/backgrounds/lalibela-bete-giyorgis.jpg",
+  // September 6, 2026 — know your history / Africa rising
+  "46": "/backgrounds/lekki-ikoyi-bridge.jpg",
   // Venezuela "Up In Arms" / "Hijacked" episodes
   "9": "/backgrounds/maduro-venezuela.jpg",
   "10": "/backgrounds/maduro-venezuela.jpg",
