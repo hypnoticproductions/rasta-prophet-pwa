@@ -430,4 +430,29 @@ export const posts_25_35: EpisodePost[] = [
     ],
     guestAnte: "",
   },
+  {
+    id: "46",
+    hook: "DO NOT SURRENDER YOUR MIND, YOUR HISTORY, OR YOUR POWER.",
+    teaser:
+      "A clear trumpet call this September 6th: wake up, know yourself, study your history, and prepare for a future built on justice, dignity and self-determination. From the resistance of Haile Selassie I against fascism to the trafficking of Africans in Libya and the treatment of Haitians in the Caribbean, the Prophet names the war on our consciousness and the road to constructive self-liberation.",
+    body:
+      "Blessed love, family. This September 6th edition of the Voice of Africa came with a clear trumpet call: wake up, know yourself, study your history, and prepare for a future built on justice, dignity and self-determination. Rooted in the Ethiopia Africa Black International Congress, the Prophet moved through the spiritual responsibilities of the prophet, priest and king; the call to place every person under their own vine and fig tree; the Universal Declaration of Human Rights; and the Rastafari commitment to African consciousness, international repatriation and economic liberation.\n\nThe broadcast revisited the Italian invasion of Ethiopia and gave thanks for Emperor Haile Selassie I's resistance to fascism, connecting that history to today's debates about power, propaganda, war, borders and the unequal application of international law. It challenged the language of independence when political systems remain economically dependent, and urged the listeners to look beyond nationality toward ancestry, identity, land and collective responsibility.\n\nThe programme turned its lens toward the reported trafficking and exploitation of Africans in Libya, the treatment of Haitian people in the Caribbean, the struggle for Rastafari rights, and the need for prison systems to become places of education and rehabilitation rather than cycles of punishment. From the Sahel to Haiti, from the Caribbean to the wider African world, the message was one of vigilance and constructive self-liberation: support food security, build knowledge, defend human rights, reject manipulation, and organise around a righteous future. The prophetic language is intense, but the practical challenge is direct \u2014 do not surrender your mind, your history, or your power. Give thanks. Stay conscious. Keep the fire burning.",
+    hashtags: [
+      "BlessedLove",
+      "VoiceOfAfrica",
+      "Blazing993FM",
+      "Rastafari",
+      "KnowThyself",
+      "HaileSelassieI",
+      "AntiFascism",
+      "Repatriation",
+      "Libya",
+      "Haiti",
+      "SahelRising",
+      "FoodSecurity",
+      "PanAfrican",
+      "SelfLiberation",
+    ],
+    guestAnte: "",
+  },
 ];
