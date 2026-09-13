@@ -345,6 +345,38 @@ export default function App() {
           </div>
         </section>
 
+        {/* MEMORIAL BANNER — Mount Gimie 1977 */}
+        <section className="px-6 py-10 bg-gradient-to-r from-[#0a0a0a] via-black to-[#0a0a0a] border-b border-white/5">
+          <a
+            href="/mount-jimmy-memorial"
+            className="group block max-w-5xl mx-auto rounded-lg overflow-hidden border border-gold/25 hover:border-gold/60 transition-colors"
+          >
+            <div className="flex h-1.5 w-full">
+              <div className="flex-1 bg-red" />
+              <div className="flex-1 bg-gold" />
+              <div className="flex-1 bg-green" />
+            </div>
+            <div className="px-6 py-7 md:px-10 md:py-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4 bg-black/60">
+              <div>
+                <p className="text-gold text-[10px] font-bold tracking-[0.35em] uppercase mb-2">
+                  In Loving Memory
+                </p>
+                <h3 className="text-xl md:text-2xl font-black uppercase italic tracking-tight text-white">
+                  Mount Gimie · September 1977
+                </h3>
+                <p className="text-stone-400 text-sm mt-2 max-w-xl">
+                  Honouring the Rastafari elders who endured the raid on the
+                  community — Ras Ibo, Ras Olongo, Ras Choco, Ras Flamba, Sista
+                  Iva, Sista Love &amp; many others.
+                </p>
+              </div>
+              <span className="shrink-0 text-gold text-xs font-bold tracking-[0.25em] uppercase border border-gold/40 rounded px-4 py-2 group-hover:bg-gold group-hover:text-black transition-colors">
+                We Remember →
+              </span>
+            </div>
+          </a>
+        </section>
+
         {/* PROMOS SECTION - Black Star Roots Video */}
         <section className="px-8 py-20 bg-black/40 backdrop-blur-sm border-y border-white/5">
           <div className="max-w-6xl mx-auto">
