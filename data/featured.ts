@@ -31,43 +31,44 @@ export interface FeaturedGuest {
 }
 
 export const featuredGuest: FeaturedGuest = {
-  episodeId: "46",
-  showDate: "September 6, 2026",
-  name: "Do Not Surrender Your Mind",
+  episodeId: "47",
+  showDate: "September 13, 2026",
+  name: "Freedom, Redemption, Repatriation",
   honorific: "",
-  title: "Wake up, know yourself, study your history — and organise around a righteous future.",
-  image: "/backgrounds/renaissance-monument-dakar.jpg",
+  title:
+    "Emancipation without economic power is only half a freedom — with compensation.",
+  image: "/backgrounds/lalibela-bete-giyorgis.jpg",
   imageCredit: "Blessed Love · Voice of Africa · Blazing 99.3 FM",
   tagline:
-    "Do not surrender your mind, your history, or your power. Give thanks. Stay conscious. Keep the fire burning.",
+    "Africa for Africans — those at home and those abroad. Give thanks for the Ethiopian New Year.",
   intro: [
-    "Blessed love, family. This September 6th edition of the Voice of Africa came with a clear trumpet call: wake up, know yourself, study your history, and prepare for a future built on justice, dignity and self-determination.",
-    "Rooted in the Ethiopia Africa Black International Congress, the Prophet moved through the responsibilities of the prophet, priest and king, the call to place every person under their own vine and fig tree, and the Rastafari commitment to African consciousness, repatriation and economic liberation.",
+    "Blessed love, family. This September 13th edition opened with prayer, Nyabinghi consciousness and thanksgiving for the Ethiopian New Year — honouring the Prophet, Priest and King order of Rastafari, His Imperial Majesty Emperor Haile Selassie I, King Emmanuel Charles Edwards and the Right Excellent Marcus Mosiah Garvey.",
+    "It was a fearless reasoning on freedom, redemption, economic liberation and international repatriation with compensation.",
   ],
   sections: [
     {
-      heading: "Selassie I Against Fascism",
+      heading: "September 11 — Mount Jimmy & Ras Choco",
       body: [
-        "The broadcast revisited the Italian invasion of Ethiopia and gave thanks for Emperor Haile Selassie I's resistance to fascism — connecting that history to today's debates about power, propaganda, war, borders and the unequal application of international law.",
-        "It challenged the language of 'independence' when political systems remain economically dependent, and urged the listeners to look beyond nationality toward ancestry, identity, land and collective responsibility.",
+        "The remembrance ran deep: the raid on the Rastafari camp at Mount Jimmy in Saint Lucia, a tribute to the late Ras Choco and the elders who endured that persecution, and the wider history of state violence against Rastafari across the Caribbean — Coral Gardens in Jamaica, the fight over sacramental cannabis, and the right to wear the turban and headdress.",
+        "From that struggle came landmark victories — but the fight for equal rights and justice continues.",
       ],
     },
     {
-      heading: "From The Sahel To Haiti",
+      heading: "Reparations & Economic Power",
       body: [
-        "The programme turned its lens toward the reported trafficking and exploitation of Africans in Libya, the treatment of Haitian people in the Caribbean, the struggle for Rastafari rights, and the need for prison systems to become places of education and rehabilitation rather than cycles of punishment.",
-        "From the Sahel to Haiti to the wider African world, the message was vigilance and constructive self-liberation: support food security, build knowledge, defend human rights, reject manipulation, and organise around a righteous future.",
+        "The British monarchy has acknowledged the horrors of slavery — but stopped short of compensation. Callers reasoned on whether acknowledgment without apology or material repair can ever be justice.",
+        "The programme held firm: from the Battle of Adwa to the Sahel, political independence without control of land, production, finance, technology and education is only partial freedom. Build businesses, build knowledge, prepare the youth.",
       ],
     },
   ],
   quotes: [
     {
-      text: "Do not surrender your mind, your history, or your power.",
+      text: "Emancipation without economic power remains incomplete.",
       attribution: "Prophet Alem",
     },
     {
-      text: "It is us today. It will be you tomorrow.",
-      attribution: "Emperor Haile Selassie I, before the League of Nations",
+      text: "Africa is potentially rich. Our poverty need not cover us with shame.",
+      attribution: "Emperor Haile Selassie I",
     },
   ],
   hashtags: [
@@ -75,13 +76,13 @@ export const featuredGuest: FeaturedGuest = {
     "VoiceOfAfrica",
     "Blazing993FM",
     "Rastafari",
-    "KnowThyself",
+    "EthiopianNewYear",
     "HaileSelassieI",
+    "MarcusGarvey",
+    "MountJimmy",
+    "Reparations",
     "Repatriation",
-    "SahelRising",
-    "Haiti",
-    "FoodSecurity",
-    "PanAfrican",
-    "SelfLiberation",
+    "EconomicLiberation",
+    "PanAfricanism",
   ],
 };

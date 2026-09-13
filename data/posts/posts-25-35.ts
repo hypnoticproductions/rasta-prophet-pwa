@@ -455,4 +455,30 @@ export const posts_25_35: EpisodePost[] = [
     ],
     guestAnte: "",
   },
+  {
+    id: "47",
+    hook: "EMANCIPATION WITHOUT ECONOMIC POWER IS ONLY HALF A FREEDOM.",
+    teaser:
+      "Ethiopian New Year blessings, a tribute to the fallen, and a fearless reasoning on reparations: King Charles admitted the horrors of slavery but stopped short of paying. On this September 13th broadcast, Prophet Alem connects Mount Jimmy to Coral Gardens, Adwa to reparations, and reminds us that a people freed on paper but not in pocket are not yet free.",
+    body:
+      "Blessed love, family. This September 13th edition opened with prayer, Nyabinghi consciousness and thanksgiving for the Ethiopian New Year, honouring the Prophet, Priest and King order of Rastafari, His Imperial Majesty Emperor Haile Selassie I, King Emmanuel Charles Edwards and the Right Excellent Marcus Mosiah Garvey.\n\nThe September 11 remembrance ran deep. The Prophet recalled the raid on the Rastafari camp at Mount Jimmy in Saint Lucia, paid tribute to the late Ras Choco and the elders who endured that persecution, and connected it to the wider history of state violence against Rastafari across the Caribbean \u2014 Coral Gardens in Jamaica, the fight over sacramental cannabis, the right to wear the turban and headdress, and the long struggle for equal treatment under the law.\n\nThe broadcast turned to reparations and the British monarchy's acknowledgment of the horrors of slavery without any commitment to compensation. Callers reasoned on whether acknowledgment without apology or material repair can ever be justice, and the programme held firm: emancipation without economic power is incomplete. Africa and its diaspora must build businesses, develop financial literacy, invest in the youth and reduce dependence on systems that keep the wealth concentrated elsewhere.\n\nFrom the Battle of Adwa and Ethiopia's resistance to Fascist Italy, to the ancient Ethiopian Bible and the study of African history; from the Red Sea and the Sahel to Saint Lucia \u2014 the call was constant: political independence without control of land, production, finance, technology and education is only partial freedom. (Geopolitical claims raised on air were offered as viewpoints for investigation, not established fact.) Give thanks. Study your history. Prepare your posterity. Africa for Africans \u2014 those at home and those abroad.",
+    hashtags: [
+      "BlessedLove",
+      "VoiceOfAfrica",
+      "Blazing993FM",
+      "Rastafari",
+      "BoboShanti",
+      "EthiopianNewYear",
+      "HaileSelassieI",
+      "MarcusGarvey",
+      "MountJimmy",
+      "RasChoco",
+      "Reparations",
+      "Repatriation",
+      "EconomicLiberation",
+      "EqualRightsAndJustice",
+      "PanAfricanism",
+    ],
+    guestAnte: "",
+  },
 ];

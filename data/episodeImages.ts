@@ -48,6 +48,8 @@ const OVERRIDES: Record<string, string> = {
   "45": "/backgrounds/lalibela-bete-giyorgis.jpg",
   // September 6, 2026 — know your history / Africa rising
   "46": "/backgrounds/lekki-ikoyi-bridge.jpg",
+  // September 13, 2026 — Ethiopian New Year / sovereignty / Lalibela
+  "47": "/backgrounds/lalibela-bete-giyorgis.jpg",
   // Venezuela "Up In Arms" / "Hijacked" episodes
   "9": "/backgrounds/maduro-venezuela.jpg",
   "10": "/backgrounds/maduro-venezuela.jpg",
