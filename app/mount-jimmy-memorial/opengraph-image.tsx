@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og';
 
 export const dynamic = 'force-static';
 export const alt =
-  'In Loving Memory — The September 1977 Mount Gimie raid on the Rastafari community, Saint Lucia';
+  'In Loving Memory — The September 1977 Mount Jimmy raid on the Rastafari community, Saint Lucia';
 export const size = { width: 1080, height: 1350 };
 export const contentType = 'image/png';
 
@@ -62,7 +62,7 @@ export default function MountJimmyMemorial() {
               In Loving Memory
             </div>
             <div style={{ display: 'flex', marginTop: 10, fontSize: 118, fontWeight: 700, lineHeight: 1.02, color: '#FFFFFF', textAlign: 'center' }}>
-              MOUNT GIMIE
+              MOUNT JIMMY
             </div>
             <div style={{ display: 'flex', marginTop: 14, fontSize: 27, color: GOLD, letterSpacing: 2 }}>
               September 1977 · Saint Lucia

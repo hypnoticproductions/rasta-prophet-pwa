@@ -345,7 +345,7 @@ export default function App() {
           </div>
         </section>
 
-        {/* MEMORIAL BANNER — Mount Gimie 1977 */}
+        {/* MEMORIAL BANNER — Mount Jimmy 1977 */}
         <section className="px-6 py-10 bg-gradient-to-r from-[#0a0a0a] via-black to-[#0a0a0a] border-b border-white/5">
           <a
             href="/mount-jimmy-memorial"
@@ -362,7 +362,7 @@ export default function App() {
                   In Loving Memory
                 </p>
                 <h3 className="text-xl md:text-2xl font-black uppercase italic tracking-tight text-white">
-                  Mount Gimie · September 1977
+                  Mount Jimmy · September 1977
                 </h3>
                 <p className="text-stone-400 text-sm mt-2 max-w-xl">
                   Honouring the Rastafari elders who endured the raid on the
