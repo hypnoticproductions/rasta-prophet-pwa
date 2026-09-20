@@ -481,4 +481,30 @@ export const posts_25_35: EpisodePost[] = [
     ],
     guestAnte: "",
   },
+  {
+    id: "48",
+    hook: "OWN THE TOOLS, OR STAY A CUSTOMER IN YOUR OWN HOUSE.",
+    teaser:
+      "Babylon is burning \u2014 but a burning system is not the same as a free people. On this September 20th broadcast, Prophet Alem reasons that liberation must be spiritual, economic, technological AND institutional at once. Free the mind from inherited colonial ideas, then own the machines, the factories, the data and the roads. Africa cannot stay the place the world extracts from.",
+    body:
+      "Blessed love, family. This September 20th edition opened with thanksgiving for life, the Ethiopia Africa Black International Congress, the Church of Divine Salvation, Four Wings Universal and Blazing 99.3 FM \u2014 and centered the Rastafari order of the Prophet, Priest and King: vision, ceremonial order and leadership for the people. Reverence was given to His Imperial Majesty Emperor Haile Selassie I, King Emmanuel Charles Edwards and the Right Excellent Marcus Mosiah Garvey, with the call to see yourself and know yourself through African history, spiritual discipline and conscious action.\n\nThe heart of the reasoning was the link between spirituality and liberation. Education, political slogans and material success cannot complete emancipation if the mind stays trapped inside inherited colonial ideas. The Prophet challenged the listeners to examine where their religious concepts came from, how faith has been used to prop up imperial power, and how African ancestral identity can be remembered without disrespecting the good that people find in the sacred texts.\n\nThen the show came down to earth: the wars and rivalries around Yemen and Saudi Arabia, the struggle in the Sahel, and how global conflict may reshape the space open to African liberation (offered as reasoning and prediction, not settled forecast). Four areas were opened for deeper study \u2014 Dr. Marimba Ani on how belief systems shape our memory of oppression; the rise of smart cities, data harvesting and surveillance as a possible new social control; the contested history of Sudan and the Anyanya conflict, to be investigated through records and competing sources; and the African development question raised by Burkina Faso \u2014 why African nations can pay more to build less, and whether owning the construction machines, factories, roads, processing plants and technical skills can turn spending into lasting sovereignty.\n\nThe central message stands: liberation must be spiritual, economic, technological and institutional at the same time. Africa cannot remain only the place where raw materials, data, labour and markets are extracted. Own the tools. Open the books. Train the youth. Build systems that stay in African hands. Africa for Africans \u2014 those at home and those abroad.",
+    hashtags: [
+      "BlessedLove",
+      "VoiceOfAfrica",
+      "Blazing993FM",
+      "Rastafari",
+      "BoboShanti",
+      "HaileSelassieI",
+      "MarcusGarvey",
+      "SpiritualEmancipation",
+      "AfricanSovereignty",
+      "OwnTheTools",
+      "MarimbaAni",
+      "Surveillance",
+      "BurkinaFaso",
+      "EconomicLiberation",
+      "PanAfricanism",
+    ],
+    guestAnte: "",
+  },
 ];
