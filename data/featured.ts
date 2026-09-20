@@ -31,44 +31,44 @@ export interface FeaturedGuest {
 }
 
 export const featuredGuest: FeaturedGuest = {
-  episodeId: "47",
-  showDate: "September 13, 2026",
-  name: "Freedom, Redemption, Repatriation",
+  episodeId: "48",
+  showDate: "September 20, 2026",
+  name: "Own The Tools",
   honorific: "",
   title:
-    "Emancipation without economic power is only half a freedom — with compensation.",
-  image: "/backgrounds/lalibela-bete-giyorgis.jpg",
+    "Babylon burning, spiritual emancipation, and the struggle to own the tools of development.",
+  image: "/backgrounds/renaissance-monument-dakar.jpg",
   imageCredit: "Blessed Love · Voice of Africa · Blazing 99.3 FM",
   tagline:
-    "Africa for Africans — those at home and those abroad. Give thanks for the Ethiopian New Year.",
+    "Own the tools. Open the books. Train the youth. Africa for Africans — those at home and those abroad.",
   intro: [
-    "Blessed love, family. This September 13th edition opened with prayer, Nyabinghi consciousness and thanksgiving for the Ethiopian New Year — honouring the Prophet, Priest and King order of Rastafari, His Imperial Majesty Emperor Haile Selassie I, King Emmanuel Charles Edwards and the Right Excellent Marcus Mosiah Garvey.",
-    "It was a fearless reasoning on freedom, redemption, economic liberation and international repatriation with compensation.",
+    "Blessed love, family. This September 20th edition opened with thanksgiving for life, the Ethiopia Africa Black International Congress, the Church of Divine Salvation, Four Wings Universal and Blazing 99.3 FM — centering the Rastafari order of the Prophet, Priest and King.",
+    "Reverence to His Imperial Majesty Emperor Haile Selassie I, King Emmanuel Charles Edwards and the Right Excellent Marcus Mosiah Garvey — with the call to see yourself and know yourself.",
   ],
   sections: [
     {
-      heading: "September 11 — Mount Jimmy & Ras Choco",
+      heading: "Free The Mind First",
       body: [
-        "The remembrance ran deep: the raid on the Rastafari camp at Mount Jimmy in Saint Lucia, a tribute to the late Ras Choco and the elders who endured that persecution, and the wider history of state violence against Rastafari across the Caribbean — Coral Gardens in Jamaica, the fight over sacramental cannabis, and the right to wear the turban and headdress.",
-        "From that struggle came landmark victories — but the fight for equal rights and justice continues.",
+        "The heart of the reasoning: liberation must be spiritual before it can be anything else. Education, political slogans and material success cannot complete emancipation if the mind stays trapped inside inherited colonial ideas.",
+        "Examine where your religious concepts came from, how faith has been used to prop up imperial power, and how African ancestral identity can be remembered without disrespecting the good in the sacred texts.",
       ],
     },
     {
-      heading: "Reparations & Economic Power",
+      heading: "Own The Tools Of Development",
       body: [
-        "The British monarchy has acknowledged the horrors of slavery — but stopped short of compensation. Callers reasoned on whether acknowledgment without apology or material repair can ever be justice.",
-        "The programme held firm: from the Battle of Adwa to the Sahel, political independence without control of land, production, finance, technology and education is only partial freedom. Build businesses, build knowledge, prepare the youth.",
+        "From the Sahel to Burkina Faso: why can African nations pay more to build less? Because they rent the machines, the skills and the systems instead of owning them.",
+        "The challenge — study Dr. Marimba Ani, watch the rise of smart cities and surveillance, investigate the true history of Sudan, and build. Own the machines, the factories, the roads and the data. Liberation must be spiritual, economic, technological and institutional at once.",
       ],
     },
   ],
   quotes: [
     {
-      text: "Emancipation without economic power remains incomplete.",
+      text: "Own the tools, or stay a customer in your own house.",
       attribution: "Prophet Alem",
     },
     {
-      text: "Africa is potentially rich. Our poverty need not cover us with shame.",
-      attribution: "Emperor Haile Selassie I",
+      text: "A people without the knowledge of their past history, origin and culture is like a tree without roots.",
+      attribution: "Marcus Mosiah Garvey",
     },
   ],
   hashtags: [
@@ -76,12 +76,12 @@ export const featuredGuest: FeaturedGuest = {
     "VoiceOfAfrica",
     "Blazing993FM",
     "Rastafari",
-    "EthiopianNewYear",
     "HaileSelassieI",
     "MarcusGarvey",
-    "MountJimmy",
-    "Reparations",
-    "Repatriation",
+    "SpiritualEmancipation",
+    "AfricanSovereignty",
+    "OwnTheTools",
+    "BurkinaFaso",
     "EconomicLiberation",
     "PanAfricanism",
   ],
